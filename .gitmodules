@@ -1,0 +1,3 @@
+[submodule "Submodules/MagicalRecord-DevedUp"]
+	path = Submodules/MagicalRecord-DevedUp
+	url = git@github.com:devedup/MagicalRecord.git
