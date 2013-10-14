@@ -48,7 +48,7 @@
 		titleLabel.backgroundColor = [UIColor clearColor];
 		titleLabel.textColor = [UIColor whiteColor];
 		titleLabel.font = [UIFont boldSystemFontOfSize:19.0];
-		titleLabel.minimumFontSize = 8.0;
+		//titleLabel.minimumFontSize = 8.0;
 		titleLabel.adjustsFontSizeToFitWidth = YES;
 		[self addSubview:titleLabel];
 		

@@ -48,21 +48,21 @@
 																	  forKey:(__bridge id)kSecValueData];
 		
 		error = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
-		NSAssert1(error == errSecSuccess, @"SecItemUpdate failed: %ld", error);
+		NSAssert1((int)error == errSecSuccess, @"SecItemUpdate failed: %d", (int) error);
         if (error != errSecSuccess) {
-            DULog(@"SecItemUpdate failed: %ld", error);
+            DULog(@"SecItemUpdate failed: %d", (int)error);
         }
 	} else if (error == errSecItemNotFound) {
 		// do add
 		[query setObject:[string dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
 		
 		error = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
-		NSAssert1(error == errSecSuccess, @"SecItemAdd failed: %ld", error);
+		NSAssert1(error == errSecSuccess, @"SecItemAdd failed: %d", (int)error);
         if (error != errSecSuccess) {
-            DULog(@"SecItemAdd failed: %ld", error);
+            DULog(@"SecItemAdd failed: %d", (int)error);
         }
 	} else {
-		NSAssert1(NO, @"SecItemCopyMatching failed: %ld", error);
+		NSAssert1(NO, @"SecItemCopyMatching failed: %d", (int)error);
 	}
 }
 

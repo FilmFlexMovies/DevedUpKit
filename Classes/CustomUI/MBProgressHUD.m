@@ -219,8 +219,16 @@
     // Add label if label text was set
     if (nil != self.labelText) {
         // Get size of label text
-        CGSize dims = [self.labelText sizeWithFont:self.labelFont];
-
+        
+        CGSize dims;
+        if (iOS_7_or_later) {
+            dims = [self.labelText sizeWithAttributes:@{NSFontAttributeName:self.labelFont}];
+        } else {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+            dims = [self.labelText sizeWithFont:self.labelFont];
+#endif
+        }
+        
         // Compute label dimensions based on font metrics if size is larger than max then clip the label width
         float lHeight = dims.height;
         float lWidth;
@@ -233,7 +241,7 @@
         // Set label properties
         label.font = self.labelFont;
         label.adjustsFontSizeToFitWidth = NO;
-        label.textAlignment = UITextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentCenter;
         label.opaque = NO;
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor whiteColor];
@@ -273,13 +281,13 @@
             // Set label properties
             detailsLabel.font = self.detailsLabelFont;
             detailsLabel.adjustsFontSizeToFitWidth = YES;
-            detailsLabel.textAlignment = UITextAlignmentCenter;
+            detailsLabel.textAlignment = NSTextAlignmentCenter;
             detailsLabel.opaque = NO;
             detailsLabel.backgroundColor = [UIColor clearColor];
             detailsLabel.textColor = [UIColor whiteColor];
             detailsLabel.text = self.detailsLabelText;
 			detailsLabel.numberOfLines = 3;
-			detailsLabel.lineBreakMode = UILineBreakModeWordWrap;
+			detailsLabel.lineBreakMode = NSLineBreakByWordWrapping;
 
             // Update HUD size
             if (self.width < lWidth) {

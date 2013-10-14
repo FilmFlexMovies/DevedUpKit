@@ -74,7 +74,7 @@
 	self.checkBoxLabel.textColor = [UIColor whiteColor];
 	
 	// layout of label
-	self.checkBoxLabel.lineBreakMode = UILineBreakModeWordWrap;
+	self.checkBoxLabel.lineBreakMode = NSLineBreakByWordWrapping;
 	self.checkBoxLabel.numberOfLines = 0;
 	
 	[self addSubview:self.checkBoxLabel];

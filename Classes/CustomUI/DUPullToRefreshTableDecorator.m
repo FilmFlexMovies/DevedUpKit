@@ -93,7 +93,7 @@
 //    self.refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, REFRESH_HEADER_HEIGHT)];
 //    self.refreshLabel.backgroundColor = [UIColor clearColor];
 //    self.refreshLabel.font = [UIFont fontWithName:@"Palatino-Bold" size:12.0f];
-//    self.refreshLabel.textAlignment = UITextAlignmentCenter;
+//    self.refreshLabel.textAlignment = NSTextAlignmentCenter;
 //    self.refreshLabel.numberOfLines = 0;
 //    self.refreshLabel.lineBreakMode = UILineBreakModeWordWrap;
 //    self.refreshLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;

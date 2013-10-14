@@ -141,7 +141,7 @@ const NSUInteger kMaxDiskCacheSize = 400000000;
 		}
 		
 		self.cacheSize = totalSize;
-		DULog(@"cache size is: %d", self.cacheSize);
+		DULog(@"cache size is: %lu", (unsigned long)self.cacheSize);
 	}
 	return self.cacheSize;
 }
@@ -176,13 +176,13 @@ NSInteger dateModifiedSort(id file1, id file2, void *reverse) {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
     // NSUInteger targetBytes = MIN(kMaxDiskCacheSize, MAX(0, targetBytes));
     NSUInteger targetBytes = kMaxDiskCacheSize * 0.75;
-    DULog(@"Checking disk cache size. Limit %i bytes", targetBytes);
-    NSString *size = [NSString stringWithFormat:@"%i", [self cacheSize]];
+    DULog(@"Checking disk cache size. Limit %lu bytes", (unsigned long)targetBytes);
+    NSString *size = [NSString stringWithFormat:@"%lu", (unsigned long)[self cacheSize]];
     if ([self cacheSize] > targetBytes) {
-        DULog(@"Time to clean the cache! size is: %@, %d", [self cacheDir], [self cacheSize]);
+        DULog(@"Time to clean the cache! size is: %@, %lu", [self cacheDir], (unsigned long)[self cacheSize]);
         NSError *error = nil;
         NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self cacheDir] error:&error];
-        DULog(@"There are %i contents in dir", [dirContents count]);
+        DULog(@"There are %lu contents in dir", (unsigned long)[dirContents count]);
         if (!error) {
             NSMutableArray *filteredArray = [[NSMutableArray alloc] init];
             for (NSString *file in dirContents) {
@@ -201,7 +201,7 @@ NSInteger dateModifiedSort(id file1, id file2, void *reverse) {
                 [sortedDirContents removeLastObject];
                 DULog(@"removing ");
             }
-            DULog(@"Remaining cache size: %d, target size: %d", self.cacheSize, targetBytes);
+            DULog(@"Remaining cache size: %lu, target size: %lu", (unsigned long)self.cacheSize, (unsigned long)targetBytes);
         }
     }
     DULog(@"Finished checking disk cache");

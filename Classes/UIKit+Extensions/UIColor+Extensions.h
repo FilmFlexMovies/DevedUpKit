@@ -65,6 +65,7 @@ struct hsv_color {
 - (CGColorRef) lowCGColor;
 - (CGColorRef) highCGColor;
 
++ (UIColor *) colorWithRGBString:(NSString *)rgbString;
 
 @end
 

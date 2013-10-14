@@ -16,7 +16,12 @@
 @property (nonatomic, retain, readonly) NSString *previousVersionString;
 @property (nonatomic, retain, readonly) NSString *currentVersionString;
 
++ (DUMigrationController *) sharedController;
+
 - (BOOL) hasMigratedAlready;
 - (void) finishMigration;
+
+- (void) migrateToNewVersion;
+
 
 @end

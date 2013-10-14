@@ -10,15 +10,22 @@
 
 @class DUVerticalSeparatorLayer;
 
-typedef enum {
-	DUTwoSegmentedControlStateNeutral = 0,
+typedef enum {	
 	DUTwoSegmentedControlStateLeftSelected,
-	DUTwoSegmentedControlStateRightSelected
+	DUTwoSegmentedControlStateRightSelected,
+    DUTwoSegmentedControlStateNeutral
 } DUTwoSegmentedControlState;
 
 @interface DUTwoSegmentedControl : UIButton 
 
-@property (nonatomic, readonly) DUTwoSegmentedControlState state;
+@property (nonatomic, retain) UIColor *highColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, retain) UIColor *lowColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, retain) UIColor *highColorSelected UI_APPEARANCE_SELECTOR;
+@property (nonatomic, retain) UIColor *lowColorSelected UI_APPEARANCE_SELECTOR;
+@property (nonatomic, retain) UIFont *font UI_APPEARANCE_SELECTOR;
+
+
+@property (nonatomic, assign, readonly) DUTwoSegmentedControlState state;
 @property (nonatomic, retain, readonly) UILabel *leftLabel;
 @property (nonatomic, retain, readonly) UILabel *rightLabel;
 @property (nonatomic, assign) BOOL oneButtonBehaviour;
@@ -28,7 +35,7 @@ typedef enum {
 - (void) setLeftSelected;
 - (void) setRightSelected;
 - (void) setTitle:(NSString*)title forDUTwoSegmentedControlState:(DUTwoSegmentedControlState)state;
-- (void) setColor:(UIColor*)color forDUTwoSegmentedControlState:(DUTwoSegmentedControlState)state;
 - (void) setTitleColor:(UIColor*)color forDUTwoSegmentedControlState:(DUTwoSegmentedControlState)state;
 
 @end
+

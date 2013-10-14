@@ -202,4 +202,17 @@
 	return nil;
 }
 
++ (UIColor *) colorWithRGBString:(NSString *)rgbString {
+    rgbString = [rgbString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSArray *rgbComponents = [rgbString componentsSeparatedByString:@","];
+    NSAssert(rgbComponents.count == 3, @"Needs to have 3 components");
+    
+    float r = [rgbComponents[0] floatValue] / 255.0f;
+    float g = [rgbComponents[1] floatValue] / 255.0f;
+    float b = [rgbComponents[2] floatValue] / 255.0f;
+    
+    return [UIColor colorWithRed:r green:g blue:b alpha:1.0f];
+    
+}
+
 @end

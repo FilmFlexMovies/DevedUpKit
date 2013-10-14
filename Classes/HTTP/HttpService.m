@@ -292,7 +292,7 @@ NSString *const NSHTTPPropertyStatusCodeKey=@"HTTPPropertyStatusCode";
 		//Yes there was
 		//We now have the error details in receivedData
 		NSString *dataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-		DULog(@"Connection Error With HTTP Response Code:%i \n\n %@", [connectionError code], dataString);
+		DULog(@"Connection Error With HTTP Response Code:%li \n\n %@", (long)[connectionError code], dataString);
         
         if ([delegate respondsToSelector:@selector(httpService:didFailWithError:dataString:)]){
             [delegate httpService:self didFailWithError:connectionError dataString:dataString];

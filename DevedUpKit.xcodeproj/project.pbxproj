@@ -189,6 +189,9 @@
 		557BD14418081A66007E3D75 /* UIImage+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13A18081A66007E3D75 /* UIImage+NSCoding.m */; };
 		557BD14518081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
 		557BD14618081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
+		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
+		559700E818083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
+		55DE1E7E180C0F6E00BD8ABB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DE1E7D180C0F6E00BD8ABB /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -402,6 +405,10 @@
 		557BD13A18081A66007E3D75 /* UIImage+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSCoding.m"; sourceTree = "<group>"; };
 		557BD13B18081A66007E3D75 /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		557BD13C18081A66007E3D75 /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
+		559700E3180837400047DACB /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemVersionMacros.h; sourceTree = "<group>"; };
+		559700E518083C3B0047DACB /* NSString+DUBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DUBase64.h"; sourceTree = "<group>"; };
+		559700E618083C3B0047DACB /* NSString+DUBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DUBase64.m"; sourceTree = "<group>"; };
+		55DE1E7D180C0F6E00BD8ABB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DE1E7E180C0F6E00BD8ABB /* CoreFoundation.framework in Frameworks */,
 				557BCF071808169D007E3D75 /* UIKit.framework in Frameworks */,
 				557BCE8E18081534007E3D75 /* Foundation.framework in Frameworks */,
 			);
@@ -451,6 +459,7 @@
 		557BCE8C18081534007E3D75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55DE1E7D180C0F6E00BD8ABB /* CoreFoundation.framework */,
 				557BCF061808169D007E3D75 /* UIKit.framework */,
 				557BCE8D18081534007E3D75 /* Foundation.framework */,
 				557BCE9B18081534007E3D75 /* XCTest.framework */,
@@ -489,6 +498,7 @@
 		557BCF9B18081980007E3D75 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				559700E3180837400047DACB /* SystemVersionMacros.h */,
 				557BD00118081981007E3D75 /* Macros.h */,
 				557BCFDE18081981007E3D75 /* DUConstants.h */,
 				557BCFDF18081981007E3D75 /* DUConstants.m */,
@@ -808,6 +818,8 @@
 				557BD02518081981007E3D75 /* NSObject+DUExtensions.m */,
 				557BD02618081981007E3D75 /* NSString+Extensions.h */,
 				557BD02718081981007E3D75 /* NSString+Extensions.m */,
+				559700E518083C3B0047DACB /* NSString+DUBase64.h */,
+				559700E618083C3B0047DACB /* NSString+DUBase64.m */,
 			);
 			path = "NS+Extensions";
 			sourceTree = "<group>";
@@ -1031,6 +1043,7 @@
 				557BD08518081981007E3D75 /* CheckBoxControl.m in Sources */,
 				557BD0A318081981007E3D75 /* RefreshArrowView.m in Sources */,
 				557BD0CB18081981007E3D75 /* DUNetworkAuthenticatorFactory.m in Sources */,
+				559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */,
 				557BD10518081981007E3D75 /* ViewHelper.m in Sources */,
 				557BD07F18081981007E3D75 /* DUCAAnimationBlockDelegate.m in Sources */,
 				557BD07318081981007E3D75 /* UIView+DUBlur.m in Sources */,
@@ -1141,6 +1154,7 @@
 				557BD10618081981007E3D75 /* ViewHelper.m in Sources */,
 				557BD0B418081981007E3D75 /* DUImageCache.m in Sources */,
 				557BD0E818081981007E3D75 /* MailController.m in Sources */,
+				559700E818083C3B0047DACB /* NSString+DUBase64.m in Sources */,
 				557BD0EA18081981007E3D75 /* ASHSoundManager.m in Sources */,
 				557BD0DC18081981007E3D75 /* NSMutableArray+Extensions.m in Sources */,
 				557BD12E18081A47007E3D75 /* NSDecimalNumber+Extensions.m in Sources */,
@@ -1231,8 +1245,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1263,7 +1278,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1272,6 +1288,7 @@
 		557BCEAE18081534007E3D75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DevedUpKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevedUpKit-Prefix.pch";
@@ -1279,12 +1296,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
 		557BCEAF18081534007E3D75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DevedUpKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevedUpKit-Prefix.pch";
@@ -1292,6 +1311,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

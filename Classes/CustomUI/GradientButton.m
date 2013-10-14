@@ -235,7 +235,15 @@ static NSString *defaultHexEncodedColorsString;
 + (UIButton *) gradientButtonWithTitle:(NSString*)title width:(CGFloat)width {
 	
 	UIFont *titleFont = [UIFont boldSystemFontOfSize:12];
-	CGSize size = [title sizeWithFont:titleFont];
+    
+	CGSize size;
+    if (iOS_7_or_later) {
+        size = [title sizeWithAttributes:@{NSFontAttributeName:titleFont}];
+    } else {
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
+        size = [title sizeWithFont:titleFont];
+        #endif
+    }
 	
 	if((size.width + kGradientButtonEdgeInsertsWidth) < width) {
 		width = (size.width + kGradientButtonEdgeInsertsWidth);

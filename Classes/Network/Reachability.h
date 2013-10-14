@@ -81,6 +81,9 @@ typedef enum {
 - (void) stopNotifier;
 
 - (NetworkStatus) currentReachabilityStatus;
+
+- (BOOL) isReachable;
+
 //WWAN may be available, but not active until a connection has been established.
 //WiFi may require a connection for VPN on Demand.
 - (BOOL) connectionRequired;

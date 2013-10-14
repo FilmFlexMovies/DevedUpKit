@@ -59,3 +59,5 @@ id existingObjectWithID(NSManagedObjectID *objectID, NSManagedObjectContext *con
 //having the persistent store on the main context - sometimes you don't have the persistent object id's
 //in a timely manner...maybe
 void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *context);
+
+typedef DUCoreDataManager FFXCoreDataManager;

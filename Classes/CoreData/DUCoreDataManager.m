@@ -109,32 +109,32 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 
 #pragma mark - iCloud Setup
 
-//- (void) setupRecreatingFromRemoteStorWithStoreName:(NSString *)storeName iCloudID:(NSString *)key {
+- (void) setupRecreatingFromRemoteStorWithStoreName:(NSString *)storeName iCloudID:(NSString *)key {
 //    [self setupWithStoreName:storeName iCloudID:key options:@{NSPersistentStoreRebuildFromUbiquitousContentOption: [NSNumber numberWithBool:YES]}];
-//}
+}
 
 - (void) setupClearingRemoteStorWithStoreName:(NSString *)storeName iCloudID:(NSString *)key {
     
-    NSString *contentName = [key stringByReplacingOccurrencesOfString:@"." withString:@"~"];
-    NSDictionary *options = @{
-                              NSPersistentStoreUbiquitousContentNameKey: contentName,
-                              NSPersistentStoreUbiquitousContainerIdentifierKey: key,
-                              NSPersistentStoreRemoveUbiquitousMetadataOption: [NSNumber numberWithBool:YES]};
+//    NSString *contentName = [key stringByReplacingOccurrencesOfString:@"." withString:@"~"];
+//    NSDictionary *options = @{
+//                              NSPersistentStoreUbiquitousContentNameKey: contentName,
+//                              NSPersistentStoreUbiquitousContainerIdentifierKey: key,
+//                              NSPersistentStoreRemoveUbiquitousMetadataOption: [NSNumber numberWithBool:YES]};
+//    
+//    
+//    //First remove
+//    NSError *error = nil;
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:storeName];
     
-    
-    //First remove
-    NSError *error = nil;
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:storeName];
-    
-    @try {
-        BOOL deleted = [NSPersistentStoreCoordinator removeUbiquitousContentAndPersistentStoreAtURL:storeURL options:options error:&error];
-    }
-    @catch (NSException *exception) {
-        
-    }
-    @finally {
-        
-    }
+//    @try {
+//        BOOL deleted = [NSPersistentStoreCoordinator removeUbiquitousContentAndPersistentStoreAtURL:storeURL options:options error:&error];
+//    }
+//    @catch (NSException *exception) {
+//        
+//    }
+//    @finally {
+//        
+//    }
     
     
     

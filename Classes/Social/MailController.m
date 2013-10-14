@@ -95,7 +95,7 @@
 		emailViewController.mailComposeDelegate = self;
 		
         self.hostController = vc; //Just assign
-		[vc presentModalViewController:emailViewController animated:YES];		
+		[vc presentViewController:emailViewController animated:YES completion:nil];
 	} else {
         NSError *error = [NSError errorWithDomain:@"You don't have an email address setup on this device" code:999 userInfo:nil];
         if(self.completionBlock)
@@ -117,7 +117,7 @@
         if(self.completionBlock)
             self.completionBlock(nil);    
 	}
-    [self.hostController dismissModalViewControllerAnimated:YES];
+    [self.hostController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

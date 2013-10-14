@@ -146,7 +146,7 @@ const NSUInteger kMaxDiskCacheSize3			= 400000000;
 		}
 		
 		_cacheSize = totalSize;
-		DULog(@"cache size is: %d", _cacheSize);
+		DULog(@"cache size is: %lu", (unsigned long)_cacheSize);
 	}
 	return _cacheSize;
 }
@@ -181,13 +181,13 @@ NSInteger dateModifiedSort3(id file1, id file2, void *reverse) {
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{  
        // NSUInteger targetBytes = MIN(kMaxDiskCacheSize3, MAX(0, targetBytes));
         NSUInteger targetBytes = kMaxDiskCacheSize3 * 0.75;
-        DULog(@"Checking disk cache size. Limit %i bytes", targetBytes);
-    NSString *size = [NSString stringWithFormat:@"%i", [self sizeOfCache]];
+        DULog(@"Checking disk cache size. Limit %lu bytes", (unsigned long)targetBytes);
+    NSString *size = [NSString stringWithFormat:@"%lu", (unsigned long)[self sizeOfCache]];
         if ([self sizeOfCache] > targetBytes) {
-            DULog(@"Time to clean the cache! size is: %@, %d", [self cacheDir], [self sizeOfCache]);
+            DULog(@"Time to clean the cache! size is: %@, %lu", [self cacheDir], (unsigned long)[self sizeOfCache]);
             NSError *error = nil;
             NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self cacheDir] error:&error];
-            DULog(@"There are %i contents in dir", [dirContents count]);
+            DULog(@"There are %lu contents in dir", (unsigned long)[dirContents count]);
             if (!error) {
                 NSMutableArray *filteredArray = [[NSMutableArray alloc] init];
                 for (NSString *file in dirContents) {
@@ -206,7 +206,7 @@ NSInteger dateModifiedSort3(id file1, id file2, void *reverse) {
                     [sortedDirContents removeLastObject];
                     DULog(@"removing ");
                 }
-                DULog(@"Remaining cache size: %d, target size: %d", _cacheSize, targetBytes);
+                DULog(@"Remaining cache size: %lu, target size: %lu", (unsigned long)_cacheSize, (unsigned long)targetBytes);
             }	
         }
         DULog(@"Finished checking disk cache");

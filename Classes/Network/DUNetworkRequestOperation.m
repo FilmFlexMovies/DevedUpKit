@@ -12,9 +12,9 @@
 //#ifdef DEBUG
 //static NSUInteger dataDownloadedSize;
 //#endif
-static int __connectionCount = 0;
+static int __connectionCount_du = 0;
 
-const NSInteger kTimeOut = 60;
+const NSInteger kTimeOut_du = 60;
 
 @interface DUNetworkRequestOperation ()
 @property (nonatomic, copy) asyncCompletionBlock completion;
@@ -35,62 +35,62 @@ const NSInteger kTimeOut = 60;
 
 static dispatch_semaphore_t sema = nil;
 
-+ (void) createActivitySemaphore {
++ (void) createActivitySemaphore_du {
     if (!sema) {
         //The idea is that when the semaphore value is less than 0, it blocks and waits for a notify
         sema = dispatch_semaphore_create(0);
     }
 }
 
-+ (void) releaseActivitySemaphore {
++ (void) releaseActivitySemaphore_du {
     //dispatch_release(sema);
     sema = nil;
 }
 
-void waitForNotification_network() {
+void waitForNotification_network_du() {
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
-void notifyToContinue_network() {
+void notifyToContinue_network_du() {
     dispatch_semaphore_signal(sema);
 }
 
 #pragma mark - Connection Count and Network activity indicator
 
-void decrementConnectionCount() {
-	waitForNotification_network();
-    __connectionCount--;
+void decrementConnectionCount_du() {
+	waitForNotification_network_du();
+    __connectionCount_du--;
     //(@"network connection count %i", __connectionCount);
-    if (__connectionCount == 0) {
+    if (__connectionCount_du == 0) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }
 #ifdef DEBUG
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNetworkConnectionCountNotification object:@(__connectionCount) userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNetworkConnectionCountNotification object:@(__connectionCount_du) userInfo:nil];
 #endif
-	notifyToContinue_network();
+	notifyToContinue_network_du();
 }
 
-void incrementConnectionCount() {
-	waitForNotification_network();
+void incrementConnectionCount_du() {
+	waitForNotification_network_du();
     static int totalConnectionsMade = 0;
     totalConnectionsMade++;
-    __connectionCount++;
+    __connectionCount_du++;
     //(@"network connection count %i", __connectionCount);
-    if (__connectionCount > 0) {
+    if (__connectionCount_du > 0) {
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 	}
 #ifdef DEBUG
     NSLog(@"Total Connections Made: %i", totalConnectionsMade);
-    [[NSNotificationCenter defaultCenter] postNotificationName:kNetworkConnectionCountNotification object:@(__connectionCount) userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNetworkConnectionCountNotification object:@(__connectionCount_du) userInfo:nil];
 #endif
-	notifyToContinue_network();
+	notifyToContinue_network_du();
 }
 
 
 + (void) initialize {
 	if (self == [DUNetworkRequestOperation class]) {
-        [DUNetworkRequestOperation createActivitySemaphore];
-		notifyToContinue_network();
+        [DUNetworkRequestOperation createActivitySemaphore_du];
+		notifyToContinue_network_du();
     }	
 }
 
@@ -150,7 +150,7 @@ void incrementConnectionCount() {
 
 - (void) start {
 	//Show Progress
-    incrementConnectionCount();
+    incrementConnectionCount_du();
 	
 	if (self.isCancelled) {
         // Must move the operation to the finished state if it is canceled.
@@ -196,7 +196,7 @@ void incrementConnectionCount() {
 }
 
 - (void) finish {
-	decrementConnectionCount();
+	decrementConnectionCount_du();
     self.completion = nil;
     self.httpConnection = nil;
     self.receivedData = nil;    
@@ -209,7 +209,7 @@ void incrementConnectionCount() {
     //Create Request
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.url];
 	request.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    request.timeoutInterval = kTimeOut;
+    request.timeoutInterval = kTimeOut_du;
     
     //HTTP Method
     switch (self.method) {

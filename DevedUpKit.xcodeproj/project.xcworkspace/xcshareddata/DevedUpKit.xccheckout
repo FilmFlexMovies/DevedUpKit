@@ -5,36 +5,48 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3D6B9997-DE79-484D-88F6-6C9EE9ED5A1B</string>
+	<string>C3EA3190-F2F4-4CD1-8019-C67A2244CB23</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DevedUpKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C2126BDB-C38A-4B8F-B2A5-D48CA23C883E</key>
-		<string>ssh://github.com/devedup/DevedUpKit.git</string>
+		<key>4E289947-084D-4AD0-9FCC-1370155137AC</key>
+		<string>ssh://github.com/FilmFlexMovies/iOSModelController.git</string>
+		<key>FE285104-A29B-4063-99FD-ED9AD967C31E</key>
+		<string>ssh://github.com/FilmFlexMovies/DevedUpKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DevedUpKit/DevedUpKit.xcodeproj/project.xcworkspace</string>
+	<string>Submodules/DevedUpKit-FilmFlex/DevedUpKit.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C2126BDB-C38A-4B8F-B2A5-D48CA23C883E</key>
-		<string>../../..</string>
+		<key>4E289947-084D-4AD0-9FCC-1370155137AC</key>
+		<string>../../../..</string>
+		<key>FE285104-A29B-4063-99FD-ED9AD967C31E</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/devedup/DevedUpKit.git</string>
+	<string>ssh://github.com/FilmFlexMovies/DevedUpKit.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C2126BDB-C38A-4B8F-B2A5-D48CA23C883E</string>
+	<string>4E289947-084D-4AD0-9FCC-1370155137AC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C2126BDB-C38A-4B8F-B2A5-D48CA23C883E</string>
+			<string>FE285104-A29B-4063-99FD-ED9AD967C31E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>DevedUpKit</string>
+			<string>DevedUpKit-FilmFlex</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4E289947-084D-4AD0-9FCC-1370155137AC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSModelController</string>
 		</dict>
 	</array>
 </dict>

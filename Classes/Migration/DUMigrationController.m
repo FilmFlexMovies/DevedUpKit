@@ -18,6 +18,17 @@
 @implementation DUMigrationController
 
 
++ (DUMigrationController *) sharedController {
+    static dispatch_once_t onceToken;
+    static DUMigrationController * __sharedManager = nil;
+    
+    dispatch_once(&onceToken, ^{
+        __sharedManager = [[self alloc] init];
+    });
+    
+    return __sharedManager;
+}
+
 #pragma mark - Init
 
 - (id)init {
@@ -62,5 +73,56 @@
     [[NSUserDefaults standardUserDefaults] setObject:_currentVersionString forKey:kSavedVersion];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+- (void) migrateToNewVersion {
+
+    
+}
+
+/*
+  TODO --- COMMENTED THIS OUT, DO WE NEED TO DO THIS ANYMORE IT WAS MIGRATING OLD VERSION
+ 
+// Migrate absolute paths in Media to relative
+- (void) migrateMediaAssets {
+    
+	NSManagedObjectContext *context = MainContext;
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	request.entity = [NSEntityDescription entityForName:[FFXMedia entityName] inManagedObjectContext:context];
+	
+    NSError *error = nil;
+    NSArray *mediaArray = [context executeFetchRequest:request error:&error];
+    
+	if (!error)
+	{
+		for (FFXMedia *media in mediaArray)
+		{
+            // Absolute to relative
+            if (media.assetPath.length > 0) {
+                if (![media.assetPath hasPrefix:@"offine"]) {
+                    media.assetPath = [@"offline" stringByAppendingPathComponent:media.filename];
+                }
+            }
+            
+            if (media.temporaryPath.length > 0) {
+                if (![media.temporaryPath hasPrefix:@"temp"]) {
+                    media.temporaryPath = [@"temp" stringByAppendingPathComponent:media.filename];
+                }
+            }
+		}
+	}
+    [FFXCoreDataManager saveMainContext];
+}
+
+ */
+
+////This will just delete the current version so it will be recreated
+//- (void) migrateCoreData {
+//    NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:@"FilmFlex"];
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error = nil;
+//    if ([fileManager fileExistsAtPath:[storeURL path]]) {
+//        [fileManager removeItemAtURL:storeURL error:&error];
+//    }
+//}
 
 @end
