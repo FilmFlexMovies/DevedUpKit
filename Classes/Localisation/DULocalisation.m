@@ -23,7 +23,7 @@
     return __sharedManager;
 }
 
-- (NSString *) localisedString:(NSString *)string { // comment:(NSString *)comment {
+- (NSString *) localisedString:(NSString *)string {
     if (!string || string.length == 0) {
         return @""; //don't translate blank
     }
@@ -40,9 +40,16 @@
 #ifndef DEBUG
 	[self.analytics logEvent:@"Missing Translation" withKey:string value:nil];
 #endif
-    
+
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *translated = [bundle localizedStringForKey:string value:defaultValue table:@"Localizable"];
+    
+    //First look for a target specific string - default here is blank
+    NSString *translated = [bundle localizedStringForKey:string value:@"doesntexist" table:@"TargetSpecific"];
+    if ([@"doesntexist" isEqualToString:translated]) {
+        //try the default strings file, and use default if it doesn't exist
+        translated = [bundle localizedStringForKey:string value:defaultValue table:@"Localizable"];
+    }
+    
     return translated;
 }
 
