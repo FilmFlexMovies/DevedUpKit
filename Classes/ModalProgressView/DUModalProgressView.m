@@ -15,15 +15,12 @@
 
 @implementation DUModalProgressView
 
-- (void)dealloc {
+- (void) dealloc {
     [_logoSpinner stopAnimating];
-    [_logoSpinner release];
-    [_overlay release];
-    [super dealloc];
 }
 
 - (void) addSpinner {
-    self.logoSpinner = [[UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
+    self.logoSpinner = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     self.logoSpinner.hidesWhenStopped = NO;
     self.logoSpinner.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.logoSpinner];
@@ -42,7 +39,7 @@
         self.autoresizesSubviews = YES;
         
         //Overlay 
-        UIView *overlayView = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+        UIView *overlayView = [[UIView alloc] initWithFrame:CGRectZero];
         overlayView.translatesAutoresizingMaskIntoConstraints = NO;
         overlayView.backgroundColor = [UIColor blackColor];
         overlayView.alpha = 0.3;
