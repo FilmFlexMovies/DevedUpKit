@@ -78,7 +78,17 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (void) setupWithStoreName:(NSString *)storeName inBundleNamed:(NSString *)bundleName {
+    NSAssert([bundleName hasPrefix:@".bundle"], @"Bundle name must end in .bundle");
+    NSString *modelName = [NSString stringWithFormat:@"%@.momd", storeName];
+    NSManagedObjectModel *model = [NSManagedObjectModel MR_newModelNamed:modelName inBundleNamed:bundleName];
+    [NSManagedObjectModel  MR_setDefaultManagedObjectModel:model];
+    
+    [self setupWithStoreName:storeName];
+}
+
 - (void) setupWithStoreName:(NSString *)storeName {
+    
     //Set up core data
     NSPersistentStoreCoordinator *coordinator = [NSPersistentStoreCoordinator MR_coordinatorWithAutoMigratingSqliteStoreNamed:storeName];
     [NSPersistentStoreCoordinator MR_setDefaultStoreCoordinator:coordinator];
