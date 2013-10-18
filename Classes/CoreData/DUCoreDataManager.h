@@ -31,7 +31,7 @@ extern NSString * const CoreDataUpdatedExternally;
 /*
     Setup
  */
-- (void) setupWithStoreName:(NSString *)storeName inBundleNamed:(NSString *)bundleName;
+- (void) setupWithStoreName:(NSString *)storeName inBundle:(NSBundle *)bundle;
 - (void) setupWithStoreName:(NSString *)storeName;
 - (void) setupWithStoreName:(NSString *)storeName iCloudID:(NSString *)key;
 

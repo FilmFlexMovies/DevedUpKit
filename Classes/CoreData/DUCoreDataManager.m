@@ -78,10 +78,21 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-- (void) setupWithStoreName:(NSString *)storeName inBundleNamed:(NSString *)bundleName {
-    NSAssert([bundleName hasPrefix:@".bundle"], @"Bundle name must end in .bundle");
-    NSString *modelName = [NSString stringWithFormat:@"%@.momd", storeName];
-    NSManagedObjectModel *model = [NSManagedObjectModel MR_newModelNamed:modelName inBundleNamed:bundleName];
+- (void) setupWithStoreName:(NSString *)storeName inBundle:(NSBundle *)bundle {
+    NSAssert(bundle, @"You must pass a bundle");
+    NSAssert(![storeName hasSuffix:@".momd"], @"The store name must NOT end in .momd");
+    
+    
+    NSString *path = [bundle pathForResource:[storeName stringByDeletingPathExtension]
+                                                     ofType:@"momd"];
+    NSURL *modelUrl = [NSURL fileURLWithPath:path];
+    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelUrl];
+    
+//    
+//    
+//    NSString *modelName = [NSString stringWithFormat:@"%@.momd", storeName];
+//    NSManagedObjectModel *model = [NSManagedObjectModel MR_newModelNamed:modelName inBundleNamed:bundleName];
+
     [NSManagedObjectModel  MR_setDefaultManagedObjectModel:model];
     
     [self setupWithStoreName:storeName];
