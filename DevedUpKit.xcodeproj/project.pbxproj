@@ -7,6 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55777D1F1821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 559700E3180837400047DACB /* SystemVersionMacros.h */; };
+		55777D201821467B005F7592 /* Macros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00118081981007E3D75 /* Macros.h */; };
+		55777D211821467B005F7592 /* DUConstants.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFDE18081981007E3D75 /* DUConstants.h */; };
+		55777D221821467B005F7592 /* DUAnalytics.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCF9D18081980007E3D75 /* DUAnalytics.h */; };
+		55777D231821467B005F7592 /* UIImage+ImageEffects.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCF9F18081980007E3D75 /* UIImage+ImageEffects.h */; };
+		55777D241821467B005F7592 /* UIView+DUBlur.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFA118081980007E3D75 /* UIView+DUBlur.h */; };
+		55777D251821467B005F7592 /* DUAutolayout.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFA418081980007E3D75 /* DUAutolayout.h */; };
+		55777D261821467B005F7592 /* DUBlocks.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFA718081980007E3D75 /* DUBlocks.h */; };
+		55777D271821467B005F7592 /* CALayer+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFAA18081980007E3D75 /* CALayer+DUExtensions.h */; };
+		55777D281821467B005F7592 /* DUConcurrentOperation.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFAD18081980007E3D75 /* DUConcurrentOperation.h */; };
+		55777D291821467B005F7592 /* DUCAAnimationBlockDelegate.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFB218081981007E3D75 /* DUCAAnimationBlockDelegate.h */; };
+		55777D2A1821467B005F7592 /* DUCoreDataManager.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFB518081981007E3D75 /* DUCoreDataManager.h */; };
+		55777D2B1821467B005F7592 /* BackBarButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFB818081981007E3D75 /* BackBarButton.h */; };
+		55777D2C1821467B005F7592 /* CheckBoxControl.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFBA18081981007E3D75 /* CheckBoxControl.h */; };
+		55777D2D1821467B005F7592 /* DoubleTapCaptureView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFBC18081981007E3D75 /* DoubleTapCaptureView.h */; };
+		55777D2E1821467B005F7592 /* DUEditableImageView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFBE18081981007E3D75 /* DUEditableImageView.h */; };
+		55777D2F1821467B005F7592 /* DUPinStripeLayer.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFC018081981007E3D75 /* DUPinStripeLayer.h */; };
+		55777D301821467B005F7592 /* DUPullToLoadMoreTableDecorator.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFC218081981007E3D75 /* DUPullToLoadMoreTableDecorator.h */; };
+		55777D311821467B005F7592 /* DUPullToRefreshTableDecorator.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFC418081981007E3D75 /* DUPullToRefreshTableDecorator.h */; };
+		55777D321821467B005F7592 /* DUShadowView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFC618081981007E3D75 /* DUShadowView.h */; };
+		55777D331821467B005F7592 /* DUUITextView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFC818081981007E3D75 /* DUUITextView.h */; };
+		55777D341821467B005F7592 /* ForwardBarButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFCA18081981007E3D75 /* ForwardBarButton.h */; };
+		55777D351821467B005F7592 /* GradientBackButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFCC18081981007E3D75 /* GradientBackButton.h */; };
+		55777D361821467B005F7592 /* GradientButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFCE18081981007E3D75 /* GradientButton.h */; };
+		55777D371821467B005F7592 /* LoginAlertView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD018081981007E3D75 /* LoginAlertView.h */; };
+		55777D381821467B005F7592 /* MBProgressHUD.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD218081981007E3D75 /* MBProgressHUD.h */; };
+		55777D391821467B005F7592 /* PicturePickerNavBar.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD418081981007E3D75 /* PicturePickerNavBar.h */; };
+		55777D3A1821467B005F7592 /* RadioButtonControl.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD618081981007E3D75 /* RadioButtonControl.h */; };
+		55777D3B1821467B005F7592 /* RefreshArrowView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD818081981007E3D75 /* RefreshArrowView.h */; };
+		55777D3C1821467B005F7592 /* TabBarArrow.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFDA18081981007E3D75 /* TabBarArrow.h */; };
+		55777D3D1821467B005F7592 /* ToolTipPopUpView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFDC18081981007E3D75 /* ToolTipPopUpView.h */; };
+		55777D3E1821467B005F7592 /* DUTwoSegmentedControl.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFE118081981007E3D75 /* DUTwoSegmentedControl.h */; };
+		55777D3F1821467B005F7592 /* DUGestureFactory.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFE418081981007E3D75 /* DUGestureFactory.h */; };
+		55777D401821467B005F7592 /* DUTouchDownGestureRecogniser.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFE618081981007E3D75 /* DUTouchDownGestureRecogniser.h */; };
+		55777D411821467B005F7592 /* HttpService.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFE918081981007E3D75 /* HttpService.h */; };
+		55777D421821467B005F7592 /* DUImageCache.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFEC18081981007E3D75 /* DUImageCache.h */; };
+		55777D431821467B005F7592 /* DURemoteImage.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFEE18081981007E3D75 /* DURemoteImage.h */; };
+		55777D441821467B005F7592 /* SKProduct+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF118081981007E3D75 /* SKProduct+DUExtensions.h */; };
+		55777D451821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF418081981007E3D75 /* SystemVersionMacros.h */; };
+		55777D461821467B005F7592 /* DUKeychain.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF618081981007E3D75 /* DUKeychain.h */; };
+		55777D471821467B005F7592 /* DUKVOHelper.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF918081981007E3D75 /* DUKVOHelper.h */; };
+		55777D481821467B005F7592 /* DULocalisation.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFFC18081981007E3D75 /* DULocalisation.h */; };
+		55777D491821467B005F7592 /* Logger.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFFF18081981007E3D75 /* Logger.h */; };
+		55777D4A1821467B005F7592 /* MKMapView+DUZoomLevel.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00418081981007E3D75 /* MKMapView+DUZoomLevel.h */; };
+		55777D4B1821467B005F7592 /* DUMigrationController.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00718081981007E3D75 /* DUMigrationController.h */; };
+		55777D4C1821467B005F7592 /* DUModalProgressView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00A18081981007E3D75 /* DUModalProgressView.h */; };
+		55777D4D1821467B005F7592 /* AsyncURLConnection.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00D18081981007E3D75 /* AsyncURLConnection.h */; };
+		55777D4E1821467B005F7592 /* DUNetworkAuthenticatorFactory.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00F18081981007E3D75 /* DUNetworkAuthenticatorFactory.h */; };
+		55777D4F1821467B005F7592 /* DUNetworkController.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01118081981007E3D75 /* DUNetworkController.h */; };
+		55777D501821467B005F7592 /* DUNetworkRequestOperation.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01318081981007E3D75 /* DUNetworkRequestOperation.h */; };
+		55777D511821467B005F7592 /* InternetConnectionController.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01518081981007E3D75 /* InternetConnectionController.h */; };
+		55777D521821467B005F7592 /* Reachability.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01718081981007E3D75 /* Reachability.h */; };
+		55777D531821467B005F7592 /* RemoteImage.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01918081981007E3D75 /* RemoteImage.h */; };
+		55777D541821467B005F7592 /* URLDiskCache.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01B18081981007E3D75 /* URLDiskCache.h */; };
+		55777D551821467B005F7592 /* NSDecimalNumber+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD12718081A47007E3D75 /* NSDecimalNumber+Extensions.h */; };
+		55777D561821467B005F7592 /* NSNumber+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD12918081A47007E3D75 /* NSNumber+Extensions.h */; };
+		55777D571821467B005F7592 /* NSString+MD5.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD12B18081A47007E3D75 /* NSString+MD5.h */; };
+		55777D581821467B005F7592 /* NSString+DUExtension.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD123180819FD007E3D75 /* NSString+DUExtension.h */; };
+		55777D591821467B005F7592 /* NSDate+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01E18081981007E3D75 /* NSDate+Extensions.h */; };
+		55777D5A1821467B005F7592 /* NSMutableArray+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02018081981007E3D75 /* NSMutableArray+Extensions.h */; };
+		55777D5B1821467B005F7592 /* NSNumberFormatter+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02218081981007E3D75 /* NSNumberFormatter+Extensions.h */; };
+		55777D5C1821467B005F7592 /* NSObject+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02418081981007E3D75 /* NSObject+DUExtensions.h */; };
+		55777D5D1821467B005F7592 /* NSString+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02618081981007E3D75 /* NSString+Extensions.h */; };
+		55777D5E1821467B005F7592 /* NSString+DUBase64.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 559700E518083C3B0047DACB /* NSString+DUBase64.h */; };
+		55777D5F1821467B005F7592 /* DUProperties.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02C18081981007E3D75 /* DUProperties.h */; };
+		55777D601821467B005F7592 /* MailController.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD02F18081981007E3D75 /* MailController.h */; };
+		55777D611821467B005F7592 /* ASHSoundManager.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03218081981007E3D75 /* ASHSoundManager.h */; };
+		55777D621821467B005F7592 /* DUStateMachine.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03518081981007E3D75 /* DUStateMachine.h */; };
+		55777D631821467B005F7592 /* OrderedMutableDictionary.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13318081A66007E3D75 /* OrderedMutableDictionary.h */; };
+		55777D641821467B005F7592 /* TransparentToolBar.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13518081A66007E3D75 /* TransparentToolBar.h */; };
+		55777D651821467B005F7592 /* UIImage+Additions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13718081A66007E3D75 /* UIImage+Additions.h */; };
+		55777D661821467B005F7592 /* UIImage+NSCoding.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13918081A66007E3D75 /* UIImage+NSCoding.h */; };
+		55777D671821467B005F7592 /* UIView+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13B18081A66007E3D75 /* UIView+Extensions.h */; };
+		55777D681821467B005F7592 /* BottomRoundedCornerView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03818081981007E3D75 /* BottomRoundedCornerView.h */; };
+		55777D691821467B005F7592 /* DUAlertViewQuestion.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03A18081981007E3D75 /* DUAlertViewQuestion.h */; };
+		55777D6A1821467B005F7592 /* DUBaseViewController.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03C18081981007E3D75 /* DUBaseViewController.h */; };
+		55777D6B1821467B005F7592 /* DUPaddedLabel.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD03E18081981007E3D75 /* DUPaddedLabel.h */; };
+		55777D6C1821467B005F7592 /* DUTableView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04018081981007E3D75 /* DUTableView.h */; };
+		55777D6D1821467B005F7592 /* UIAlertView+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04218081981007E3D75 /* UIAlertView+Extensions.h */; };
+		55777D6E1821467B005F7592 /* UIColor+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04418081981007E3D75 /* UIColor+Extensions.h */; };
+		55777D6F1821467B005F7592 /* UIDevice+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04618081981007E3D75 /* UIDevice+Extensions.h */; };
+		55777D701821467B005F7592 /* UIImage+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04818081981007E3D75 /* UIImage+DUExtensions.h */; };
+		55777D711821467B005F7592 /* UITableView+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04918081981007E3D75 /* UITableView+DUExtensions.h */; };
+		55777D721821467B005F7592 /* UIToolbar+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04B18081981007E3D75 /* UIToolbar+Extensions.h */; };
+		55777D731821467B005F7592 /* UIView+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04D18081981007E3D75 /* UIView+DUExtensions.h */; };
+		55777D741821467B005F7592 /* UIViewController+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04F18081981007E3D75 /* UIViewController+DUExtensions.h */; };
+		55777D751821467B005F7592 /* ViewHelper.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD05118081981007E3D75 /* ViewHelper.h */; };
+		55777D761821467B005F7592 /* DDFileReader.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06518081981007E3D75 /* DDFileReader.h */; };
+		55777D771821467B005F7592 /* DUDateUtil.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06718081981007E3D75 /* DUDateUtil.h */; };
+		55777D781821467B005F7592 /* DUFormat.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06918081981007E3D75 /* DUFormat.h */; };
+		55777D791821467B005F7592 /* DUMediaPlayer.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06B18081981007E3D75 /* DUMediaPlayer.h */; };
+		55777D7A1821467B005F7592 /* IndexedDictionary.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06D18081981007E3D75 /* IndexedDictionary.h */; };
+		55777D7B1821467B005F7592 /* Version.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD06F18081981007E3D75 /* Version.h */; };
 		557BCE8E18081534007E3D75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557BCE8D18081534007E3D75 /* Foundation.framework */; };
 		557BCE9C18081534007E3D75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557BCE9B18081534007E3D75 /* XCTest.framework */; };
 		557BCE9D18081534007E3D75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557BCE8D18081534007E3D75 /* Foundation.framework */; };
@@ -205,13 +298,107 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		557BCE8818081534007E3D75 /* CopyFiles */ = {
+		557BCE8818081534007E3D75 /* Copy Header Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
+			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				55777D1F1821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */,
+				55777D201821467B005F7592 /* Macros.h in Copy Header Files */,
+				55777D211821467B005F7592 /* DUConstants.h in Copy Header Files */,
+				55777D221821467B005F7592 /* DUAnalytics.h in Copy Header Files */,
+				55777D231821467B005F7592 /* UIImage+ImageEffects.h in Copy Header Files */,
+				55777D241821467B005F7592 /* UIView+DUBlur.h in Copy Header Files */,
+				55777D251821467B005F7592 /* DUAutolayout.h in Copy Header Files */,
+				55777D261821467B005F7592 /* DUBlocks.h in Copy Header Files */,
+				55777D271821467B005F7592 /* CALayer+DUExtensions.h in Copy Header Files */,
+				55777D281821467B005F7592 /* DUConcurrentOperation.h in Copy Header Files */,
+				55777D291821467B005F7592 /* DUCAAnimationBlockDelegate.h in Copy Header Files */,
+				55777D2A1821467B005F7592 /* DUCoreDataManager.h in Copy Header Files */,
+				55777D2B1821467B005F7592 /* BackBarButton.h in Copy Header Files */,
+				55777D2C1821467B005F7592 /* CheckBoxControl.h in Copy Header Files */,
+				55777D2D1821467B005F7592 /* DoubleTapCaptureView.h in Copy Header Files */,
+				55777D2E1821467B005F7592 /* DUEditableImageView.h in Copy Header Files */,
+				55777D2F1821467B005F7592 /* DUPinStripeLayer.h in Copy Header Files */,
+				55777D301821467B005F7592 /* DUPullToLoadMoreTableDecorator.h in Copy Header Files */,
+				55777D311821467B005F7592 /* DUPullToRefreshTableDecorator.h in Copy Header Files */,
+				55777D321821467B005F7592 /* DUShadowView.h in Copy Header Files */,
+				55777D331821467B005F7592 /* DUUITextView.h in Copy Header Files */,
+				55777D341821467B005F7592 /* ForwardBarButton.h in Copy Header Files */,
+				55777D351821467B005F7592 /* GradientBackButton.h in Copy Header Files */,
+				55777D361821467B005F7592 /* GradientButton.h in Copy Header Files */,
+				55777D371821467B005F7592 /* LoginAlertView.h in Copy Header Files */,
+				55777D381821467B005F7592 /* MBProgressHUD.h in Copy Header Files */,
+				55777D391821467B005F7592 /* PicturePickerNavBar.h in Copy Header Files */,
+				55777D3A1821467B005F7592 /* RadioButtonControl.h in Copy Header Files */,
+				55777D3B1821467B005F7592 /* RefreshArrowView.h in Copy Header Files */,
+				55777D3C1821467B005F7592 /* TabBarArrow.h in Copy Header Files */,
+				55777D3D1821467B005F7592 /* ToolTipPopUpView.h in Copy Header Files */,
+				55777D3E1821467B005F7592 /* DUTwoSegmentedControl.h in Copy Header Files */,
+				55777D3F1821467B005F7592 /* DUGestureFactory.h in Copy Header Files */,
+				55777D401821467B005F7592 /* DUTouchDownGestureRecogniser.h in Copy Header Files */,
+				55777D411821467B005F7592 /* HttpService.h in Copy Header Files */,
+				55777D421821467B005F7592 /* DUImageCache.h in Copy Header Files */,
+				55777D431821467B005F7592 /* DURemoteImage.h in Copy Header Files */,
+				55777D441821467B005F7592 /* SKProduct+DUExtensions.h in Copy Header Files */,
+				55777D451821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */,
+				55777D461821467B005F7592 /* DUKeychain.h in Copy Header Files */,
+				55777D471821467B005F7592 /* DUKVOHelper.h in Copy Header Files */,
+				55777D481821467B005F7592 /* DULocalisation.h in Copy Header Files */,
+				55777D491821467B005F7592 /* Logger.h in Copy Header Files */,
+				55777D4A1821467B005F7592 /* MKMapView+DUZoomLevel.h in Copy Header Files */,
+				55777D4B1821467B005F7592 /* DUMigrationController.h in Copy Header Files */,
+				55777D4C1821467B005F7592 /* DUModalProgressView.h in Copy Header Files */,
+				55777D4D1821467B005F7592 /* AsyncURLConnection.h in Copy Header Files */,
+				55777D4E1821467B005F7592 /* DUNetworkAuthenticatorFactory.h in Copy Header Files */,
+				55777D4F1821467B005F7592 /* DUNetworkController.h in Copy Header Files */,
+				55777D501821467B005F7592 /* DUNetworkRequestOperation.h in Copy Header Files */,
+				55777D511821467B005F7592 /* InternetConnectionController.h in Copy Header Files */,
+				55777D521821467B005F7592 /* Reachability.h in Copy Header Files */,
+				55777D531821467B005F7592 /* RemoteImage.h in Copy Header Files */,
+				55777D541821467B005F7592 /* URLDiskCache.h in Copy Header Files */,
+				55777D551821467B005F7592 /* NSDecimalNumber+Extensions.h in Copy Header Files */,
+				55777D561821467B005F7592 /* NSNumber+Extensions.h in Copy Header Files */,
+				55777D571821467B005F7592 /* NSString+MD5.h in Copy Header Files */,
+				55777D581821467B005F7592 /* NSString+DUExtension.h in Copy Header Files */,
+				55777D591821467B005F7592 /* NSDate+Extensions.h in Copy Header Files */,
+				55777D5A1821467B005F7592 /* NSMutableArray+Extensions.h in Copy Header Files */,
+				55777D5B1821467B005F7592 /* NSNumberFormatter+Extensions.h in Copy Header Files */,
+				55777D5C1821467B005F7592 /* NSObject+DUExtensions.h in Copy Header Files */,
+				55777D5D1821467B005F7592 /* NSString+Extensions.h in Copy Header Files */,
+				55777D5E1821467B005F7592 /* NSString+DUBase64.h in Copy Header Files */,
+				55777D5F1821467B005F7592 /* DUProperties.h in Copy Header Files */,
+				55777D601821467B005F7592 /* MailController.h in Copy Header Files */,
+				55777D611821467B005F7592 /* ASHSoundManager.h in Copy Header Files */,
+				55777D621821467B005F7592 /* DUStateMachine.h in Copy Header Files */,
+				55777D631821467B005F7592 /* OrderedMutableDictionary.h in Copy Header Files */,
+				55777D641821467B005F7592 /* TransparentToolBar.h in Copy Header Files */,
+				55777D651821467B005F7592 /* UIImage+Additions.h in Copy Header Files */,
+				55777D661821467B005F7592 /* UIImage+NSCoding.h in Copy Header Files */,
+				55777D671821467B005F7592 /* UIView+Extensions.h in Copy Header Files */,
+				55777D681821467B005F7592 /* BottomRoundedCornerView.h in Copy Header Files */,
+				55777D691821467B005F7592 /* DUAlertViewQuestion.h in Copy Header Files */,
+				55777D6A1821467B005F7592 /* DUBaseViewController.h in Copy Header Files */,
+				55777D6B1821467B005F7592 /* DUPaddedLabel.h in Copy Header Files */,
+				55777D6C1821467B005F7592 /* DUTableView.h in Copy Header Files */,
+				55777D6D1821467B005F7592 /* UIAlertView+Extensions.h in Copy Header Files */,
+				55777D6E1821467B005F7592 /* UIColor+Extensions.h in Copy Header Files */,
+				55777D6F1821467B005F7592 /* UIDevice+Extensions.h in Copy Header Files */,
+				55777D701821467B005F7592 /* UIImage+DUExtensions.h in Copy Header Files */,
+				55777D711821467B005F7592 /* UITableView+DUExtensions.h in Copy Header Files */,
+				55777D721821467B005F7592 /* UIToolbar+Extensions.h in Copy Header Files */,
+				55777D731821467B005F7592 /* UIView+DUExtensions.h in Copy Header Files */,
+				55777D741821467B005F7592 /* UIViewController+DUExtensions.h in Copy Header Files */,
+				55777D751821467B005F7592 /* ViewHelper.h in Copy Header Files */,
+				55777D761821467B005F7592 /* DDFileReader.h in Copy Header Files */,
+				55777D771821467B005F7592 /* DUDateUtil.h in Copy Header Files */,
+				55777D781821467B005F7592 /* DUFormat.h in Copy Header Files */,
+				55777D791821467B005F7592 /* DUMediaPlayer.h in Copy Header Files */,
+				55777D7A1821467B005F7592 /* IndexedDictionary.h in Copy Header Files */,
+				55777D7B1821467B005F7592 /* Version.h in Copy Header Files */,
 			);
+			name = "Copy Header Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -932,7 +1119,7 @@
 			buildPhases = (
 				557BCE8618081534007E3D75 /* Sources */,
 				557BCE8718081534007E3D75 /* Frameworks */,
-				557BCE8818081534007E3D75 /* CopyFiles */,
+				557BCE8818081534007E3D75 /* Copy Header Files */,
 			);
 			buildRules = (
 			);
