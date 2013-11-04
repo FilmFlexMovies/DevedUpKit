@@ -361,4 +361,22 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 	}
 }
 
+
+//- (void)cleanAndResetupStore
+//{
+//    NSError *error = nil;
+//	
+//    NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:@"CoreData"];
+//	
+//    [MagicalRecord cleanUp];
+//	
+//    if([[NSFileManager defaultManager] removeItemAtURL:storeURL error:&error]){
+//        [self setup];
+//    }
+//    else{
+//        NSLog(@"An error has occurred while deleting store");
+//        NSLog(@"Error description: %@", error.description);
+//    }
+//}
+
 @end

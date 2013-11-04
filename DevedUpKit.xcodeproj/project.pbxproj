@@ -284,6 +284,9 @@
 		557BD14618081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		559700E818083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
+		55B97583182815E800697499 /* DUAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B97582182815E800697499 /* DUAnimator.m */; };
+		55B97584182815E800697499 /* DUAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B97582182815E800697499 /* DUAnimator.m */; };
+		55B97585182815F000697499 /* DUAnimator.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 55B97581182815E800697499 /* DUAnimator.h */; };
 		55DE1E7E180C0F6E00BD8ABB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DE1E7D180C0F6E00BD8ABB /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -304,6 +307,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				55B97585182815F000697499 /* DUAnimator.h in Copy Header Files */,
 				55777D1F1821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */,
 				55777D201821467B005F7592 /* Macros.h in Copy Header Files */,
 				55777D211821467B005F7592 /* DUConstants.h in Copy Header Files */,
@@ -595,6 +599,8 @@
 		559700E3180837400047DACB /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemVersionMacros.h; sourceTree = "<group>"; };
 		559700E518083C3B0047DACB /* NSString+DUBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DUBase64.h"; sourceTree = "<group>"; };
 		559700E618083C3B0047DACB /* NSString+DUBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DUBase64.m"; sourceTree = "<group>"; };
+		55B97581182815E800697499 /* DUAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUAnimator.h; sourceTree = "<group>"; };
+		55B97582182815E800697499 /* DUAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUAnimator.m; sourceTree = "<group>"; };
 		55DE1E7D180C0F6E00BD8ABB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -734,6 +740,8 @@
 		557BCF9E18081980007E3D75 /* AnimationsAndImaging */ = {
 			isa = PBXGroup;
 			children = (
+				55B97581182815E800697499 /* DUAnimator.h */,
+				55B97582182815E800697499 /* DUAnimator.m */,
 				557BCF9F18081980007E3D75 /* UIImage+ImageEffects.h */,
 				557BCFA018081980007E3D75 /* UIImage+ImageEffects.m */,
 				557BCFA118081980007E3D75 /* UIView+DUBlur.h */,
@@ -1220,6 +1228,7 @@
 				557BD0BB18081981007E3D75 /* DUKVOHelper.m in Sources */,
 				557BD12D18081A47007E3D75 /* NSDecimalNumber+Extensions.m in Sources */,
 				557BD0E918081981007E3D75 /* ASHSoundManager.m in Sources */,
+				55B97583182815E800697499 /* DUAnimator.m in Sources */,
 				557BD10318081981007E3D75 /* UIViewController+DUExtensions.m in Sources */,
 				557BD0FF18081981007E3D75 /* UIToolbar+Extensions.m in Sources */,
 				557BD09718081981007E3D75 /* GradientBackButton.m in Sources */,
@@ -1323,6 +1332,7 @@
 				557BD0AA18081981007E3D75 /* DUConstants.m in Sources */,
 				557BD08E18081981007E3D75 /* DUPullToLoadMoreTableDecorator.m in Sources */,
 				557BD0C018081981007E3D75 /* Logger.m in Sources */,
+				55B97584182815E800697499 /* DUAnimator.m in Sources */,
 				557BD0C418081981007E3D75 /* MKMapView+DUZoomLevel.m in Sources */,
 				557BD11E18081981007E3D75 /* DUMediaPlayer.m in Sources */,
 				557BD0A018081981007E3D75 /* PicturePickerNavBar.m in Sources */,
