@@ -79,6 +79,10 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 }
 
 - (void) setupWithStoreName:(NSString *)storeName inBundle:(NSBundle *)bundle {
+    [self setupWithStoreName:storeName inBundle:bundle modelsToMerge:nil];
+}
+
+- (void) setupWithStoreName:(NSString *)storeName inBundle:(NSBundle *)bundle modelsToMerge:(NSArray *)otherModels {
     NSAssert(bundle, @"You must pass a bundle");
     NSAssert(![storeName hasSuffix:@".momd"], @"The store name must NOT end in .momd");
     
@@ -88,12 +92,18 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     NSURL *modelUrl = [NSURL fileURLWithPath:path];
     NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelUrl];
     
+    if (otherModels) {
+        NSMutableArray *allModels = [NSMutableArray arrayWithArray:otherModels];
+        [allModels addObject:model];
+        model = [NSManagedObjectModel modelByMergingModels:allModels];
+    }
+    
 //    
 //    
 //    NSString *modelName = [NSString stringWithFormat:@"%@.momd", storeName];
 //    NSManagedObjectModel *model = [NSManagedObjectModel MR_newModelNamed:modelName inBundleNamed:bundleName];
 
-    [NSManagedObjectModel  MR_setDefaultManagedObjectModel:model];
+    [NSManagedObjectModel MR_setDefaultManagedObjectModel:model];
     
     [self setupWithStoreName:storeName];
 }
