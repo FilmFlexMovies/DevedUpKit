@@ -13,6 +13,61 @@
 
 @implementation UIDevice (Extensions)
 
+
++(BOOL)isLandscape {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if(orientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    if(orientation == UIInterfaceOrientationLandscapeRight) return YES;
+    return NO;
+}
+
++(BOOL)isLandscape:(UIInterfaceOrientation)orientation {
+    if(orientation == UIInterfaceOrientationLandscapeLeft) return YES;
+    if(orientation == UIInterfaceOrientationLandscapeRight) return YES;
+    return NO;
+}
+
++(BOOL)is_iPad {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
++ (BOOL) is_iPhone {
+    return (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad);
+}
+
++(BOOL)isRetina {
+	if([[[UIDevice currentDevice] systemVersion] intValue] >= 4 && [[UIScreen mainScreen] scale] == 2.0) {
+        return YES;
+    }
+	return NO;
+}
+
++(BOOL)supportsCustomFonts {
+    if([UIDevice is_iPad]) return YES;
+    if([[[UIDevice currentDevice] systemVersion] intValue] >= 4) return YES;
+    return NO;
+}
+
++(CGPoint)getPoint:(CGPoint)p {
+	if([UIDevice is_iPad]) return CGPointMake(p.x * 2, p.y * 2);
+	return p;
+}
+
++(float)getFloat:(float)f {
+	if([UIDevice is_iPad]) return f * 2;
+	return f;
+}
+
++(CGRect)getRect:(CGRect)rect {
+	if([UIDevice is_iPad]) return CGRectMake(rect.origin.x * 2, rect.origin.y * 2, rect.size.width * 2, rect.size.height * 2);
+	return rect;
+}
+
++(CGSize)getSize:(CGSize)size {
+	if([UIDevice is_iPad]) return CGSizeMake(size.width * 2, size.height * 2);
+	return size;
+}
+
 + (NSString *) friendlyDeviceName {
 	static NSMutableDictionary *devices;
 	NSString *friendlyDeviceName;

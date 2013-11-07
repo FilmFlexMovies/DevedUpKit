@@ -8,8 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface UIDevice (Extensions)
+
++ (BOOL) is_iPad;
++ (BOOL) is_iPhone;
+
++(BOOL)isRetina;
++(BOOL)supportsCustomFonts;
++(CGPoint)getPoint:(CGPoint)p;
++(float)getFloat:(float)f;
++(CGRect)getRect:(CGRect)rect;
++(CGSize)getSize:(CGSize)size;
++(BOOL)isLandscape;
++(BOOL)isLandscape:(UIInterfaceOrientation)orientation;
+
 
 + (NSString *) device;
 + (NSString *) friendlyDeviceName;
