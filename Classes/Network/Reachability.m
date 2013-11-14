@@ -292,4 +292,16 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	
 }
 
+- (NSString *) currentReachabilityStatusString {
+    NetworkStatus currentStatus = [[Reachability reachabilityForInternetConnection] currentReachabilityStatus];
+    switch (currentStatus) {
+        case ReachableViaWiFi:
+            return @"WiFi";
+        case NotReachable:
+            return @"Offline";
+        case ReachableViaWWAN:
+            return @"WWAN (4G/3G/Edge)";
+    }
+}
+
 @end
