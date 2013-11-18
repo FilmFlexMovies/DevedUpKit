@@ -45,7 +45,6 @@
 		55777D421821467B005F7592 /* DUImageCache.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFEC18081981007E3D75 /* DUImageCache.h */; };
 		55777D431821467B005F7592 /* DURemoteImage.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFEE18081981007E3D75 /* DURemoteImage.h */; };
 		55777D441821467B005F7592 /* SKProduct+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF118081981007E3D75 /* SKProduct+DUExtensions.h */; };
-		55777D451821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF418081981007E3D75 /* SystemVersionMacros.h */; };
 		55777D461821467B005F7592 /* DUKeychain.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF618081981007E3D75 /* DUKeychain.h */; };
 		55777D471821467B005F7592 /* DUKVOHelper.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF918081981007E3D75 /* DUKVOHelper.h */; };
 		55777D481821467B005F7592 /* DULocalisation.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFFC18081981007E3D75 /* DULocalisation.h */; };
@@ -346,7 +345,6 @@
 				55777D421821467B005F7592 /* DUImageCache.h in Copy Header Files */,
 				55777D431821467B005F7592 /* DURemoteImage.h in Copy Header Files */,
 				55777D441821467B005F7592 /* SKProduct+DUExtensions.h in Copy Header Files */,
-				55777D451821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */,
 				55777D461821467B005F7592 /* DUKeychain.h in Copy Header Files */,
 				55777D471821467B005F7592 /* DUKVOHelper.h in Copy Header Files */,
 				55777D481821467B005F7592 /* DULocalisation.h in Copy Header Files */,
@@ -489,7 +487,6 @@
 		557BCFEF18081981007E3D75 /* DURemoteImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DURemoteImage.m; sourceTree = "<group>"; };
 		557BCFF118081981007E3D75 /* SKProduct+DUExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+DUExtensions.h"; sourceTree = "<group>"; };
 		557BCFF218081981007E3D75 /* SKProduct+DUExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+DUExtensions.m"; sourceTree = "<group>"; };
-		557BCFF418081981007E3D75 /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemVersionMacros.h; sourceTree = "<group>"; };
 		557BCFF618081981007E3D75 /* DUKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUKeychain.h; sourceTree = "<group>"; };
 		557BCFF718081981007E3D75 /* DUKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUKeychain.m; sourceTree = "<group>"; };
 		557BCFF918081981007E3D75 /* DUKVOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUKVOHelper.h; sourceTree = "<group>"; };
@@ -709,7 +706,6 @@
 				557BCFE818081981007E3D75 /* HTTP */,
 				557BCFEB18081981007E3D75 /* ImageLoading */,
 				557BCFF018081981007E3D75 /* InAppPurcahse */,
-				557BCFF318081981007E3D75 /* iOSVersion */,
 				557BCFF518081981007E3D75 /* Keychain */,
 				557BCFF818081981007E3D75 /* KVOHelper */,
 				557BCFFB18081981007E3D75 /* Localisation */,
@@ -896,14 +892,6 @@
 				557BCFF218081981007E3D75 /* SKProduct+DUExtensions.m */,
 			);
 			path = InAppPurcahse;
-			sourceTree = "<group>";
-		};
-		557BCFF318081981007E3D75 /* iOSVersion */ = {
-			isa = PBXGroup;
-			children = (
-				557BCFF418081981007E3D75 /* SystemVersionMacros.h */,
-			);
-			path = iOSVersion;
 			sourceTree = "<group>";
 		};
 		557BCFF518081981007E3D75 /* Keychain */ = {
