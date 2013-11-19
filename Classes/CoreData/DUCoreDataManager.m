@@ -87,6 +87,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     NSAssert(![storeName hasSuffix:@".momd"], @"The store name must NOT end in .momd");
     
     
+    
     NSString *path = [bundle pathForResource:[storeName stringByDeletingPathExtension]
                                                      ofType:@"momd"];
     NSURL *modelUrl = [NSURL fileURLWithPath:path];
@@ -95,13 +96,27 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     if (otherModels) {
         NSMutableArray *allModels = [NSMutableArray arrayWithArray:otherModels];
         [allModels addObject:model];
-        model = [NSManagedObjectModel modelByMergingModels:allModels];
+        
+        NSMutableArray *finalModels = [NSMutableArray arrayWithCapacity:0];
+        
+        NSMutableArray *updatedEntities = [NSMutableArray arrayWithCapacity:0];
+        for (NSManagedObjectModel *immutableModel in allModels) {
+            NSManagedObjectModel *model = [immutableModel mutableCopy];
+            for (NSEntityDescription *entity in [model entities]) {
+                if ([[[entity userInfo] objectForKey:@"TempPlaceholder"] boolValue]) {
+                    // Ignore placeholder.
+                    DULog(@"Ignoring: %@", entity.name);
+                } else {
+                    [updatedEntities addObject:entity];
+                }
+            }
+            [model setEntities:updatedEntities];
+            [updatedEntities removeAllObjects];
+            [finalModels addObject:model];
+        }
+        
+        model = [NSManagedObjectModel modelByMergingModels:finalModels];
     }
-    
-//    
-//    
-//    NSString *modelName = [NSString stringWithFormat:@"%@.momd", storeName];
-//    NSManagedObjectModel *model = [NSManagedObjectModel MR_newModelNamed:modelName inBundleNamed:bundleName];
 
     [NSManagedObjectModel MR_setDefaultManagedObjectModel:model];
     
