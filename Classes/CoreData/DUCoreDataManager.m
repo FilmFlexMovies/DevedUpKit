@@ -298,7 +298,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 					ErrorLog(@"Couldn't get the permanent id's %@", error);
 				}
 			}
-						
+			
 			[coreData performSaveOfContext:mainContext];
 			
 			[coreData.diskWritingContext performBlock:^{
@@ -321,6 +321,12 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
         ErrorLog(@"There is an error with saving core data %@", error);
         
 #ifdef DEBUG
+        
+        NSSet __unused *registeredObjects = [context registeredObjects];
+        NSSet __unused *insertedObjects = [context insertedObjects];
+        NSSet __unused *deletedObjects = [context deletedObjects];
+        NSSet __unused *updatedObjects = [context updatedObjects];
+        
         @throw [NSException exceptionWithName:@"Core Data Save Error" reason:@"Look at the logs, this only crashes in DEBUG mode, but you should figure out what is going wrong" userInfo:nil];
 #endif
         
@@ -342,6 +348,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
     if (context == MainContext) {
         [DUCoreDataManager saveMainContext];
     } else {
+        
 		if ([context hasChanges]) {
 									
 			[context performBlockAndWait:^{
