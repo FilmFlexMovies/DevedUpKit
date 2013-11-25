@@ -138,39 +138,51 @@
 
 
 - (void)addHelper:(DUKVOHelper*)helper {
-    if (![self.helpers containsObject:helper]) {
-        [self.helpers addObject:helper];
+    @synchronized(_helpers) {
+        if (![self.helpers containsObject:helper]) {
+            [self.helpers addObject:helper];
+        }
     }
 }
 
 - (void)addHelpers:(NSSet*)helpers {
-    [self.helpers unionSet:helpers];
+    @synchronized(_helpers) {
+        [self.helpers unionSet:helpers];
+    }
 }
 
 - (void)removeHelper:(DUKVOHelper*)helper {
-    [self.helpers removeObject:helper];
+    @synchronized(_helpers) {
+        [self.helpers removeObject:helper];
+    }
 }
 
 - (void)removeHelpers:(NSSet*)helpers {
-    [self.helpers minusSet:helpers];
+    @synchronized(_helpers) {
+        [self.helpers minusSet:helpers];
+    }
 }
 
 - (void)removeObservedObject:(id)object {
-    NSMutableSet* helpers = [NSMutableSet setWithCapacity:[self.helpers count]];
-    for (DUKVOHelper* helper in self.helpers) {
-        if (helper.object == object){
-            [helpers addObject:helper];
+    @synchronized(_helpers) {
+        NSMutableSet* helpers = [NSMutableSet setWithCapacity:[self.helpers count]];
+        for (DUKVOHelper* helper in self.helpers) {
+            if (helper.object == object){
+                [helpers addObject:helper];
+            }
         }
-    }
-    if ([helpers count]){
-        [self removeHelpers:helpers];
+        if ([helpers count]){
+            [self removeHelpers:helpers];
+        }
     }
 }
 
 - (void)invalidateHelpers {
-    for (DUKVOHelper* helper in self.helpers) {
-        [helper invalidate];
-        [self removeHelper:helper];
+    @synchronized(_helpers) {
+        for (DUKVOHelper* helper in self.helpers) {
+            [helper invalidate];
+        }
+        [self.helpers removeAllObjects];
     }
 }
 
