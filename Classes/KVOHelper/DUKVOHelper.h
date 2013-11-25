@@ -64,4 +64,6 @@
 - (void)removeHelper:(DUKVOHelper*)helper;
 - (void)removeHelpers:(NSSet*)helpers;
 - (void)removeObservedObject:(id)object;
+- (void)invalidateHelpers;
+
 @end

@@ -138,7 +138,9 @@
 
 
 - (void)addHelper:(DUKVOHelper*)helper {
-    [self.helpers addObject:helper];
+    if (![self.helpers containsObject:helper]) {
+        [self.helpers addObject:helper];
+    }
 }
 
 - (void)addHelpers:(NSSet*)helpers {
@@ -162,6 +164,13 @@
     }
     if ([helpers count]){
         [self removeHelpers:helpers];
+    }
+}
+
+- (void)invalidateHelpers {
+    for (DUKVOHelper* helper in self.helpers) {
+        [helper invalidate];
+        [self removeHelper:helper];
     }
 }
 
