@@ -21,3 +21,11 @@ typedef enum {
 + (void) staggerAnimateViews:(NSArray *)views inView:(UIView *)containerView outInDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion;
 
 @end
+
+#pragma mark - DUAnimatee
+
+@protocol DUAnimatee <NSObject>
+- (NSArray *) viewsToStaggerAnimate;
+@end
+
+
