@@ -13,7 +13,10 @@
 #define kStaggerAnimationSpeed 0.4
 #define kStaggerAnimationDelay 0.05
 
-+ (void) staggerAnimateViews:(NSArray *)views inView:(UIView *)containerView inFromDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion {
++ (void) staggerAnimate:(id<DUStaggerAnimatee>)target inFromDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion {
+    NSArray *views = [target viewsToStaggerAnimateForDirection:direction];
+    UIView *containerView = [target containerView];
+    
     CGFloat width = CGRectGetWidth(containerView.bounds);
     if (DUAnimationDirectionLeft == direction) {
         width = 0 - width; //reverse width
@@ -25,7 +28,10 @@
     [self applyStaggerAnimationsToViews:views withTransform:CATransform3DIdentity completion:completion];
 }
 
-+ (void) staggerAnimateViews:(NSArray *)views inView:(UIView *)containerView outInDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion {
++ (void) staggerAnimate:(id<DUStaggerAnimatee>)target outInDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion {
+    NSArray *views = [target viewsToStaggerAnimateForDirection:direction];
+    UIView *containerView = [target containerView];
+    
     CGFloat width = CGRectGetWidth(containerView.bounds);
     if (DUAnimationDirectionLeft == direction) {
         width = 0 - width; //reverse width

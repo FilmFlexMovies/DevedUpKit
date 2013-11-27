@@ -15,17 +15,21 @@ typedef enum {
     DUAnimationDirectionDown
 } DUAnimationDirection;
 
+@protocol DUStaggerAnimatee;
+
 @interface DUAnimator : NSObject
 
-+ (void) staggerAnimateViews:(NSArray *)views inView:(UIView *)containerView inFromDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion;
-+ (void) staggerAnimateViews:(NSArray *)views inView:(UIView *)containerView outInDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion;
++ (void) staggerAnimate:(id<DUStaggerAnimatee>)target inFromDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion;
++ (void) staggerAnimate:(id<DUStaggerAnimatee>)target outInDirection:(DUAnimationDirection)direction completion:(void(^)(void))completion;
 
 @end
 
-#pragma mark - DUAnimatee
+#pragma mark - DUStaggerAnimatee
 
-@protocol DUAnimatee <NSObject>
-- (NSArray *) viewsToStaggerAnimate;
+@protocol DUStaggerAnimatee <NSObject>
+@required
+- (UIView *) containerView;
+- (NSArray *) viewsToStaggerAnimateForDirection:(DUAnimationDirection)direction;
 @end
 
 
