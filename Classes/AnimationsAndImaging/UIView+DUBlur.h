@@ -10,7 +10,7 @@
 
 @interface UIView (DUBlur)
 
-- (void) blur_DU;
+- (void) blurWithIntensity_DU:(CGFloat)intensity;
 - (void) removeBlur_DU;
 
 @end
