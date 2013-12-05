@@ -10,6 +10,12 @@
 
 @interface UIView (DUBlur)
 
+#pragma mark - Apply blur and return an Image View
+
+- (UIImageView *) blurredImageView_DU:(CGFloat)intensity;
+
+#pragma mark - Apply Blur to current view
+
 - (void) blurWithIntensity_DU:(CGFloat)intensity;
 - (void) removeBlur_DU;
 

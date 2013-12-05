@@ -13,7 +13,7 @@ NSInteger kBlurredViewTag = 5784738;
 
 @implementation UIView (DUBlur)
 
-- (void) blurWithIntensity_DU:(CGFloat)intensity {
+- (UIImageView *) blurredImageView_DU:(CGFloat)intensity {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -22,6 +22,11 @@ NSInteger kBlurredViewTag = 5784738;
     UIImageView *imageView = [UIImageView.alloc initWithImage:blurredImage];
     imageView.frame = self.bounds;
     imageView.tag = kBlurredViewTag;
+    return imageView;
+}
+
+- (void) blurWithIntensity_DU:(CGFloat)intensity {
+    UIImageView *imageView = [self blurredImageView_DU:intensity];
     imageView.alpha = 0.0f;
     [self addSubview:imageView];
     [UIView animateWithDuration:0.5f animations:^{
