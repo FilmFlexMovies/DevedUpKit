@@ -17,9 +17,10 @@
 - (void) exitStateWithContext:(id)context;
 
 @required
-- (void) executeStateWithContext:(id)context;
+- (BOOL) executeStateWithContext:(id)context;
 - (BOOL) hasBegunExecuting;
 - (NSUInteger) stateValueInt;
+- (BOOL) requiresNetwork;
 
 @end
 
