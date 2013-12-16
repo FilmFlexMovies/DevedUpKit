@@ -7,6 +7,7 @@
 
 #import "DUMigrationController.h"
 #import "NSString+DUExtension.h"
+#import "ActiveCloakMediaPlayer.h"
 
 #define kSavedVersion @"DUSavedVersion"
 
@@ -45,19 +46,6 @@
     return self;
 }
 
-#pragma mark - Migration Methods
-
-//This will just delete the current version so it will be recreated
-//- (void) migrateCoreData {
-//    NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:@"FilmFlex"];
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    NSError *error = nil;
-//    if ([fileManager fileExistsAtPath:[storeURL path]]) {
-//        [fileManager removeItemAtURL:storeURL error:&error];
-//    }
-//}
-
-
 #pragma mark - Migration
 
 - (BOOL) hasMigratedAlready {
@@ -74,9 +62,32 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void) migrateToNewVersion {
+- (void) migrateToNewVersion
+{
+	if ([self hasMigratedAlready]) {
+		return;
+	}
+	
+	[self removeLicenseStore];
+	
+	[self finishMigration];
+}
 
-    
+#pragma mark - Migration Methods
+
+//This will just delete the current version so it will be recreated
+//- (void) migrateCoreData {
+//    NSURL *storeURL = [NSPersistentStore MR_urlForStoreName:@"FilmFlex"];
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error = nil;
+//    if ([fileManager fileExistsAtPath:[storeURL path]]) {
+//        [fileManager removeItemAtURL:storeURL error:&error];
+//    }
+//}
+- (void) removeLicenseStore
+{
+	NSLog(@"Deleting license store");
+	[ActiveCloakMediaPlayer deleteLicenseStore];
 }
 
 /*
