@@ -7,7 +7,6 @@
 
 #import "DUMigrationController.h"
 #import "NSString+DUExtension.h"
-#import "ActiveCloakMediaPlayer.h"
 
 #define kSavedVersion @"DUSavedVersion"
 
@@ -64,13 +63,7 @@
 
 - (void) migrateToNewVersion
 {
-	if ([self hasMigratedAlready]) {
-		return;
-	}
 	
-	[self removeLicenseStore];
-	
-	[self finishMigration];
 }
 
 #pragma mark - Migration Methods
@@ -84,11 +77,6 @@
 //        [fileManager removeItemAtURL:storeURL error:&error];
 //    }
 //}
-- (void) removeLicenseStore
-{
-	NSLog(@"Deleting license store");
-	[ActiveCloakMediaPlayer deleteLicenseStore];
-}
 
 /*
   TODO --- COMMENTED THIS OUT, DO WE NEED TO DO THIS ANYMORE IT WAS MIGRATING OLD VERSION
