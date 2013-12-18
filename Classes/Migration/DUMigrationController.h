@@ -18,10 +18,18 @@
 
 + (DUMigrationController *) sharedController;
 
-- (BOOL) hasMigratedAlready;
-- (void) finishMigration;
-
 - (void) migrateToNewVersion;
 
+@end
+
+
+/*
+    Subclasses must conform to this protocol
+ */
+
+@protocol DUMigrator <NSObject>
+
+@required
+- (void) performMigration;
 
 @end

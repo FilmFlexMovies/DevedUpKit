@@ -40,7 +40,15 @@
         
         //New App Version
         self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-                
+        
+        NSLog(@"Vendor ID %@", [UIDevice currentDevice].identifierForVendor);
+        
+        // Check subclass conforms to protocol
+        if (self != [DUMigrationController class]) {
+            if (![self conformsToProtocol:@protocol(DUMigrator)]) {
+                NSAssert(NO ,@"You must conform to DUMigrator if you subclass");
+            }
+        }
     }
     return self;
 }
@@ -61,9 +69,16 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void) migrateToNewVersion
-{
+- (void) migrateToNewVersion {
+	if ([self hasMigratedAlready]) {
+		return;
+	}
 	
+    if ([self respondsToSelector:@selector(performMigration)]) {
+        [self performSelector:@selector(performMigration)];
+    }
+	
+	[self finishMigration];
 }
 
 #pragma mark - Migration Methods
