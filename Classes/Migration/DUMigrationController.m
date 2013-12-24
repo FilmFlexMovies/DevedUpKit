@@ -39,7 +39,7 @@
         self.previousVersionString = (savedVersion) ? savedVersion : @"0";
         
         //New App Version
-        self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
         
         NSLog(@"Vendor ID %@", [UIDevice currentDevice].identifierForVendor);
         
