@@ -281,6 +281,7 @@
 		557BD14418081A66007E3D75 /* UIImage+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13A18081A66007E3D75 /* UIImage+NSCoding.m */; };
 		557BD14518081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
 		557BD14618081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
+		558AD13B188EDE5E002906CA /* DUFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 558AD13A188EDE5E002906CA /* DUFileLogger.m */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		559700E818083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		55B97583182815E800697499 /* DUAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B97582182815E800697499 /* DUAnimator.m */; };
@@ -593,6 +594,8 @@
 		557BD13A18081A66007E3D75 /* UIImage+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSCoding.m"; sourceTree = "<group>"; };
 		557BD13B18081A66007E3D75 /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		557BD13C18081A66007E3D75 /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
+		558AD139188EDE5E002906CA /* DUFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUFileLogger.h; sourceTree = "<group>"; };
+		558AD13A188EDE5E002906CA /* DUFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUFileLogger.m; sourceTree = "<group>"; };
 		559700E3180837400047DACB /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemVersionMacros.h; sourceTree = "<group>"; };
 		559700E518083C3B0047DACB /* NSString+DUBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DUBase64.h"; sourceTree = "<group>"; };
 		559700E618083C3B0047DACB /* NSString+DUBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DUBase64.m"; sourceTree = "<group>"; };
@@ -926,6 +929,8 @@
 			children = (
 				557BCFFF18081981007E3D75 /* Logger.h */,
 				557BD00018081981007E3D75 /* Logger.m */,
+				558AD139188EDE5E002906CA /* DUFileLogger.h */,
+				558AD13A188EDE5E002906CA /* DUFileLogger.m */,
 			);
 			path = Logging;
 			sourceTree = "<group>";
@@ -1219,6 +1224,7 @@
 				55B97583182815E800697499 /* DUAnimator.m in Sources */,
 				557BD10318081981007E3D75 /* UIViewController+DUExtensions.m in Sources */,
 				557BD0FF18081981007E3D75 /* UIToolbar+Extensions.m in Sources */,
+				558AD13B188EDE5E002906CA /* DUFileLogger.m in Sources */,
 				557BD09718081981007E3D75 /* GradientBackButton.m in Sources */,
 				557BD07918081981007E3D75 /* CALayer+DUExtensions.m in Sources */,
 				557BD14518081A66007E3D75 /* UIView+Extensions.m in Sources */,
