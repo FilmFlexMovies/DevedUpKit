@@ -46,6 +46,13 @@ static NSMutableDictionary *loggers;
     return self;
 }
 
+- (void) blankLine {
+    NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
+    [file seekToEndOfFile];
+    [file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [file closeFile];
+}
+
 - (void) append:(NSString *)logMessage {
     static NSDateFormatter *dateFormat = nil;
     static dispatch_once_t onceToken;

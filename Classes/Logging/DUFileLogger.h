@@ -12,6 +12,7 @@
 
 + (DUFileLogger *) fileLoggerForFile:(NSString *)filename;
 
+- (void) blankLine;
 - (void) append:(NSString *)logMessage;
 
 @end

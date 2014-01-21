@@ -282,6 +282,7 @@
 		557BD14518081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
 		557BD14618081A66007E3D75 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BD13C18081A66007E3D75 /* UIView+Extensions.m */; };
 		558AD13B188EDE5E002906CA /* DUFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 558AD13A188EDE5E002906CA /* DUFileLogger.m */; };
+		558AD13C188EEC38002906CA /* DUFileLogger.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 558AD139188EDE5E002906CA /* DUFileLogger.h */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		559700E818083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		55B97583182815E800697499 /* DUAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B97582182815E800697499 /* DUAnimator.m */; };
@@ -307,6 +308,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				558AD13C188EEC38002906CA /* DUFileLogger.h in Copy Header Files */,
 				55B97585182815F000697499 /* DUAnimator.h in Copy Header Files */,
 				55777D1F1821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */,
 				55777D201821467B005F7592 /* Macros.h in Copy Header Files */,
