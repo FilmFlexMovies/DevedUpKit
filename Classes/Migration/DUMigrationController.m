@@ -7,7 +7,6 @@
 
 #import "DUMigrationController.h"
 #import "NSString+DUExtension.h"
-#import "FFXCacheController.h"
 
 #define kSavedVersion @"DUSavedVersion"
 
@@ -74,8 +73,6 @@
 	if ([self hasMigratedAlready]) {
 		return;
 	}
-	
-    [[FFXCacheController sharedController] resetCache];
     
     if ([self respondsToSelector:@selector(performMigration)]) {
         [self performSelector:@selector(performMigration)];
