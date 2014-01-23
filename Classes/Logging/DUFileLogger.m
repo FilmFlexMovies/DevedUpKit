@@ -35,7 +35,7 @@ static NSMutableDictionary *loggers;
 - (id) initWithFileName:(NSString *)filename {
     self = [super init];
     if (self) {
-#if defined(TEST_FLIGHT) || (DEBUG)
+#if defined(TEST_FLIGHT) || defined(DEBUG)
         //Get file path
         NSString *documentsDirectory = [[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"logs"];
         NSError *error = nil;
@@ -53,7 +53,7 @@ static NSMutableDictionary *loggers;
 }
 
 - (void) blankLine {
-#if defined(TEST_FLIGHT) || (DEBUG)
+#if defined(TEST_FLIGHT) || defined(DEBUG)
     NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
     [file seekToEndOfFile];
     [file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -62,7 +62,7 @@ static NSMutableDictionary *loggers;
 }
 
 - (void) append:(NSString *)logMessage {
-#if defined(TEST_FLIGHT) || (DEBUG)
+#if defined(TEST_FLIGHT) || defined(DEBUG)
     static NSDateFormatter *dateFormat = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
