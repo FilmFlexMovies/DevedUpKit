@@ -54,29 +54,33 @@ static NSMutableDictionary *loggers;
 
 - (void) blankLine {
 #if defined(TEST_FLIGHT) || defined(DEBUG)
-    NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
-    [file seekToEndOfFile];
-    [file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [file closeFile];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
+        [file seekToEndOfFile];
+        [file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [file closeFile];
+    });
 #endif
 }
 
 - (void) append:(NSString *)logMessage {
 #if defined(TEST_FLIGHT) || defined(DEBUG)
-    static NSDateFormatter *dateFormat = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        dateFormat = [[NSDateFormatter alloc] init];
-        dateFormat.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
-        dateFormat.timeZone = [NSTimeZone timeZoneWithName: @"GMT"];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        static NSDateFormatter *dateFormat = nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            dateFormat = [[NSDateFormatter alloc] init];
+            dateFormat.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
+            dateFormat.timeZone = [NSTimeZone timeZoneWithName: @"GMT"];
+        });
+        
+        NSString *message = [NSString stringWithFormat:@"\n%@ %@", [dateFormat stringFromDate:[NSDate date]], logMessage];
+        
+        NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
+        [file seekToEndOfFile];
+        [file writeData:[message dataUsingEncoding:NSUTF8StringEncoding]];
+        [file closeFile];
     });
-    
-    logMessage = [NSString stringWithFormat:@"\n%@ %@", [dateFormat stringFromDate:[NSDate date]], logMessage];
-    
-    NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
-    [file seekToEndOfFile];
-    [file writeData:[logMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    [file closeFile];
 #endif
 }
 
