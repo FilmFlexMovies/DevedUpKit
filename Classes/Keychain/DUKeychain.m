@@ -8,6 +8,7 @@
 
 #import "DUKeychain.h"
 #import <Security/Security.h>
+#import "DUFileLogger.h"
 
 @implementation DUKeychain
 
@@ -35,11 +36,16 @@
         return;
     }
     
+#ifdef DEBUG
+    [[DUFileLogger fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Setting credentials, Key: [%@] Value: [%@]", key, string]];
+#endif
+    
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
 	
 	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
 	[query setObject:key forKey:(__bridge id)kSecAttrAccount];
-	[query setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
+    // This allows you to access data even when phone is locked in the background (only after the device is unlocked after a reboot)
+	[query setObject:(__bridge id)kSecAttrAccessibleAfterFirstUnlock forKey:(__bridge id)kSecAttrAccessible];
 	
 	OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, NULL);
 	if (error == errSecSuccess) {
@@ -83,7 +89,7 @@
 	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
 	[query setObject:key forKey:(__bridge id)kSecAttrAccount];
 	[query setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
-
+    
 	NSData *dataFromKeychain = nil;
 
 	OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, (void *)&dataFromKeychain);
@@ -92,7 +98,11 @@
 	if (error == errSecSuccess) {
 		stringToReturn = [[NSString alloc] initWithData:dataFromKeychain encoding:NSUTF8StringEncoding];
 	}
-		
+	
+#ifdef DEBUG
+    [[DUFileLogger fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Credentials returned, Key: [%@] Value: [%@]", key, stringToReturn]];
+#endif
+    
 	return stringToReturn;
 }
 
