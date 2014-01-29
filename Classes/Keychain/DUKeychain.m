@@ -36,6 +36,9 @@
         return;
     }
     
+    // Going to call remove first as we have changed the permissions of kSecAttrAccessible
+    [self removeObjectForKey:key];
+    
 #ifdef DEBUG
     [[DUFileLogger fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Setting credentials, Key: [%@] Value: [%@]", key, string]];
 #endif
