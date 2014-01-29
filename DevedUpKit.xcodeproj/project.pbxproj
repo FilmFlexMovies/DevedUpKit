@@ -1490,7 +1490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -1505,7 +1505,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = armv7;
 			};
 			name = Release;
 		};
@@ -1593,7 +1593,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = armv7;
 			};
 			name = TestFlight;
 		};
