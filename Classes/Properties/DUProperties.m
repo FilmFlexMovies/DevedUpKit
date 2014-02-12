@@ -9,7 +9,7 @@
 #import "DUProperties.h"
 
 NSString * const PropertyFlurryKey = @"FlurryKey";
-NSString * const PropertyFlurryKeyDEBUG = @"FlurryKeyDEBUG";
+NSString * const PropertyFlurryKeyDEBUG = @"FlurryKeyDev";
 NSString * const PropertyReachabilityDomain = @"ReachabilityDomain";
 NSString * const PropertyCoreDataFile = @"CoreDataFile";
 NSString * const PropertyCrittercismAppID = @"CrittercismAppID";
