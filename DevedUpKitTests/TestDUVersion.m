@@ -73,4 +73,17 @@
     XCTAssertFalse([self.lower isBeforeVersion:self.higher ], @"lower should NOT be before higher");
 }
 
+#pragma mark - Test Comparison
+
+- (void) testComparison {
+    DUVersion *fromVersion = [DUVersion.alloc initWithVersionString:@"1.7.34"];
+    
+    //Upgrade from any version before 1.8.0
+    if (NSOrderedDescending == [fromVersion compare:[DUVersion.alloc initWithVersionString:@"1.8.0"]]) {
+        
+    } else {
+        XCTFail(@"Comparison didn't work");
+    }
+    
+}
 @end
