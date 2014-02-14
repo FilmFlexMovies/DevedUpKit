@@ -7,6 +7,7 @@
 
 #import "DUMigrationController.h"
 #import "NSString+DUExtension.h"
+#import "DUVersion.h"
 
 #define kSavedVersion @"DUSavedVersion"
 
@@ -74,8 +75,11 @@
 		return;
 	}
     
-    if ([self respondsToSelector:@selector(performMigration)]) {
-        [self performSelector:@selector(performMigration)];
+    DUVersion *lastVersion = [DUVersion.alloc initWithVersionString:self.previousVersionString];
+    DUVersion *newVersion =[DUVersion.alloc initWithVersionString:self.currentVersionString];
+    
+    if ([self respondsToSelector:@selector(performMigrationToVersion:fromVersion:)]) {
+        [self performSelector:@selector(performMigrationToVersion:fromVersion:) withObject:newVersion withObject:lastVersion];
     }
 	
 	[self finishMigration];

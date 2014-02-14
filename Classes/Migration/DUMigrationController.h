@@ -11,6 +11,8 @@
 
  */
 
+@class DUVersion;
+
 @interface DUMigrationController : NSObject 
 
 @property (nonatomic, retain, readonly) NSString *previousVersionString;
@@ -30,6 +32,6 @@
 @protocol DUMigrator <NSObject>
 
 @required
-- (void) performMigration;
+- (void) performMigrationToVersion:(DUVersion *)toVersion fromVersion:(DUVersion *)fromVersion;
 
 @end
