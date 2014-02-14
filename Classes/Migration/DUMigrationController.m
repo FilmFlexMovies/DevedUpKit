@@ -38,9 +38,13 @@
         //Current App Version - last time the app was run
 		NSString *savedVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kSavedVersion];
         self.previousVersionString = (savedVersion) ? savedVersion : @"0";
+        if (NSNotFound == [savedVersion rangeOfString:@"."].location) {
+            //i.e. when we were using the build version
+            self.previousVersionString = @"1.7.34"; // The last version we used this
+        }
         
         //New App Version
-        self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+        self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         
         NSLog(@"Vendor ID %@", [UIDevice currentDevice].identifierForVendor);
         

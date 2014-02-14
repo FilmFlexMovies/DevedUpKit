@@ -43,7 +43,7 @@
 
 - (BOOL) isBeforeVersion:(DUVersion *)version {
     NSComparisonResult result = [self compare:version];
-    if (NSOrderedAscending == result) {
+    if (NSOrderedDescending == result) {
         return YES;
     } else {
         return NO;
@@ -52,28 +52,28 @@
 
 - (NSComparisonResult) compare:(DUVersion *)version {
     if (self.major.intValue < version.major.intValue) {
-        return NSOrderedAscending;
+        return NSOrderedDescending;
     } else {
         if (self.major.intValue == version.major.intValue) {
             if (self.minor.intValue < version.minor.intValue) {
-                return NSOrderedAscending;
+                return NSOrderedDescending;
             } else {
                 if (self.minor.intValue == version.minor.intValue) {
                     if (self.revision.intValue < version.revision.intValue) {
-                        return NSOrderedAscending;
+                        return NSOrderedDescending;
                     } else {
                         if (self.revision.intValue == version.revision.intValue) {
                             return NSOrderedSame;
                         } else {
-                            return NSOrderedDescending;
+                            return NSOrderedAscending;
                         }
                     }
                 } else {
-                    return NSOrderedDescending;
+                    return NSOrderedAscending;
                 }
             }
         } else {
-            return NSOrderedDescending;
+            return NSOrderedAscending;
         }
     }
 }

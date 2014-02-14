@@ -11,6 +11,7 @@
 		5561FF9E18AE936E0014F1A7 /* DUVersion.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5561FF9B18AE911F0014F1A7 /* DUVersion.h */; };
 		5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCEA918081534007E3D75 /* DevedUpKitTests.m */; };
 		5561FFA318AE97450014F1A7 /* TestDUVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5561FF9F18AE96310014F1A7 /* TestDUVersion.m */; };
+		5561FFA418AEB6870014F1A7 /* DUVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5561FF9C18AE911F0014F1A7 /* DUVersion.m */; };
 		55777D1F1821467B005F7592 /* SystemVersionMacros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 559700E3180837400047DACB /* SystemVersionMacros.h */; };
 		55777D201821467B005F7592 /* Macros.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00118081981007E3D75 /* Macros.h */; };
 		55777D211821467B005F7592 /* DUConstants.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFDE18081981007E3D75 /* DUConstants.h */; };
@@ -1213,6 +1214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5561FFA418AEB6870014F1A7 /* DUVersion.m in Sources */,
 				5561FFA318AE97450014F1A7 /* TestDUVersion.m in Sources */,
 				5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */,
 			);
