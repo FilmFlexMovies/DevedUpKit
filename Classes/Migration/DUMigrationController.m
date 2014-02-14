@@ -37,7 +37,7 @@
     if (self) {
         //Current App Version - last time the app was run
 		NSString *savedVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kSavedVersion];
-        self.previousVersionString = (savedVersion) ? savedVersion : @"0";
+        self.previousVersionString = (savedVersion) ? savedVersion : @"0.0.0";
         if (NSNotFound == [savedVersion rangeOfString:@"."].location) {
             //i.e. when we were using the build version
             self.previousVersionString = @"1.7.34"; // The last version we used this
