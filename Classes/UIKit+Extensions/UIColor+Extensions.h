@@ -62,8 +62,8 @@ struct hsv_color {
 
 + (UIColor *) buttonBaseGrayColor;
 
-- (CGColorRef) lowCGColor;
-- (CGColorRef) highCGColor;
+//- (CGColorRef) lowCGColor;
+//- (CGColorRef) highCGColor;
 
 + (UIColor *) colorWithRGBString:(NSString *)rgbString;
 

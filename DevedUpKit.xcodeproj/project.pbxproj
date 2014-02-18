@@ -37,7 +37,6 @@
 		55777D351821467B005F7592 /* GradientBackButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFCC18081981007E3D75 /* GradientBackButton.h */; };
 		55777D361821467B005F7592 /* GradientButton.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFCE18081981007E3D75 /* GradientButton.h */; };
 		55777D371821467B005F7592 /* LoginAlertView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD018081981007E3D75 /* LoginAlertView.h */; };
-		55777D381821467B005F7592 /* MBProgressHUD.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD218081981007E3D75 /* MBProgressHUD.h */; };
 		55777D391821467B005F7592 /* PicturePickerNavBar.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD418081981007E3D75 /* PicturePickerNavBar.h */; };
 		55777D3A1821467B005F7592 /* RadioButtonControl.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD618081981007E3D75 /* RadioButtonControl.h */; };
 		55777D3B1821467B005F7592 /* RefreshArrowView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFD818081981007E3D75 /* RefreshArrowView.h */; };
@@ -132,7 +131,6 @@
 		557BD09718081981007E3D75 /* GradientBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFCD18081981007E3D75 /* GradientBackButton.m */; };
 		557BD09918081981007E3D75 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFCF18081981007E3D75 /* GradientButton.m */; };
 		557BD09B18081981007E3D75 /* LoginAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFD118081981007E3D75 /* LoginAlertView.m */; };
-		557BD09D18081981007E3D75 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFD318081981007E3D75 /* MBProgressHUD.m */; };
 		557BD09F18081981007E3D75 /* PicturePickerNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFD518081981007E3D75 /* PicturePickerNavBar.m */; };
 		557BD0A118081981007E3D75 /* RadioButtonControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFD718081981007E3D75 /* RadioButtonControl.m */; };
 		557BD0A318081981007E3D75 /* RefreshArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCFD918081981007E3D75 /* RefreshArrowView.m */; };
@@ -251,7 +249,6 @@
 				55777D351821467B005F7592 /* GradientBackButton.h in Copy Header Files */,
 				55777D361821467B005F7592 /* GradientButton.h in Copy Header Files */,
 				55777D371821467B005F7592 /* LoginAlertView.h in Copy Header Files */,
-				55777D381821467B005F7592 /* MBProgressHUD.h in Copy Header Files */,
 				55777D391821467B005F7592 /* PicturePickerNavBar.h in Copy Header Files */,
 				55777D3A1821467B005F7592 /* RadioButtonControl.h in Copy Header Files */,
 				55777D3B1821467B005F7592 /* RefreshArrowView.h in Copy Header Files */,
@@ -381,8 +378,6 @@
 		557BCFCF18081981007E3D75 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		557BCFD018081981007E3D75 /* LoginAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAlertView.h; sourceTree = "<group>"; };
 		557BCFD118081981007E3D75 /* LoginAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAlertView.m; sourceTree = "<group>"; };
-		557BCFD218081981007E3D75 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		557BCFD318081981007E3D75 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		557BCFD418081981007E3D75 /* PicturePickerNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturePickerNavBar.h; sourceTree = "<group>"; };
 		557BCFD518081981007E3D75 /* PicturePickerNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturePickerNavBar.m; sourceTree = "<group>"; };
 		557BCFD618081981007E3D75 /* RadioButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonControl.h; sourceTree = "<group>"; };
@@ -756,8 +751,6 @@
 				557BCFCF18081981007E3D75 /* GradientButton.m */,
 				557BCFD018081981007E3D75 /* LoginAlertView.h */,
 				557BCFD118081981007E3D75 /* LoginAlertView.m */,
-				557BCFD218081981007E3D75 /* MBProgressHUD.h */,
-				557BCFD318081981007E3D75 /* MBProgressHUD.m */,
 				557BCFD418081981007E3D75 /* PicturePickerNavBar.h */,
 				557BCFD518081981007E3D75 /* PicturePickerNavBar.m */,
 				557BCFD618081981007E3D75 /* RadioButtonControl.h */,
@@ -1118,7 +1111,6 @@
 			files = (
 				557BD08918081981007E3D75 /* DUEditableImageView.m in Sources */,
 				557BD09918081981007E3D75 /* GradientButton.m in Sources */,
-				557BD09D18081981007E3D75 /* MBProgressHUD.m in Sources */,
 				557BD0D318081981007E3D75 /* Reachability.m in Sources */,
 				557BD08718081981007E3D75 /* DoubleTapCaptureView.m in Sources */,
 				557BD0B518081981007E3D75 /* DURemoteImage.m in Sources */,

@@ -153,6 +153,7 @@
 	return color;
 }
 
+/*
 - (CGColorRef) lowCGColor {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	
@@ -177,7 +178,9 @@
 	}
 	return nil;
 }
+*/
 
+/*
 - (CGColorRef) highCGColor {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	
@@ -201,6 +204,7 @@
 	}
 	return nil;
 }
+*/
 
 + (UIColor *) colorWithRGBString:(NSString *)rgbString {
     rgbString = [rgbString stringByReplacingOccurrencesOfString:@" " withString:@""];

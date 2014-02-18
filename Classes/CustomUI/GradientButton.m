@@ -236,7 +236,7 @@ static NSString *defaultHexEncodedColorsString;
 	
 	UIFont *titleFont = [UIFont boldSystemFontOfSize:12];
     
-	CGSize size;
+	CGSize size = CGSizeZero;
     if (iOS_7_or_later) {
         size = [title sizeWithAttributes:@{NSFontAttributeName:titleFont}];
     } else {
