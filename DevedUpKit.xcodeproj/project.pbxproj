@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553A9E6818B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */; };
+		553A9E6918B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */; };
+		553A9E6A18B41C8D0074AFB8 /* DUCollectionViewFlowLayout.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 553A9E6618B41C6F0074AFB8 /* DUCollectionViewFlowLayout.h */; };
 		5561FF9D18AE911F0014F1A7 /* DUVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5561FF9C18AE911F0014F1A7 /* DUVersion.m */; };
 		5561FF9E18AE936E0014F1A7 /* DUVersion.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5561FF9B18AE911F0014F1A7 /* DUVersion.h */; };
 		5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCEA918081534007E3D75 /* DevedUpKitTests.m */; };
@@ -221,6 +224,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				553A9E6A18B41C8D0074AFB8 /* DUCollectionViewFlowLayout.h in Copy Header Files */,
 				5561FF9E18AE936E0014F1A7 /* DUVersion.h in Copy Header Files */,
 				558AD13C188EEC38002906CA /* DUFileLogger.h in Copy Header Files */,
 				55B97585182815F000697499 /* DUAnimator.h in Copy Header Files */,
@@ -322,6 +326,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		553A9E6618B41C6F0074AFB8 /* DUCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUCollectionViewFlowLayout.h; path = CollectionView/DUCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUCollectionViewFlowLayout.m; path = CollectionView/DUCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		5561FF9B18AE911F0014F1A7 /* DUVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUVersion.h; sourceTree = "<group>"; };
 		5561FF9C18AE911F0014F1A7 /* DUVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUVersion.m; sourceTree = "<group>"; };
 		5561FF9F18AE96310014F1A7 /* TestDUVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDUVersion.m; sourceTree = "<group>"; };
@@ -545,6 +551,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		553A9E6518B41C490074AFB8 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				553A9E6618B41C6F0074AFB8 /* DUCollectionViewFlowLayout.h */,
+				553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */,
+			);
+			name = CollectionViews;
+			sourceTree = "<group>";
+		};
 		557BCE8118081534007E3D75 = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +635,7 @@
 				557BCFAC18081980007E3D75 /* Concurrency */,
 				557BCFB118081980007E3D75 /* CoreAnimation */,
 				557BCFB418081981007E3D75 /* CoreData */,
+				553A9E6518B41C490074AFB8 /* CollectionViews */,
 				557BCFB718081981007E3D75 /* CustomUI */,
 				557BCFE018081981007E3D75 /* DUTwoSegmentedControl */,
 				557BCFE318081981007E3D75 /* Gestures */,
@@ -1175,6 +1191,7 @@
 				557BD14318081A66007E3D75 /* UIImage+NSCoding.m in Sources */,
 				557BD0B318081981007E3D75 /* DUImageCache.m in Sources */,
 				557BD14118081A66007E3D75 /* UIImage+Additions.m in Sources */,
+				553A9E6818B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */,
 				557BD0EB18081981007E3D75 /* DUStateMachine.m in Sources */,
 				557BD07118081981007E3D75 /* UIImage+ImageEffects.m in Sources */,
 				557BD0DF18081981007E3D75 /* NSObject+DUExtensions.m in Sources */,
@@ -1207,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5561FFA418AEB6870014F1A7 /* DUVersion.m in Sources */,
+				553A9E6918B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */,
 				5561FFA318AE97450014F1A7 /* TestDUVersion.m in Sources */,
 				5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */,
 			);
