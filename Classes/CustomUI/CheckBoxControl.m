@@ -8,6 +8,7 @@
 
 #import "CheckBoxControl.h"
 #import "ASHSoundManager.h"
+#import "UIImage+Additions.h"
 
 #define LABEL_PADDING_LEFT 8
 
@@ -41,9 +42,9 @@
 
 - (void) initImages {
     // prepare images and view
-	self.checkBox = [UIImage imageNamed:@"checkbox.png"];
-	self.checkBoxPressed = [UIImage imageNamed:@"checkbox-pressed.png"];
-	self.checkBoxChecked = [UIImage imageNamed:@"checkbox-checked.png"];
+	self.checkBox = [[UIImage imageNamed:@"checkbox.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	self.checkBoxPressed = [[UIImage imageNamed:@"checkbox-pressed.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	self.checkBoxChecked = [[UIImage imageNamed:@"checkbox-checked.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 - (void) _init {

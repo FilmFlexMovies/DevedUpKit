@@ -13,5 +13,6 @@
 
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
 - (UIImage *) imageWithShadow;
+- (UIImage *)tintedImageWithColor:(UIColor *)tintColor;
 
 @end
