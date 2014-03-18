@@ -6,13 +6,11 @@
 //  Copyright (c) 2014 DevedUp. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface DUFileLogger : NSObject
-
-+ (DUFileLogger *) fileLoggerForFile:(NSString *)filename;
-
+@protocol DUFileLogger <NSObject>
 - (void) blankLine;
 - (void) append:(NSString *)logMessage;
+@end
 
+@interface DUFileLoggerFactory : NSObject
++ (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename;
 @end

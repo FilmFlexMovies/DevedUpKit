@@ -10,23 +10,27 @@
 
 static NSMutableDictionary *loggers;
 
-@interface DUFileLogger ()
+@interface DUFileLoggerImpl : NSObject <DUFileLogger>
+@end
+
+@interface DUFileLoggerImpl ()
++ (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename;
 - (id) initWithFileName:(NSString *)filename;
 @property (nonatomic, retain) NSString *filename;
 @end
 
-@implementation DUFileLogger
+@implementation DUFileLoggerImpl
 
 + (void) initialize {
-    if (self == [DUFileLogger class]) {
+    if (self == [DUFileLoggerImpl class]) {
         loggers = [NSMutableDictionary.alloc init];
     }
 }
 
-+ (DUFileLogger *) fileLoggerForFile:(NSString *)filename {
-    DUFileLogger *logger = [loggers objectForKey:filename];
++ (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename {
+    DUFileLoggerImpl *logger = [loggers objectForKey:filename];
     if (!logger) {
-        logger = [DUFileLogger.alloc initWithFileName:filename];
+        logger = [DUFileLoggerImpl.alloc initWithFileName:filename];
         [loggers setObject:logger forKey:filename];
     }
     return logger;
@@ -85,3 +89,14 @@ static NSMutableDictionary *loggers;
 }
 
 @end
+
+
+@implementation DUFileLoggerFactory : NSObject
+
++ (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename {
+    return [DUFileLoggerImpl fileLoggerForFile:filename];
+}
+
+@end
+
+

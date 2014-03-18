@@ -40,7 +40,7 @@
     [self removeObjectForKey:key];
     
 #ifdef DEBUG
-    [[DUFileLogger fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Setting credentials, Key: [%@] Value: [%@]", key, string]];
+    [[DUFileLoggerFactory fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Setting credentials, Key: [%@] Value: [%@]", key, string]];
 #endif
     
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
@@ -103,7 +103,7 @@
 	}
 	
 #ifdef DEBUG
-    [[DUFileLogger fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Credentials returned, Key: [%@] Value: [%@]", key, stringToReturn]];
+    [[DUFileLoggerFactory fileLoggerForFile:@"Auth.log"] append:[NSString stringWithFormat:@"Credentials returned, Key: [%@] Value: [%@]", key, stringToReturn]];
 #endif
     
 	return stringToReturn;
