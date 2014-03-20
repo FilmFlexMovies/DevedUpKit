@@ -236,7 +236,10 @@ NSString * const RemoteImageDownloadCountChangedNotification = @"RemoteImageDown
     [_receivedData setLength:0];
     self.response = response;
     
-    self.totalBytes = response.expectedContentLength;
+    
+    if (response.expectedContentLength) {
+        self.totalBytes = [NSNumber numberWithLongLong:response.expectedContentLength].unsignedIntValue;
+    }
 }
 
 

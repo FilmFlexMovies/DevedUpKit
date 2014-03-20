@@ -82,7 +82,7 @@
 
 - (NSNumberFormatter *) formatterWithSameDecimalPlaces {
 	
-	int decimalPlaces = [self calculateNumberOfDecimalPlaces];
+	NSInteger decimalPlaces = [self calculateNumberOfDecimalPlaces];
 	//int integerPlaces = [self calculateNumberOfIntegerPlaces];
 	NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc] initWithIGStyle];
 	[numberFormat setMaximumFractionDigits:decimalPlaces];

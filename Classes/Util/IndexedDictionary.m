@@ -62,7 +62,7 @@
 }
 
 - (void) moveObjectToIndexZero:(NSString *)key {
-    int index = [keys indexOfObject:key];    
+    NSInteger index = [keys indexOfObject:key];
     [keys removeObjectAtIndex:index];        
     id value = [values objectAtIndex:index];
     [values removeObjectAtIndex:index];
@@ -85,7 +85,7 @@
         return nil;
     }
     if ([keys containsObject:key]) {
-        int index = [keys indexOfObject:key];  
+        NSInteger index = [keys indexOfObject:key];
         return [values objectAtIndex:index];
     } else {
         return nil;

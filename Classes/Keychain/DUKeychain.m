@@ -119,7 +119,7 @@
 		
 	OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);
 	if (status != errSecSuccess) {
-		DULog(@"SecItemDelete failed: %ld", status);
+		DULog(@"SecItemDelete failed: %d", (int)status);
 	}
 }
 

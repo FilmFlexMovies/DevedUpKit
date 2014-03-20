@@ -26,7 +26,7 @@
 	
 		decimalPlaces = stringLength - locationOfDecimalPoint - 1; //-1 cos indexing starts at 0
 	}
-	return [NSNumber numberWithInt:decimalPlaces];
+	return [NSNumber numberWithLong:decimalPlaces];
 }
 
 
