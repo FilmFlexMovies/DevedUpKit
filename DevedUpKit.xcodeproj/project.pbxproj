@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5500E91818EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */; };
+		5500E91918EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */; };
+		5500E91A18EAC7B7001B8CCB /* DUGradientBackgroundView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5500E91618EAC788001B8CCB /* DUGradientBackgroundView.h */; };
 		553A9E6818B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */; };
 		553A9E6918B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */; };
 		553A9E6A18B41C8D0074AFB8 /* DUCollectionViewFlowLayout.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 553A9E6618B41C6F0074AFB8 /* DUCollectionViewFlowLayout.h */; };
@@ -305,6 +308,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				5500E91A18EAC7B7001B8CCB /* DUGradientBackgroundView.h in Copy Header Files */,
 				5580C3B318BF8206001FD2A9 /* MagicalImportFunctions.h in Copy Header Files */,
 				5580C3B418BF8206001FD2A9 /* NSAttributeDescription+MagicalDataImport.h in Copy Header Files */,
 				5580C3B518BF8206001FD2A9 /* NSEntityDescription+MagicalDataImport.h in Copy Header Files */,
@@ -435,6 +439,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5500E91618EAC788001B8CCB /* DUGradientBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUGradientBackgroundView.h; path = Gradient/DUGradientBackgroundView.h; sourceTree = "<group>"; };
+		5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUGradientBackgroundView.m; path = Gradient/DUGradientBackgroundView.m; sourceTree = "<group>"; };
 		553A9E6618B41C6F0074AFB8 /* DUCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUCollectionViewFlowLayout.h; path = CollectionView/DUCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		553A9E6718B41C6F0074AFB8 /* DUCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUCollectionViewFlowLayout.m; path = CollectionView/DUCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		5561FF9B18AE911F0014F1A7 /* DUVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUVersion.h; sourceTree = "<group>"; };
@@ -716,6 +722,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5500E91518EAC75C001B8CCB /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				5500E91618EAC788001B8CCB /* DUGradientBackgroundView.h */,
+				5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */,
+			);
+			name = Gradient;
+			sourceTree = "<group>";
+		};
 		553A9E6518B41C490074AFB8 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +821,7 @@
 				557BCFB718081981007E3D75 /* CustomUI */,
 				557BCFE018081981007E3D75 /* DUTwoSegmentedControl */,
 				557BCFE318081981007E3D75 /* Gestures */,
+				5500E91518EAC75C001B8CCB /* Gradient */,
 				557BCFE818081981007E3D75 /* HTTP */,
 				557BCFEB18081981007E3D75 /* ImageLoading */,
 				557BCFF018081981007E3D75 /* InAppPurcahse */,
@@ -1504,6 +1520,7 @@
 				557BD08318081981007E3D75 /* BackBarButton.m in Sources */,
 				557BD0EF18081981007E3D75 /* DUAlertViewQuestion.m in Sources */,
 				557BD0A118081981007E3D75 /* RadioButtonControl.m in Sources */,
+				5500E91818EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */,
 				557BD0D518081981007E3D75 /* RemoteImage.m in Sources */,
 				5580C38318BF81E9001FD2A9 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				5580C3A918BF81E9001FD2A9 /* MagicalRecord+iCloud.m in Sources */,
@@ -1552,6 +1569,7 @@
 				5580C3AC18BF81E9001FD2A9 /* MagicalRecord+Options.m in Sources */,
 				5580C3AE18BF81E9001FD2A9 /* MagicalRecord+Setup.m in Sources */,
 				5580C3A818BF81E9001FD2A9 /* MagicalRecord+ErrorHandling.m in Sources */,
+				5500E91918EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */,
 				5580C3A618BF81E9001FD2A9 /* MagicalRecord+Actions.m in Sources */,
 				5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */,
 				5580C39A18BF81E9001FD2A9 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
