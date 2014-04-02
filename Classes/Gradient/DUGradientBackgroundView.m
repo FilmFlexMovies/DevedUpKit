@@ -8,6 +8,7 @@
 
 #import "DUGradientBackgroundView.h"
 #import "UIColor+Extensions.h"
+#import "UIView+DUExtensions.h"
 
 @implementation DUGradientBackgroundView
 
@@ -19,6 +20,13 @@
         [self.layer insertSublayer:gradient atIndex:1];
     }
     return self;
+}
+
+- (void) addDarkAlpha {
+    UIView *alpha = [UIView.alloc initWithFrame:self.bounds];
+    alpha.backgroundColor = [UIColor blackColor];
+    alpha.alpha = 0.4f;
+    [self addSubviewAndFillBounds:alpha];
 }
 
 - (UIImage *) renderToImage {

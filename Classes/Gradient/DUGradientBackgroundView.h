@@ -12,6 +12,8 @@
 
 - (id) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient;
 
+- (void) addDarkAlpha;
+
 - (UIImage *) renderToImage;
 
 @end
