@@ -7,6 +7,7 @@
 //
 
 #import "LoginAlertView.h"
+#import "DULocalisation.h"
 
 @implementation LoginAlertView
 
@@ -20,9 +21,9 @@
 
 - (id) initWithDelegate:(id)delegate {
 
-    NSString *title = NSLocalizedString(@"Login to Flurry", @"");
-    NSString *cancel = NSLocalizedString(@"Cancel", @"");
-    NSString *ok = NSLocalizedString(@"Find API Key", @"");
+    NSString *title = DULocalizedString(@"Login to Flurry", @"");
+    NSString *cancel = DULocalizedString(@"Cancel", @"");
+    NSString *ok = DULocalizedString(@"Find API Key", @"");
     CGSize titleSize = [title sizeWithFont:[UIFont boldSystemFontOfSize:18] constrainedToSize:CGSizeMake(260, MAXFLOAT)];
     
 	if ((self = [super initWithTitle:title
