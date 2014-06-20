@@ -36,6 +36,7 @@
 
 - (void) addSubviewAndFillBounds:(UIView *)subview {
     subview.frame = self.bounds;
+    subview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:subview];
 }
 
