@@ -19,6 +19,7 @@ NSString * const PropertyFlickrKey = @"FlickrKey";
 NSString * const PropertyFlickrSecret = @"FlickrSecret";
 NSString * const PropertyFlickrAuthCallback = @"FlickrAuthCallback";
 NSString * const PropertyCrashlyticsID = @"CrashlyticsID";
+NSString * const PropertyEnvironment = @"Environment";
 
 @interface DUProperties ()
 @property (nonatomic, retain) NSDictionary *properties;

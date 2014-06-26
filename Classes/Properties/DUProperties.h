@@ -17,7 +17,8 @@ extern NSString * const PropertyFlickrKey;
 extern NSString * const PropertyFlickrSecret;
 extern NSString * const PropertyFlickrAuthCallback;
 extern NSString * const PropertyCrashlyticsID;
-
+extern NSString * const PropertyFlickrAuthCallback;
+extern NSString * const PropertyEnvironment;
 
 @interface DUProperties : NSObject 
 
