@@ -11,13 +11,29 @@
 
 @implementation NSDate (DUExtensions)
 
+- (NSCalendar *) gregorianCalendar_DU {
+    static NSCalendar *gregorian = nil;
+    if (!gregorian) {
+        gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    }
+    return gregorian;
+}
+
 - (NSDate *) sevenDaysAgo_DU {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [self gregorianCalendar_DU];
     NSDateComponents *sevenDaysAgo = [[NSDateComponents alloc] init];
     sevenDaysAgo.day = -7;
     
     NSDate *dateMinus7Days = [gregorian dateByAddingComponents:sevenDaysAgo toDate:self options:0];
     return dateMinus7Days;
+}
+
+- (NSDate *) dateByAddingHours:(NSInteger)hours {
+    NSCalendar *gregorian = [self gregorianCalendar_DU];
+    NSDateComponents *hoursAdded = [[NSDateComponents alloc] init];
+    hoursAdded.hour = hours;
+    
+    return [gregorian dateByAddingComponents:hoursAdded toDate:self options:0];
 }
 
 //- (NSString *) formatTheUnit:(NSString *)unit value:(NSInteger)value {    

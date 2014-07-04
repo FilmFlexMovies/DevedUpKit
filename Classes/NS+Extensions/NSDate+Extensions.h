@@ -23,4 +23,6 @@
 
 - (NSDate *) yesterday;
 
+- (NSDate *) dateByAddingHours:(NSInteger)hours;
+
 @end
