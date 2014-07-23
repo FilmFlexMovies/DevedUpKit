@@ -308,7 +308,19 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 - (BOOL)isReachable {
-    return ![self connectionRequired];
+    NetworkStatus status = [self currentReachabilityStatus];
+    switch (status) {
+        case NotReachable:
+            return NO;
+        default: {
+            BOOL connectionRequired = [self connectionRequired];
+            if (connectionRequired) {
+                return NO;
+            } else {
+                return YES;
+            }            
+        }
+    }
 }
 
 @end

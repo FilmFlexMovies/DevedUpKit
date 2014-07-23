@@ -344,6 +344,10 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 }
 
 + (void) saveContext:(NSManagedObjectContext *)context {
+    static int saveCount = 0;
+    saveCount++;
+    NSLog(@"Saved called %i times already", saveCount);
+    
     DUCoreDataManager *coreData = [DUCoreDataManager sharedManager];
     if (context == MainContext) {
         [DUCoreDataManager saveMainContext];
