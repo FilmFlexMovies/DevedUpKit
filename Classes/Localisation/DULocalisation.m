@@ -10,6 +10,8 @@
 
 #import "DULocalisation.h"
 
+NSString * const DULocalizationMissing = @"DULocalizationMissing";
+
 @implementation DULocalisation
 
 + (DULocalisation *) sharedController {
@@ -44,8 +46,8 @@
     NSBundle *bundle = [NSBundle mainBundle];
     
     //First look for a target specific string - default here is blank
-    NSString *translated = [bundle localizedStringForKey:string value:@"doesntexist" table:@"TargetSpecific"];
-    if ([@"doesntexist" isEqualToString:translated]) {
+    NSString *translated = [bundle localizedStringForKey:string value:DULocalizationMissing table:@"TargetSpecific"];
+    if ([DULocalizationMissing isEqualToString:translated]) {
         //try the default strings file, and use default if it doesn't exist
         translated = [bundle localizedStringForKey:string value:defaultValue table:@"Localizable"];
     }

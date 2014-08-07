@@ -8,6 +8,8 @@
 
 #import	"DUAnalytics.h"
 
+extern NSString * const DULocalizationMissing;
+
 @interface DULocalisation : NSObject
 
 @property (nonatomic, retain) id<DUAnalytics> analytics;
