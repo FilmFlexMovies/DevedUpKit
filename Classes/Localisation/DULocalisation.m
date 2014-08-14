@@ -32,7 +32,7 @@ NSString * const DULocalizationMissing = @"DULocalizationMissing";
     
     NSString *defaultValue = @"";
     
-#if DEBUG_TRANSLATIONS
+#if DEBUG
     defaultValue = [NSString stringWithFormat:@"TRANSLATE: %@", string];
     if ([string hasPrefix:@"TRANSLATE:"]) {
         //don't translate twice
