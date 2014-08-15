@@ -20,6 +20,7 @@ NSString * const PropertyFlickrSecret = @"FlickrSecret";
 NSString * const PropertyFlickrAuthCallback = @"FlickrAuthCallback";
 NSString * const PropertyCrashlyticsID = @"CrashlyticsID";
 NSString * const PropertyEnvironment = @"Environment";
+NSString * const PropertyTsAndCsURL = @"tsandcs.url";
 
 @interface DUProperties ()
 @property (nonatomic, retain) NSDictionary *properties;
