@@ -18,6 +18,10 @@ NSManagedObjectContext* createBackgroundContext() {
 }
 
 id existingObjectWithID(NSManagedObjectID *objectID, NSManagedObjectContext *context) {
+    NSCAssert(objectID, @"Debug Mode, why is this object nil");
+    if (!objectID) {
+        return nil;
+    }
 	NSError *error = nil;
 	id object = [context existingObjectWithID:objectID error:&error];
 	NSCAssert(![objectID isTemporaryID], @"This objectID is from a temporary object not saved yet");
