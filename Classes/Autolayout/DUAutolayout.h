@@ -17,6 +17,8 @@
 #pragma mark - Alignment
 
 + (void) pinSubview:(UIView *)subview toRightOfView:(UIView *)superview padding:(CGFloat)padding;
++ (void) pinSubview:(UIView *)subview toLeftOfView:(UIView *)superview padding:(CGFloat)padding;
+
 + (void) horizontallyCenterSubview:(UIView *)subview inView:(UIView *)superview;
 + (void) verticallyCenterSubview:(UIView *)subview inView:(UIView *)superview;
 + (void) centerSubview:(UIView *)subview inView:(UIView *)superview;

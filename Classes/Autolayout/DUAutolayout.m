@@ -75,6 +75,18 @@
     [superview addConstraint:pinConstraint];
 }
 
++ (void) pinSubview:(UIView *)subview toLeftOfView:(UIView *)superview padding:(CGFloat)padding {
+    NSLayoutConstraint *pinConstraint =
+    [NSLayoutConstraint constraintWithItem:subview
+                                 attribute:NSLayoutAttributeLeft
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:superview
+                                 attribute:NSLayoutAttributeLeft
+                                multiplier:1.0
+                                  constant:-padding];
+    [superview addConstraint:pinConstraint];
+}
+
 + (void) horizontallyCenterSubview:(UIView *)subview inView:(UIView *)superview {
     NSLayoutConstraint *centerXConstraint =
     [NSLayoutConstraint constraintWithItem:subview
