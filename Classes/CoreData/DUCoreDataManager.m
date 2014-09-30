@@ -38,7 +38,7 @@ id existingObjectWithID(NSManagedObjectID *objectID, NSManagedObjectContext *con
 
 //Ensure the objectID is not temporary
 void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *context) {
-	if ([object.objectID isTemporaryID]) {
+	if ([[object objectID] isTemporaryID]) {
 		NSError *error = nil;
 		BOOL success = [context obtainPermanentIDsForObjects:@[object] error:&error];
 		if (!success) {
