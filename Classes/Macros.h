@@ -25,21 +25,15 @@ typedef void (^DUBlockWithError)(NSError *error);
 
 //#define log4Method() DULog(@"%@", [NSString stringWithFormat:@"[%s:%d %@]",basename(__FILE__),__LINE__,NSStringFromSelector(_cmd)])
 
-#ifdef TEST_FLIGHT
-	#import "TestFlight.h"
-	#define NSLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-	#define DULog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-	#define ErrorLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#else
+
 	#ifdef DEBUG
 		#define DULog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 	#else
 		#define DULog( s, ... )
-#endif
+    #endif
 
 //Shouldn't need to use NSLog in code anywhere
 #define ErrorLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-#endif
 
 #define LogCGRect(rect) DULog(@"CGRect:%@", NSStringFromCGRect(rect));
 #define LogCGSize(size) DULog(@"CGSize:%@", NSStringFromCGSize(size));
