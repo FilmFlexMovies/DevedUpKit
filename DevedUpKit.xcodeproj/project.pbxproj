@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5500E91818EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */; };
 		5500E91918EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */; };
+		550847011AA5FAE300E33BE2 /* DUFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 550847001AA5FAE300E33BE2 /* DUFileLogger.m */; };
+		550847021AA5FAF500E33BE2 /* DUFileLogger.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 550846FF1AA5FAE300E33BE2 /* DUFileLogger.h */; };
 		5561FF9D18AE911F0014F1A7 /* DUVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5561FF9C18AE911F0014F1A7 /* DUVersion.m */; };
 		5561FFA218AE973F0014F1A7 /* DevedUpKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 557BCEA918081534007E3D75 /* DevedUpKitTests.m */; };
 		5561FFA318AE97450014F1A7 /* TestDUVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5561FF9F18AE96310014F1A7 /* TestDUVersion.m */; };
@@ -97,7 +99,6 @@
 		5580C3B118BF81E9001FD2A9 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580C37C18BF81E9001FD2A9 /* MagicalRecord.m */; };
 		5580C3B218BF81E9001FD2A9 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580C37C18BF81E9001FD2A9 /* MagicalRecord.m */; };
 		5580C3D018BF823A001FD2A9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5580C3CF18BF823A001FD2A9 /* CoreData.framework */; };
-		558AD13B188EDE5E002906CA /* DUFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 558AD13A188EDE5E002906CA /* DUFileLogger.m */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		55DC7AB119DB3F620064E0E5 /* MagicalImportFunctions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34618BF81E9001FD2A9 /* MagicalImportFunctions.h */; };
 		55DC7AB219DB3F620064E0E5 /* NSAttributeDescription+MagicalDataImport.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34818BF81E9001FD2A9 /* NSAttributeDescription+MagicalDataImport.h */; };
@@ -144,7 +145,6 @@
 		55DC7ADB19DB413E0064E0E5 /* DUConstants.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFDE18081981007E3D75 /* DUConstants.h */; };
 		55DC7ADC19DB41530064E0E5 /* DUKeychain.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFF618081981007E3D75 /* DUKeychain.h */; };
 		55DC7ADD19DB416C0064E0E5 /* UIView+DUExtensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04D18081981007E3D75 /* UIView+DUExtensions.h */; };
-		55DC7ADE19DB41800064E0E5 /* DUFileLogger.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 558AD139188EDE5E002906CA /* DUFileLogger.h */; };
 		55DC7ADF19DB419D0064E0E5 /* NSString+DUBase64.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 559700E518083C3B0047DACB /* NSString+DUBase64.h */; };
 		55DC7AE019DB41BE0064E0E5 /* DUModalProgressView.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD00A18081981007E3D75 /* DUModalProgressView.h */; };
 		55DC7AE119DB41D50064E0E5 /* NSDate+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD01E18081981007E3D75 /* NSDate+Extensions.h */; };
@@ -181,6 +181,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				550847021AA5FAF500E33BE2 /* DUFileLogger.h in Copy Header Files */,
 				55DC7AEA19DB42AB0064E0E5 /* UIView+DUBlur.h in Copy Header Files */,
 				55DC7AE919DB428D0064E0E5 /* UIImage+Additions.h in Copy Header Files */,
 				55DC7AE819DB42770064E0E5 /* UIColor+Extensions.h in Copy Header Files */,
@@ -193,7 +194,6 @@
 				55DC7AE119DB41D50064E0E5 /* NSDate+Extensions.h in Copy Header Files */,
 				55DC7AE019DB41BE0064E0E5 /* DUModalProgressView.h in Copy Header Files */,
 				55DC7ADF19DB419D0064E0E5 /* NSString+DUBase64.h in Copy Header Files */,
-				55DC7ADE19DB41800064E0E5 /* DUFileLogger.h in Copy Header Files */,
 				55DC7ADD19DB416C0064E0E5 /* UIView+DUExtensions.h in Copy Header Files */,
 				55DC7ADC19DB41530064E0E5 /* DUKeychain.h in Copy Header Files */,
 				55DC7ADB19DB413E0064E0E5 /* DUConstants.h in Copy Header Files */,
@@ -248,6 +248,8 @@
 /* Begin PBXFileReference section */
 		5500E91618EAC788001B8CCB /* DUGradientBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUGradientBackgroundView.h; path = Gradient/DUGradientBackgroundView.h; sourceTree = "<group>"; };
 		5500E91718EAC788001B8CCB /* DUGradientBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUGradientBackgroundView.m; path = Gradient/DUGradientBackgroundView.m; sourceTree = "<group>"; };
+		550846FF1AA5FAE300E33BE2 /* DUFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUFileLogger.h; path = Classes/Logging/DUFileLogger.h; sourceTree = "<group>"; };
+		550847001AA5FAE300E33BE2 /* DUFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUFileLogger.m; path = Classes/Logging/DUFileLogger.m; sourceTree = "<group>"; };
 		5561FF9B18AE911F0014F1A7 /* DUVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUVersion.h; path = Classes/DUVersion.h; sourceTree = "<group>"; };
 		5561FF9C18AE911F0014F1A7 /* DUVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUVersion.m; path = Classes/DUVersion.m; sourceTree = "<group>"; };
 		5561FF9F18AE96310014F1A7 /* TestDUVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDUVersion.m; sourceTree = "<group>"; };
@@ -366,8 +368,6 @@
 		5580C37D18BF81E9001FD2A9 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		5580C37E18BF81E9001FD2A9 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CoreData+MagicalRecord.h"; path = "Submodules/MagicalRecord-DevedUp/MagicalRecord/CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		5580C3CF18BF823A001FD2A9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		558AD139188EDE5E002906CA /* DUFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUFileLogger.h; path = Classes/Logging/DUFileLogger.h; sourceTree = "<group>"; };
-		558AD13A188EDE5E002906CA /* DUFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUFileLogger.m; path = Classes/Logging/DUFileLogger.m; sourceTree = "<group>"; };
 		559700E3180837400047DACB /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemVersionMacros.h; path = Classes/SystemVersionMacros.h; sourceTree = "<group>"; };
 		559700E518083C3B0047DACB /* NSString+DUBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DUBase64.h"; path = "Classes/NS+Extensions/NSString+DUBase64.h"; sourceTree = "<group>"; };
 		559700E618083C3B0047DACB /* NSString+DUBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DUBase64.m"; path = "Classes/NS+Extensions/NSString+DUBase64.m"; sourceTree = "<group>"; };
@@ -725,14 +725,14 @@
 		55DC7AB019DB3DE30064E0E5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				550846FF1AA5FAE300E33BE2 /* DUFileLogger.h */,
+				550847001AA5FAE300E33BE2 /* DUFileLogger.m */,
 				557BD00118081981007E3D75 /* Macros.h */,
 				559700E3180837400047DACB /* SystemVersionMacros.h */,
 				557BCFDE18081981007E3D75 /* DUConstants.h */,
 				557BCFDF18081981007E3D75 /* DUConstants.m */,
 				55DC7AF019DB44AC0064E0E5 /* Logger.m */,
 				55DC7AF119DB44AC0064E0E5 /* Logger.h */,
-				558AD139188EDE5E002906CA /* DUFileLogger.h */,
-				558AD13A188EDE5E002906CA /* DUFileLogger.m */,
 				5561FF9B18AE911F0014F1A7 /* DUVersion.h */,
 				5561FF9C18AE911F0014F1A7 /* DUVersion.m */,
 				55DC7AEC19DB43620064E0E5 /* NS-Extensions */,
@@ -916,7 +916,6 @@
 				5580C39918BF81E9001FD2A9 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				55DC7AFB19DB45370064E0E5 /* NSNumberFormatter+Extensions.m in Sources */,
 				5580C3A118BF81E9001FD2A9 /* NSPersistentStore+MagicalRecord.m in Sources */,
-				558AD13B188EDE5E002906CA /* DUFileLogger.m in Sources */,
 				557BD07718081981007E3D75 /* DUBlocks.m in Sources */,
 				559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */,
 				557BD07318081981007E3D75 /* UIView+DUBlur.m in Sources */,
@@ -939,6 +938,7 @@
 				5580C37F18BF81E9001FD2A9 /* MagicalImportFunctions.m in Sources */,
 				557BD0B918081981007E3D75 /* DUKeychain.m in Sources */,
 				557BD0A918081981007E3D75 /* DUConstants.m in Sources */,
+				550847011AA5FAE300E33BE2 /* DUFileLogger.m in Sources */,
 				557BD0E518081981007E3D75 /* DUProperties.m in Sources */,
 				557BD0BD18081981007E3D75 /* DULocalisation.m in Sources */,
 				55DC7AF219DB44AC0064E0E5 /* Logger.m in Sources */,
@@ -1044,7 +1044,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
