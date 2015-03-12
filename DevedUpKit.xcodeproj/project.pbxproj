@@ -1048,7 +1048,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "i386 arm64 armv7s armv7";
 			};
 			name = Debug;
 		};
@@ -1087,7 +1087,7 @@
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "i386 arm64 armv7s armv7";
 			};
 			name = Release;
 		};
@@ -1103,7 +1103,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 x86_64 i386";
+				VALID_ARCHS = "$(inherited)";
 			};
 			name = Debug;
 		};
@@ -1118,7 +1118,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 x86_64 i386";
+				VALID_ARCHS = "$(inherited)";
 			};
 			name = Release;
 		};
@@ -1193,7 +1193,7 @@
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "i386 arm64 armv7s armv7";
 			};
 			name = TestFlight;
 		};
@@ -1208,7 +1208,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 x86_64 i386";
+				VALID_ARCHS = "$(inherited)";
 			};
 			name = TestFlight;
 		};
@@ -1263,7 +1263,7 @@
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "i386 arm64 armv7s armv7";
 			};
 			name = Release_Validate_EE_Release;
 		};
@@ -1278,7 +1278,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
-				VALID_ARCHS = "armv7 x86_64 i386";
+				VALID_ARCHS = "$(inherited)";
 			};
 			name = Release_Validate_EE_Release;
 		};
