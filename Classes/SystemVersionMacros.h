@@ -19,7 +19,8 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
-#define iOS_7_or_later SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define iOS_8_or_later SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")
+#define iOS_7 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") && SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"7.1.2")
 #define iOS_6 SYSTEM_VERSION_LESS_THAN(@"7.0")
 
 /*
