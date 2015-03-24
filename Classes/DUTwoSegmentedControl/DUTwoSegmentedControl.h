@@ -10,11 +10,11 @@
 
 @class DUVerticalSeparatorLayer;
 
-typedef enum {	
-	DUTwoSegmentedControlStateLeftSelected,
-	DUTwoSegmentedControlStateRightSelected,
-    DUTwoSegmentedControlStateNeutral
-} DUTwoSegmentedControlState;
+typedef NS_ENUM(NSUInteger, DUTwoSegmentedControlState)	{
+    DUTwoSegmentedControlStateLeftSelected = 0,
+    DUTwoSegmentedControlStateRightSelected = 1,
+    DUTwoSegmentedControlStateNeutral = 2
+};
 
 @interface DUTwoSegmentedControl : UIButton 
 
