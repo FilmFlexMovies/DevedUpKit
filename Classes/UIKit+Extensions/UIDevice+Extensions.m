@@ -78,51 +78,51 @@
         
         
 		//iPhone Simulator
-		[devices setObject:@"iPhone Simulator"                  forKey:@"i386"];
-		[devices setObject:@"iPhone Simulator_"                 forKey:@"x86_64"];
+		devices[@"i386"] = @"iPhone Simulator";
+		devices[@"x86_64"] = @"iPhone Simulator_";
         
 		//iPhone Original
-		[devices setObject:@"iPhone (Original/Edge)"            forKey:@"iPhone1,1"];
+		devices[@"iPhone1,1"] = @"iPhone (Original/Edge)";
         
         //iPhone 3G
-		[devices setObject:@"iPhone 3G"                         forKey:@"iPhone1,2"];
-        [devices setObject:@"iPhone 3G (China no Wi-Fi)"        forKey:@"iPhone1,2*"];
+		devices[@"iPhone1,2"] = @"iPhone 3G";
+        devices[@"iPhone1,2*"] = @"iPhone 3G (China no Wi-Fi)";
         
         //iPhone 3GS
-		[devices setObject:@"iPhone 3GS"                        forKey:@"iPhone2,1"];
-        [devices setObject:@"iPhone 3GS (China no Wi-Fi)"       forKey:@"iPhone2,1*"];
+		devices[@"iPhone2,1"] = @"iPhone 3GS";
+        devices[@"iPhone2,1*"] = @"iPhone 3GS (China no Wi-Fi)";
         
         //iPhone 4
-		[devices setObject:@"iPhone 4 (GSM)"                    forKey:@"iPhone3,1"];
-        [devices setObject:@"iPhone 4 (CDMA/Verizon/Sprint)"    forKey:@"iPhone3,3"];
+		devices[@"iPhone3,1"] = @"iPhone 4 (GSM)";
+        devices[@"iPhone3,3"] = @"iPhone 4 (CDMA/Verizon/Sprint)";
         
         //iPhone 4S
-		[devices setObject:@"iPhone 4S"                         forKey:@"iPhone4,1"];
+		devices[@"iPhone4,1"] = @"iPhone 4S";
         
 		//iPods
-		[devices setObject:@"iPod Touch Original"               forKey:@"iPod1,1"];
-		[devices setObject:@"iPod Touch 2nd Gen"                forKey:@"iPod2,1"];
-		[devices setObject:@"iPod Touch 3rd Gen"                forKey:@"iPod3,1"];
-		[devices setObject:@"iPod Touch(Retina) 4th Gen"        forKey:@"iPod4,1"];
+		devices[@"iPod1,1"] = @"iPod Touch Original";
+		devices[@"iPod2,1"] = @"iPod Touch 2nd Gen";
+		devices[@"iPod3,1"] = @"iPod Touch 3rd Gen";
+		devices[@"iPod4,1"] = @"iPod Touch(Retina) 4th Gen";
 		
 		//iPads
-		[devices setObject:@"iPad 1"                            forKey:@"iPad1,1"];
+		devices[@"iPad1,1"] = @"iPad 1";
         
         //iPad 2
-        [devices setObject:@"iPad 2 Wi-Fi"                      forKey:@"iPad2,1"];
-		[devices setObject:@"iPad 2 Wi-Fi/GSM"                  forKey:@"iPad2,2"];
-        [devices setObject:@"iPad 2 Wi-Fi/CDMA"                 forKey:@"iPad2,3"];
-        [devices setObject:@"iPad 2 Wi-Fi/CDMA Small Chip"                 forKey:@"iPad2,4"];
+        devices[@"iPad2,1"] = @"iPad 2 Wi-Fi";
+		devices[@"iPad2,2"] = @"iPad 2 Wi-Fi/GSM";
+        devices[@"iPad2,3"] = @"iPad 2 Wi-Fi/CDMA";
+        devices[@"iPad2,4"] = @"iPad 2 Wi-Fi/CDMA Small Chip";
         
         //iPad 3
-        [devices setObject:@"iPad 3 Wi-Fi"                      forKey:@"iPad3,1"];
-		[devices setObject:@"iPad 3 Wi-Fi/GSM"                  forKey:@"iPad3,2"];
-        [devices setObject:@"iPad 3 Wi-Fi/CDMA"                 forKey:@"iPad3,3"];
+        devices[@"iPad3,1"] = @"iPad 3 Wi-Fi";
+		devices[@"iPad3,2"] = @"iPad 3 Wi-Fi/GSM";
+        devices[@"iPad3,3"] = @"iPad 3 Wi-Fi/CDMA";
         
 	}
 	
 	NSString *device = [UIDevice device];
-	friendlyDeviceName = [devices objectForKey:device];
+	friendlyDeviceName = devices[device];
 	return (friendlyDeviceName) ? friendlyDeviceName : device;
 }
 
@@ -141,7 +141,7 @@
 	sysctlbyname("hw.machine", name, &size, NULL, 0);
 	
 	// Place name into a string
-	NSString *machine = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+	NSString *machine = @(name);
 	
 	// Done with this
 	free(name);

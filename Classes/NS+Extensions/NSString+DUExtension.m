@@ -35,7 +35,7 @@
 	
 	// Do a numeric comparison on each field
 	for(i = 0; i < [leftFields count]; i++) {
-		NSComparisonResult result = [[leftFields objectAtIndex:i] compare:[rightFields objectAtIndex:i] options:NSNumericSearch];
+		NSComparisonResult result = [leftFields[i] compare:rightFields[i] options:NSNumericSearch];
 		if (result != NSOrderedSame) {
 			return result;
 		}

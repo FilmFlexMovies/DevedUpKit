@@ -70,7 +70,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 	return __sharedCDManager;
 }
 
-- (id) init {
+- (instancetype) init {
     self = [super init];
     if (self) {        
     }
@@ -107,7 +107,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
         for (NSManagedObjectModel *immutableModel in allModels) {
             NSManagedObjectModel *model = [immutableModel mutableCopy];
             for (NSEntityDescription *entity in [model entities]) {
-                if ([[[entity userInfo] objectForKey:@"TempPlaceholder"] boolValue]) {
+                if ([[entity userInfo][@"TempPlaceholder"] boolValue]) {
                     // Ignore placeholder.
                     DULog(@"Ignoring: %@", entity.name);
                 } else {
@@ -335,7 +335,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 #endif
         
         ErrorLog(@"Failed to save to data store: %@", [error localizedDescription]);
-        NSArray *detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
+        NSArray *detailedErrors = [error userInfo][NSDetailedErrorsKey];
         if (detailedErrors != nil && [detailedErrors count] > 0) {
             for (NSError *detailedError in detailedErrors) {
                 ErrorLog(@"  DetailedError: %@", [detailedError userInfo]);

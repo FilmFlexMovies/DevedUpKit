@@ -95,8 +95,8 @@
 
 @interface UIImage (ImageEffects)
 
-- (UIImage *)applyLightEffect;
-- (UIImage *)applyExtraLightEffect;
+@property (nonatomic, readonly, strong) UIImage *applyLightEffect;
+@property (nonatomic, readonly, strong) UIImage *applyExtraLightEffect;
 - (UIImage *)applyDarkEffectWithBlurIntensity:(CGFloat)intensity;
 - (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor;
 

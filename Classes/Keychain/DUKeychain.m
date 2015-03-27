@@ -45,16 +45,15 @@
     
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
 	
-	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-	[query setObject:key forKey:(__bridge id)kSecAttrAccount];
+	query[(__bridge id)kSecClass] = (__bridge id)kSecClassGenericPassword;
+	query[(__bridge id)kSecAttrAccount] = key;
     // This allows you to access data even when phone is locked in the background (only after the device is unlocked after a reboot)
-	[query setObject:(__bridge id)kSecAttrAccessibleAfterFirstUnlock forKey:(__bridge id)kSecAttrAccessible];
+	query[(__bridge id)kSecAttrAccessible] = (__bridge id)kSecAttrAccessibleAfterFirstUnlock;
 	
 	OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, NULL);
 	if (error == errSecSuccess) {
 		// do update
-		NSDictionary *attributesToUpdate = [NSDictionary dictionaryWithObject:[string dataUsingEncoding:NSUTF8StringEncoding]
-																	  forKey:(__bridge id)kSecValueData];
+		NSDictionary *attributesToUpdate = @{(__bridge id)kSecValueData: [string dataUsingEncoding:NSUTF8StringEncoding]};
 		
 		error = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
 		NSAssert1((int)error == errSecSuccess, @"SecItemUpdate failed: %d", (int) error);
@@ -63,7 +62,7 @@
         }
 	} else if (error == errSecItemNotFound) {
 		// do add
-		[query setObject:[string dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
+		query[(__bridge id)kSecValueData] = [string dataUsingEncoding:NSUTF8StringEncoding];
 		
 		error = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
 		NSAssert1(error == errSecSuccess, @"SecItemAdd failed: %d", (int)error);
@@ -89,9 +88,9 @@
     
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
 
-	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-	[query setObject:key forKey:(__bridge id)kSecAttrAccount];
-	[query setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+	query[(__bridge id)kSecClass] = (__bridge id)kSecClassGenericPassword;
+	query[(__bridge id)kSecAttrAccount] = key;
+	query[(__bridge id)kSecReturnData] = (__bridge id)kCFBooleanTrue;
     
 	NSData *dataFromKeychain = nil;
 
@@ -114,8 +113,8 @@
 
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
 	
-	[query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-	[query setObject:key forKey:(__bridge id)kSecAttrAccount];
+	query[(__bridge id)kSecClass] = (__bridge id)kSecClassGenericPassword;
+	query[(__bridge id)kSecAttrAccount] = key;
 		
 	OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);
 	if (status != errSecSuccess) {

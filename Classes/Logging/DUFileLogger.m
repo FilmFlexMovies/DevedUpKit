@@ -15,7 +15,7 @@ static NSMutableDictionary *loggers;
 
 @interface DUFileLoggerImpl ()
 + (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename;
-- (id) initWithFileName:(NSString *)filename;
+- (instancetype) initWithFileName:(NSString *)filename;
 @property (nonatomic, retain) NSString *filename;
 @end
 
@@ -28,20 +28,20 @@ static NSMutableDictionary *loggers;
 }
 
 + (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename {
-    DUFileLoggerImpl *logger = [loggers objectForKey:filename];
+    DUFileLoggerImpl *logger = loggers[filename];
     if (!logger) {
         logger = [DUFileLoggerImpl.alloc initWithFileName:filename];
-        [loggers setObject:logger forKey:filename];
+        loggers[filename] = logger;
     }
     return logger;
 }
 
-- (id) initWithFileName:(NSString *)filename {
+- (instancetype) initWithFileName:(NSString *)filename {
     self = [super init];
     if (self) {
 #if defined(TEST_FLIGHT) || defined(DEBUG)
         //Get file path
-        NSString *documentsDirectory = [[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"logs"];
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logs"];
         NSError *error = nil;
         if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory]) {
             [[NSFileManager defaultManager] createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];

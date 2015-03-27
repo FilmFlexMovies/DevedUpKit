@@ -10,10 +10,10 @@
 
 @interface DUGradientBackgroundView : UIView
 
-- (id) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient;
+- (instancetype) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient NS_DESIGNATED_INITIALIZER;
 
 - (void) addDarkAlpha;
 
-- (UIImage *) renderToImage;
+@property (nonatomic, readonly, strong) UIImage *renderToImage;
 
 @end

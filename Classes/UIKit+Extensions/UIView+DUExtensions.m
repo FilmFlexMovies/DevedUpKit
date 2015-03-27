@@ -72,13 +72,11 @@
 	[animation setDelegate:self];
 	
 	animation.duration = 0.5;
-	animation.values = [NSArray arrayWithObjects:
-						[NSNumber numberWithInteger:0],
-						[NSNumber numberWithInteger:-15],
-						[NSNumber numberWithInteger:0],
-						[NSNumber numberWithInteger:-5],
-						[NSNumber numberWithInteger:0],
-						nil];
+	animation.values = @[@0,
+						@-15,
+						@0,
+						@-5,
+						@0];
 	
 	animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
 	

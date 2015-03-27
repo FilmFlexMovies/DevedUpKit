@@ -11,7 +11,7 @@
 
 @implementation NSNumberFormatter (Extensions)
 
-- (id) initWithIGStyle {
+- (instancetype) initWithIGStyle {
 
 	if ((self = [self init])) {
 		
@@ -34,7 +34,7 @@
 	}
 }
 
-+ (id)formatterWithDecimalPlaces:(NSInteger)decimalPlaces {
++ (instancetype)formatterWithDecimalPlaces:(NSInteger)decimalPlaces {
 	NSNumberFormatter *numberFormatter = [[[self class] alloc] initWithIGStyle]; // use [self class] so that when invoked via a subclass (e.g. DMAPriceFormatter) one of those is created instead
 	if (decimalPlaces > 0){
 		[numberFormatter setMinimumIntegerDigits:1]; // ensure there's a 0 before any decimal point
@@ -44,7 +44,7 @@
 	return numberFormatter;
 }
 
-+ (id)formatterWithOptionalDecimalPlaces:(NSInteger)decimalPlaces {
++ (instancetype)formatterWithOptionalDecimalPlaces:(NSInteger)decimalPlaces {
 	NSNumberFormatter *numberFormatter = [[[self class] alloc] initWithIGStyle]; // use [self class] so that when invoked via a subclass (e.g. DMAPriceFormatter) one of those is created instead
 	if (decimalPlaces > 0){
 		[numberFormatter setMinimumIntegerDigits:1]; // ensure there's a 0 before any decimal point

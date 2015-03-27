@@ -11,7 +11,7 @@
 @interface UIView (DUExtensions)
 
 - (void) du_setAnchorPoint:(CGPoint)anchorPoint;
-- (BOOL) visible;
+@property (nonatomic, readonly) BOOL visible;
 - (void) addSubviewAndFillBounds:(UIView *)subview;
 
 

@@ -10,37 +10,57 @@
 	<string>DevedUpKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5B40D5F3-895B-4298-9A3D-62616A0CC6A0</key>
-		<string>ssh://github.com/FilmFlexMovies/DevedUpKit.git</string>
-		<key>80AED049-3189-4860-AABF-219918674E23</key>
-		<string>ssh://github.com/FilmFlexMovies/iOSModelController.git</string>
-		<key>D8FDDF63-1659-463D-B33C-CC08F86F5EB8</key>
-		<string>ssh://github.com/devedup/MagicalRecord.git</string>
+		<key>9000D3691208D8EF24B5F1783BC8F7BFFDC5BCD5</key>
+		<string>github.com:FilmFlexMovies/AppDev.git</string>
+		<key>958932E9D08E4465709D54DB1E7CECF23B0F442E</key>
+		<string>github.com:devedup/MagicalRecord.git</string>
+		<key>C14E17C08B45C3C78A6F3E48BCFAF5D65B4DA60E</key>
+		<string>github.com:FilmFlexMovies/DevedUpKit.git</string>
+		<key>E789EFDA387005A8B27BC855A347352CEF17421F</key>
+		<string>github.com:FilmFlexMovies/iOSModelController.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Submodules/DevedUpKit-FilmFlex/DevedUpKit.xcodeproj/project.xcworkspace</string>
+	<string>DevedUpKit.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5B40D5F3-895B-4298-9A3D-62616A0CC6A0</key>
+		<key>9000D3691208D8EF24B5F1783BC8F7BFFDC5BCD5</key>
+		<string>../../../../../..</string>
+		<key>958932E9D08E4465709D54DB1E7CECF23B0F442E</key>
+		<string>../..Submodules/MagicalRecord-DevedUp/</string>
+		<key>C14E17C08B45C3C78A6F3E48BCFAF5D65B4DA60E</key>
 		<string>../..</string>
-		<key>80AED049-3189-4860-AABF-219918674E23</key>
+		<key>E789EFDA387005A8B27BC855A347352CEF17421F</key>
 		<string>../../../..</string>
-		<key>D8FDDF63-1659-463D-B33C-CC08F86F5EB8</key>
-		<string>../../Submodules/MagicalRecord-DevedUp</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/FilmFlexMovies/DevedUpKit.git</string>
+	<string>github.com:FilmFlexMovies/DevedUpKit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>80AED049-3189-4860-AABF-219918674E23</string>
+	<string>C14E17C08B45C3C78A6F3E48BCFAF5D65B4DA60E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5B40D5F3-895B-4298-9A3D-62616A0CC6A0</string>
+			<string>9000D3691208D8EF24B5F1783BC8F7BFFDC5BCD5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E789EFDA387005A8B27BC855A347352CEF17421F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C14E17C08B45C3C78A6F3E48BCFAF5D65B4DA60E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DevedUpKit-FilmFlex</string>
 		</dict>
@@ -48,15 +68,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>80AED049-3189-4860-AABF-219918674E23</string>
-			<key>IDESourceControlWCCName</key>
-			<string>iOSModelController</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D8FDDF63-1659-463D-B33C-CC08F86F5EB8</string>
+			<string>958932E9D08E4465709D54DB1E7CECF23B0F442E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MagicalRecord-DevedUp</string>
 		</dict>

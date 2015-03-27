@@ -10,18 +10,18 @@
 
 @interface NSDate (DUExtensions)
 
-- (NSDate *) sevenDaysAgo_DU;
+@property (nonatomic, readonly, copy) NSDate *sevenDaysAgo_DU;
 
 - (NSString *) agoFormatWithCalendar:(NSCalendar *)calendar;
 
-- (BOOL) isMoreThanOneMonthAgo_DU;
-- (BOOL) isMoreThanOneDayAgo_DU;
-- (BOOL) isMoreThanOneHourAgo_DU;
-- (BOOL) isMoreThanHalfDayAgo_DU;
-- (BOOL) isMoreThanOneMinuteAgo_DU;
-- (BOOL) isMoreThanFiveMinutesAgo_DU;
+@property (nonatomic, getter=isMoreThanOneMonthAgo_DU, readonly) BOOL moreThanOneMonthAgo_DU;
+@property (nonatomic, getter=isMoreThanOneDayAgo_DU, readonly) BOOL moreThanOneDayAgo_DU;
+@property (nonatomic, getter=isMoreThanOneHourAgo_DU, readonly) BOOL moreThanOneHourAgo_DU;
+@property (nonatomic, getter=isMoreThanHalfDayAgo_DU, readonly) BOOL moreThanHalfDayAgo_DU;
+@property (nonatomic, getter=isMoreThanOneMinuteAgo_DU, readonly) BOOL moreThanOneMinuteAgo_DU;
+@property (nonatomic, getter=isMoreThanFiveMinutesAgo_DU, readonly) BOOL moreThanFiveMinutesAgo_DU;
 
-- (NSDate *) yesterday;
+@property (nonatomic, readonly, copy) NSDate *yesterday;
 
 - (NSDate *) dateByAddingHours:(NSInteger)hours;
 

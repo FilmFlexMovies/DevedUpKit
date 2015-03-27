@@ -10,6 +10,6 @@
 
 @interface NSString (DUBase64)
 
-- (NSString *) base64EncodedString_DU;
+@property (nonatomic, readonly, copy) NSString *base64EncodedString_DU;
 
 @end

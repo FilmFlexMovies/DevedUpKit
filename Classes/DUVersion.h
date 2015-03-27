@@ -10,7 +10,7 @@
 
 @interface DUVersion : NSObject
 
-- (id) initWithVersionString:(NSString *)version;
+- (instancetype) initWithVersionString:(NSString *)version NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, strong, readonly) NSNumber *major;
 @property (nonatomic, strong, readonly) NSNumber *minor;

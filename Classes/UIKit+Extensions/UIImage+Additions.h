@@ -12,7 +12,7 @@
 @interface UIImage (Additions) 
 
 - (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
-- (UIImage *) imageWithShadow;
+@property (nonatomic, readonly, strong) UIImage *imageWithShadow;
 - (UIImage *)tintedImageWithColor:(UIColor *)tintColor;
 
 @end

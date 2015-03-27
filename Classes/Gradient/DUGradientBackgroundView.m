@@ -12,7 +12,7 @@
 
 @implementation DUGradientBackgroundView
 
-- (id) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient {
+- (instancetype) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code

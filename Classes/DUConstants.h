@@ -6,14 +6,14 @@
 //  Copyright 2011 DevedUp Ltd. All rights reserved.
 //
 
-typedef enum {
+typedef NS_ENUM(NSInteger, DURequestStatus) {
 	DURequestStatusNone = 0,
 	DURequestStatusInProgress,
 	DURequestStatusSuccess,
 	DURequestStatusError,
 	DURequestStatusTimeout,
     DURequestStatusOffline,
-} DURequestStatus;
+} ;
 
 
 

@@ -103,7 +103,7 @@
 	return instance;
 }
 
-- (id)initWithFrame:(CGRect)rect {
+- (instancetype)initWithFrame:(CGRect)rect {
 	self = [super initWithFrame:rect];
 	if (self) {
 		[self setup];
@@ -112,7 +112,7 @@
 }
 
 //This component is going to be fixed size
-- (id) initWithFrame:(CGRect)frame leftLabel:(NSString *)leftLabelText rightLabel:(NSString *)rightLabelText {
+- (instancetype) initWithFrame:(CGRect)frame leftLabel:(NSString *)leftLabelText rightLabel:(NSString *)rightLabelText {
 	self = [self initWithFrame:frame];
 	if (self) {
 		[self.leftLabel setText:leftLabelText];
@@ -252,8 +252,8 @@
 }
 
 - (void) setEnabled:(BOOL)_enabled {
-	[self.leftLabel setTextColor:(_enabled)?[[self.settingsForStates objectAtIndex:self.state] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
-	[self.rightLabel setTextColor:(_enabled)?[[self.settingsForStates objectAtIndex:self.state] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
+	[self.leftLabel setTextColor:(_enabled)?(self.settingsForStates)[self.state][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
+	[self.rightLabel setTextColor:(_enabled)?(self.settingsForStates)[self.state][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
 	[super setEnabled:_enabled];
 }
 
@@ -264,7 +264,7 @@
 		CGColorRef highColor =  self.highColorSelected.CGColor;
 		[self.rightBackgroundLayer setColors:@[(__bridge id)lowColor, (__bridge id)highColor]];
 		[self.rightBackgroundLayer setNeedsDisplay];
-		[self.rightLabel setTextColor:[[self.settingsForStates objectAtIndex:DUTwoSegmentedControlStateRightSelected] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]];
+		[self.rightLabel setTextColor:(self.settingsForStates)[DUTwoSegmentedControlStateRightSelected][DUTwoSegmentedControlSettingKeyTitleColor]];
 		[self.rightLabel setShadowColor:[UIColor clearColor]];
 		[self.rightShineLayer setHidden:YES];
 	} else {
@@ -272,7 +272,7 @@
 		CGColorRef highColor =  self.highColor.CGColor;
 		[self.rightBackgroundLayer setColors:@[(__bridge id)highColor, (__bridge id)lowColor]];
 		[self.rightBackgroundLayer setNeedsDisplay];
-		[self.rightLabel setTextColor:[[self.settingsForStates objectAtIndex:DUTwoSegmentedControlStateNeutral] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]];
+		[self.rightLabel setTextColor:(self.settingsForStates)[DUTwoSegmentedControlStateNeutral][DUTwoSegmentedControlSettingKeyTitleColor]];
 		[self.rightLabel setShadowColor:[UIColor whiteColor]];
 		[self.rightLabel setShadowOffset:CGSizeMake(0, 1)];
 		[self.rightShineLayer setHidden:NO];
@@ -286,7 +286,7 @@
 		CGColorRef highColor =  self.highColorSelected.CGColor;
 		[self.leftBackgroundLayer setColors:@[(__bridge id)lowColor, (__bridge id)highColor]];
 		[self.leftBackgroundLayer setNeedsDisplay];
-		[self.leftLabel setTextColor:[[self.settingsForStates objectAtIndex:DUTwoSegmentedControlStateLeftSelected] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]];
+		[self.leftLabel setTextColor:(self.settingsForStates)[DUTwoSegmentedControlStateLeftSelected][DUTwoSegmentedControlSettingKeyTitleColor]];
 		[self.leftLabel setShadowColor:[UIColor clearColor]];
 		[self.leftShineLayer setHidden:YES];
 	} else {
@@ -294,7 +294,7 @@
 		CGColorRef highColor =  self.highColor.CGColor;
 		[self.leftBackgroundLayer setColors:@[(__bridge id)highColor, (__bridge id)lowColor]];
 		[self.leftBackgroundLayer setNeedsDisplay];
-		[self.leftLabel setTextColor:[[self.settingsForStates objectAtIndex:DUTwoSegmentedControlStateNeutral] objectForKey:DUTwoSegmentedControlSettingKeyTitleColor]];
+		[self.leftLabel setTextColor:(self.settingsForStates)[DUTwoSegmentedControlStateNeutral][DUTwoSegmentedControlSettingKeyTitleColor]];
 		[self.leftLabel setShadowColor:[UIColor whiteColor]];
 		[self.leftLabel setShadowOffset:CGSizeMake(0, 1)];
 		[self.leftShineLayer setHidden:NO];
@@ -349,8 +349,8 @@
 //}
 
 - (void) setTitleColor:(UIColor*)color forDUTwoSegmentedControlState:(DUTwoSegmentedControlState)state {
-	if (nil != [self.settingsForStates objectAtIndex:state]) {
-		[[self.settingsForStates objectAtIndex:state] setObject:color forKey:DUTwoSegmentedControlSettingKeyTitleColor];
+	if (nil != (self.settingsForStates)[state]) {
+		(self.settingsForStates)[state][DUTwoSegmentedControlSettingKeyTitleColor] = color;
 	}
 }
 

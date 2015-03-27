@@ -16,7 +16,7 @@
 
 @implementation DUVersion
 
-- (id) initWithVersionString:(NSString *)version {
+- (instancetype) initWithVersionString:(NSString *)version {
     self = [super init];
     if (self) {
         NSMutableArray *numbers = [[NSMutableArray alloc] initWithArray:[version componentsSeparatedByString:@"."]];
@@ -25,9 +25,9 @@
             NSAssert(NO, @"This class currently only supported versions in the triple format of x.x.x");
         }
         
-        id first = [numbers objectAtIndex:0];
-        id second = [numbers objectAtIndex:1];
-        id third = [numbers objectAtIndex:2];
+        id first = numbers[0];
+        id second = numbers[1];
+        id third = numbers[2];
         
         self.major = @([first integerValue]);
         self.minor = @([second integerValue]);

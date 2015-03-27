@@ -48,13 +48,13 @@ struct hsv_color {
 -(CGFloat)brightness;
 -(CGFloat)value;
 
-- (CGFloat)alpha;
+@property (nonatomic, readonly) CGFloat alpha;
 
 //+ (UIColor*) UIColorFromRGBString:(NSString*)stringColorValue;
 
 + (UIColor *) colorWithRGBACommaString:(NSString *)rgbaCommaString;
 
-- (NSString*) hexStringValue;
+@property (nonatomic, readonly, copy) NSString *hexStringValue;
 
 
 //- (CGColorRef) newLowCGColor;

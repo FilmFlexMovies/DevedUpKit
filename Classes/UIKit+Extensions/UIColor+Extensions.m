@@ -132,7 +132,7 @@
 + (UIColor *) colorWithRGBACommaString:(NSString *)rgbaCommaString {
 	if (rgbaCommaString && [rgbaCommaString length] > 0) {
 		NSArray* components = [rgbaCommaString componentsSeparatedByString:@","];
-		UIColor *color = [UIColor colorWithRed:[[components objectAtIndex:0] floatValue] green:[[components objectAtIndex:1] floatValue] blue:[[components objectAtIndex:2] floatValue] alpha:[[components objectAtIndex:3] floatValue]];
+		UIColor *color = [UIColor colorWithRed:[components[0] floatValue] green:[components[1] floatValue] blue:[components[2] floatValue] alpha:[components[3] floatValue]];
 		return color;
 	}else {
 		return nil;

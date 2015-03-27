@@ -11,19 +11,19 @@
 
 @interface NSString (Extensions) 
 
-- (NSNumberFormatter *) formatterWithSameDecimalPlaces;
-- (NSUInteger) calculateNumberOfDecimalPlaces;
-- (NSUInteger) calculateNumberOfIntegerPlaces;
+@property (nonatomic, readonly, copy) NSNumberFormatter *formatterWithSameDecimalPlaces;
+@property (nonatomic, readonly) NSUInteger calculateNumberOfDecimalPlaces;
+@property (nonatomic, readonly) NSUInteger calculateNumberOfIntegerPlaces;
 + (NSComparisonResult) compareVersions:(NSString *)leftVersion rightVersion:(NSString *)rightVersion;
-- (int) hexToInt;
-- (BOOL) containsOnlyDigits;
-- (NSString *) unescapeUnicodeString_DU;
-- (NSString*) decodeHtmlAmpersands;
-- (NSString*)camelCasedString;	// e.g. MyString -> myString
-- (NSString*)capitalisedCamelCasedString; // e.g. myString -> MyString
-- (NSString *) DU_stripHTML;
+@property (nonatomic, readonly) int hexToInt;
+@property (nonatomic, readonly) BOOL containsOnlyDigits;
+@property (nonatomic, readonly, copy) NSString *unescapeUnicodeString_DU;
+@property (nonatomic, readonly, copy) NSString *decodeHtmlAmpersands;
+@property (nonatomic, readonly, copy) NSString *camelCasedString;	// e.g. MyString -> myString
+@property (nonatomic, readonly, copy) NSString *capitalisedCamelCasedString; // e.g. myString -> MyString
+@property (nonatomic, readonly, copy) NSString *DU_stripHTML;
 - (NSString *) DU_stripAllHTMLExceptTags:(NSArray *)tags;
-- (NSString *) trim_DU;
+@property (nonatomic, readonly, copy) NSString *trim_DU;
 - (NSInteger) indexOf:(NSString *)searchChar;
 
 

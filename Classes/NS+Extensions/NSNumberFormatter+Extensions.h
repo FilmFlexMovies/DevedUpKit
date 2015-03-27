@@ -11,11 +11,11 @@
 
 @interface NSNumberFormatter (Extensions) 
 
-- (id) initWithIGStyle ;
+- (instancetype) initWithIGStyle ;
 
 + (NSString*)dashOrNumberString:(NSDecimalNumber*)decimalNumber usingFormatter:(NSNumberFormatter*)formatter;
 
-+ (id)formatterWithDecimalPlaces:(NSInteger)decimalPlaces;
-+ (id)formatterWithOptionalDecimalPlaces:(NSInteger)decimalPlaces;
++ (instancetype)formatterWithDecimalPlaces:(NSInteger)decimalPlaces;
++ (instancetype)formatterWithOptionalDecimalPlaces:(NSInteger)decimalPlaces;
 
 @end

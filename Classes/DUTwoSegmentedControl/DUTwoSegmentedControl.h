@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, DUTwoSegmentedControlState)	{
 @property (nonatomic, assign) BOOL oneButtonBehaviour;
 
 
-- (id) initWithFrame:(CGRect)frame leftLabel:(NSString *)leftLabelText rightLabel:(NSString *)rightLabelText;
+- (instancetype) initWithFrame:(CGRect)frame leftLabel:(NSString *)leftLabelText rightLabel:(NSString *)rightLabelText;
 - (void) setLeftSelected;
 - (void) setRightSelected;
 - (void) setTitle:(NSString*)title forDUTwoSegmentedControlState:(DUTwoSegmentedControlState)state;

@@ -32,7 +32,7 @@
 
 #pragma mark - Init
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         //Current App Version - last time the app was run
@@ -44,7 +44,7 @@
         }
         
         //New App Version
-        self.currentVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        self.currentVersionString = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
         
         NSLog(@"Vendor ID %@", [UIDevice currentDevice].identifierForVendor);
         
