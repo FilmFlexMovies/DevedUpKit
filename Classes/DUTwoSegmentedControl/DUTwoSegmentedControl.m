@@ -74,7 +74,7 @@
 
 @property (nonatomic, retain) UILabel *leftLabel;
 @property (nonatomic, retain) UILabel *rightLabel;
-@property (nonatomic, assign) DUTwoSegmentedControlState state;
+@property (nonatomic, assign) DUTwoSegmentedControlState segmentState;
 @property (nonatomic, retain) NSArray *settingsForStates;
 @property (nonatomic, retain) CAGradientLayer *leftBackgroundLayer;
 @property (nonatomic, retain) CAGradientLayer *leftShineLayer;
@@ -86,7 +86,7 @@
 
 @implementation DUTwoSegmentedControl
 
-@synthesize state = _state;
+@synthesize segmentState = _segmentState;
 
 #pragma mark -  Init 
 
@@ -230,7 +230,7 @@
 	[self.separatorLayer setNeedsLayout];
 	[self.separatorLayer setNeedsDisplay];
         
-    switch (self.state) {
+    switch (self.segmentState) {
 		case DUTwoSegmentedControlStateLeftSelected:
         {
             [self drawLeftSelected:YES];
@@ -252,8 +252,8 @@
 }
 
 - (void) setEnabled:(BOOL)_enabled {
-	[self.leftLabel setTextColor:(_enabled)?(self.settingsForStates)[self.state][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
-	[self.rightLabel setTextColor:(_enabled)?(self.settingsForStates)[self.state][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
+	[self.leftLabel setTextColor:(_enabled)?(self.settingsForStates)[self.segmentState][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
+	[self.rightLabel setTextColor:(_enabled)?(self.settingsForStates)[self.segmentState][DUTwoSegmentedControlSettingKeyTitleColor]:[UIColor blackColor]];
 	[super setEnabled:_enabled];
 }
 
@@ -308,11 +308,11 @@
 	switch (state) {
 		case DUTwoSegmentedControlStateLeftSelected:
 			//[self setLeftSelected];
-            _state = DUTwoSegmentedControlStateLeftSelected;
+            _segmentState = DUTwoSegmentedControlStateLeftSelected;
 			break;
 		case DUTwoSegmentedControlStateRightSelected:
 			//[self setRightSelected];
-            _state = DUTwoSegmentedControlStateRightSelected;
+            _segmentState = DUTwoSegmentedControlStateRightSelected;
 			break;
 		default:
 			break;
@@ -372,7 +372,7 @@
 - (void) endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
 	if ([self isEnabled]) {
 		if (self.oneButtonBehaviour) {
-			switch (self.state) {
+			switch (self.segmentState) {
 				case DUTwoSegmentedControlStateLeftSelected:
 					[self setRightSelected];
 					break;

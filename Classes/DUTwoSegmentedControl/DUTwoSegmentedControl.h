@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, DUTwoSegmentedControlState)	{
 @property (nonatomic, retain) UIFont *font UI_APPEARANCE_SELECTOR;
 
 
-@property (nonatomic, assign, readonly) DUTwoSegmentedControlState state;
+@property (nonatomic, assign, readonly) DUTwoSegmentedControlState segmentState;
 @property (nonatomic, retain, readonly) UILabel *leftLabel;
 @property (nonatomic, retain, readonly) UILabel *rightLabel;
 @property (nonatomic, assign) BOOL oneButtonBehaviour;
