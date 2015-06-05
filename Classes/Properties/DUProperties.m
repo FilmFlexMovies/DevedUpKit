@@ -21,6 +21,7 @@ NSString * const PropertyFlickrAuthCallback = @"FlickrAuthCallback";
 NSString * const PropertyCrashlyticsID = @"CrashlyticsID";
 NSString * const PropertyEnvironment = @"Environment";
 NSString * const PropertyTsAndCsURL = @"tsandcs.url";
+NSString * const PropertyBuildDate = @"BuildDate";
 
 @interface DUProperties ()
 @property (nonatomic, retain) NSDictionary *properties;
@@ -50,6 +51,8 @@ NSString * const PropertyTsAndCsURL = @"tsandcs.url";
 
 - (void) loadProperties {
 	// Default Properties
+    
+    
 	NSString *defaultPropsPath = [[NSBundle mainBundle] pathForResource:@"properties" ofType:@"plist"];	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:defaultPropsPath]) {
 		@throw [NSException exceptionWithName:@"File not found" reason:@"File properties.plist not found" userInfo:nil];
