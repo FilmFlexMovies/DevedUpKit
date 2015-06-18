@@ -11,12 +11,7 @@
 @implementation NSString (DUBase64)
 
 - (NSString *) base64EncodedString_DU {
-    if (iOS_6) {
-        NSData *data =  [self dataUsingEncoding:NSUTF8StringEncoding];
-        return [self base64forData:data];
-    } else {
-        return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
-    }
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
 }
 
 - (NSString*) base64forData:(NSData*)theData {
