@@ -289,28 +289,25 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 
 + (void) saveMainContext {
     DUCoreDataManager *coreData = [DUCoreDataManager sharedManager];
-    
     NSManagedObjectContext *mainContext = MainContext;
-	if ([mainContext hasChanges]) {
-		[mainContext performBlockAndWait:^{
-			
-			NSError *error = nil;
-			NSSet *insertedObjects = [mainContext insertedObjects];
-			if (insertedObjects.count) {
-				BOOL success = [mainContext obtainPermanentIDsForObjects:[insertedObjects allObjects] error:&error];
-				if (!success) {
-					ErrorLog(@"Couldn't get the permanent id's %@", error);
-				}
-			}
-			
-			[coreData performSaveOfContext:mainContext];
-			
-			[coreData.diskWritingContext performBlock:^{
-				[coreData performSaveOfContext:coreData.diskWritingContext];
-			}];
-			
-		}];
-	}
+    [mainContext performBlockAndWait:^{
+        if ([mainContext hasChanges]) {
+            NSError *error = nil;
+            NSSet *insertedObjects = [mainContext insertedObjects];
+            if (insertedObjects.count) {
+                BOOL success = [mainContext obtainPermanentIDsForObjects:[insertedObjects allObjects] error:&error];
+                if (!success) {
+                    ErrorLog(@"Couldn't get the permanent id's %@", error);
+                }
+            }
+            
+            [coreData performSaveOfContext:mainContext];
+            
+            [coreData.diskWritingContext performBlock:^{
+                [coreData performSaveOfContext:coreData.diskWritingContext];
+            }];
+        }
+    }];
 }
 
 - (void) performSaveOfContext:(NSManagedObjectContext *)context {
