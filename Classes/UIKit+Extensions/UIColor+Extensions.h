@@ -67,5 +67,7 @@ struct hsv_color {
 
 + (UIColor *) colorWithRGBString:(NSString *)rgbString;
 
++ (UIColor *) colorWithHexString:(NSString *)stringToConvert;
+
 @end
 
