@@ -6,9 +6,13 @@
 //  Copyright (c) 2014 DevedUp. All rights reserved.
 //
 
-@protocol DUFileLogger <NSObject>
+@import MessageUI;
+
+@protocol DUFileLogger <NSObject, MFMailComposeViewControllerDelegate>
 - (void) blankLine;
 - (void) append:(NSString *)logMessage;
+- (void) appendCrashlytics:(NSString *)logMessage;
+- (void) emailLogFileFromViewController:(UIViewController *)viewController;
 @end
 
 @interface DUFileLoggerFactory : NSObject

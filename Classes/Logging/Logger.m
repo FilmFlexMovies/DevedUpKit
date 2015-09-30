@@ -7,7 +7,7 @@
 //
 
 #import "Logger.h"
-
+#import "DUFileLogger.h"
 
 static BOOL loggingEnabled = YES;
 

@@ -7,6 +7,8 @@
 //
 
 #import "DUFileLogger.h"
+@import MessageUI;
+#import "NSData+Compression.h"
 
 static NSMutableDictionary *loggers;
 
@@ -17,6 +19,7 @@ static NSMutableDictionary *loggers;
 + (id<DUFileLogger>) fileLoggerForFile:(NSString *)filename;
 - (instancetype) initWithFileName:(NSString *)filename;
 @property (nonatomic, retain) NSString *filename;
+@property (nonatomic, strong) UIViewController *mailPresenter;
 @end
 
 @implementation DUFileLoggerImpl
@@ -39,7 +42,7 @@ static NSMutableDictionary *loggers;
 - (instancetype) initWithFileName:(NSString *)filename {
     self = [super init];
     if (self) {
-#if defined(TEST_FLIGHT) || defined(DEBUG)
+#if defined(ENTERPRISE) || defined(DEBUG)
         //Get file path
         NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logs"];
         NSError *error = nil;
@@ -56,8 +59,13 @@ static NSMutableDictionary *loggers;
     return self;
 }
 
+- (void) clearLogFile {
+    [[NSFileManager defaultManager] createFileAtPath:self.filename contents:nil attributes:nil];
+}
+
+
 - (void) blankLine {
-#if defined(TEST_FLIGHT) || defined(DEBUG)
+#if defined(ENTERPRISE) || defined(DEBUG)
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
         [file seekToEndOfFile];
@@ -67,9 +75,13 @@ static NSMutableDictionary *loggers;
 #endif
 }
 
+- (void) appendCrashlytics:(NSString *)logMessage {
+    [self append:logMessage];
+}
+
 - (void) append:(NSString *)logMessage {
     //DULog(@"%@", logMessage);
-#if defined(TEST_FLIGHT) || defined(DEBUG)
+#if defined(ENTERPRISE) || defined(DEBUG)
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         static NSDateFormatter *dateFormat = nil;
         static dispatch_once_t onceToken;
@@ -89,7 +101,57 @@ static NSMutableDictionary *loggers;
 #endif
 }
 
+- (void) emailLogFileFromViewController:(UIViewController *)viewController {
+    NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
+    NSData *allData = [file readDataToEndOfFile];
+    NSData *zipped = [allData gzippedData];
+    [self emailExport:zipped viewController:viewController];
+}
+
+- (void) emailExport:(NSData *)logFileData viewController:(UIViewController *)viewController {
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    mailComposer.mailComposeDelegate = self;
+    
+    // Set the subject of email
+    [mailComposer setSubject:@"System Log File"];
+    
+    // Add email addresses
+    // Notice three sections: "to" "cc" and "bcc"
+
+    [mailComposer setToRecipients:[NSArray arrayWithObjects:@"eircomlogs@devedup.com", nil]];
+
+    // Fill out the email body text
+    NSString *emailBody = @"The current log file";
+    
+    // This is not an HTML formatted email
+    [mailComposer setMessageBody:emailBody isHTML:NO];
+    
+    // Attach image data to the email
+    [mailComposer addAttachmentData:logFileData mimeType:@"application/x-gzip" fileName:@"logfile.gzip"];
+   
+    // Show email view
+    self.mailPresenter = viewController;
+    [viewController presentViewController:mailComposer animated:YES completion:nil];
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(nullable NSError *)error  {
+ 
+    switch (result) {
+        case MFMailComposeResultSent:
+            [self clearLogFile];
+            break;
+        case MFMailComposeResultCancelled:
+        case MFMailComposeResultFailed:
+            
+            break;
+        default:
+            break;
+    }
+    [self.mailPresenter dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
+
 
 
 @implementation DUFileLoggerFactory : NSObject

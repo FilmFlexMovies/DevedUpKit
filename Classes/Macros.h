@@ -8,6 +8,7 @@
 
 #include <libgen.h>
 #import "Logger.h"
+#import "DUFileLogger.h"
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -21,16 +22,16 @@ typedef void (^DUBlockWithError)(NSError *error);
 #define IS_PORTRAIT UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)
 #define IS_LANDSCAPE UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
 
-
-
-//#define log4Method() DULog(@"%@", [NSString stringWithFormat:@"[%s:%d %@]",basename(__FILE__),__LINE__,NSStringFromSelector(_cmd)])
-
-
-	#ifdef DEBUG
+    #ifdef ENTERPRISE
+        #define DULog( s, ... ) [[DUFileLoggerFactory fileLoggerForFile:@"System.log"] appendCrashlytics:[NSString stringWithFormat:@"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ]];
+	#elif defined(DEBUG)
 		#define DULog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-	#else
-		#define DULog( s, ... )
+    #else
+        #define DULog( s, ... )
     #endif
+
+
+
 
 //Shouldn't need to use NSLog in code anywhere
 #define ErrorLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
