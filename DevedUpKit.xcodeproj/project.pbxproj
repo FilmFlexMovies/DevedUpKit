@@ -101,6 +101,8 @@
 		5580C3D018BF823A001FD2A9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5580C3CF18BF823A001FD2A9 /* CoreData.framework */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
 		55AD09B21BBC241D00F5F436 /* NSData+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B11BBC241D00F5F436 /* NSData+Compression.m */; settings = {ASSET_TAGS = (); }; };
+		55AD09BA1BBC37A900F5F436 /* DUExtendedNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B91BBC37A900F5F436 /* DUExtendedNSLog.m */; settings = {ASSET_TAGS = (); }; };
+		55AD09BB1BBC38CB00F5F436 /* DUExtendedNSLog.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 55AD09B81BBC37A900F5F436 /* DUExtendedNSLog.h */; };
 		55DC7AB119DB3F620064E0E5 /* MagicalImportFunctions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34618BF81E9001FD2A9 /* MagicalImportFunctions.h */; };
 		55DC7AB219DB3F620064E0E5 /* NSAttributeDescription+MagicalDataImport.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34818BF81E9001FD2A9 /* NSAttributeDescription+MagicalDataImport.h */; };
 		55DC7AB319DB3F620064E0E5 /* NSEntityDescription+MagicalDataImport.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34A18BF81E9001FD2A9 /* NSEntityDescription+MagicalDataImport.h */; };
@@ -158,7 +160,6 @@
 		55DC7AE819DB42770064E0E5 /* UIColor+Extensions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD04418081981007E3D75 /* UIColor+Extensions.h */; };
 		55DC7AE919DB428D0064E0E5 /* UIImage+Additions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BD13718081A66007E3D75 /* UIImage+Additions.h */; };
 		55DC7AEA19DB42AB0064E0E5 /* UIView+DUBlur.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 557BCFA118081980007E3D75 /* UIView+DUBlur.h */; };
-		55DC7AF219DB44AC0064E0E5 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC7AF019DB44AC0064E0E5 /* Logger.m */; };
 		55DC7AF519DB44EC0064E0E5 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC7AF319DB44EC0064E0E5 /* UIImage+ImageEffects.m */; };
 		55DC7AF819DB45180064E0E5 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC7AF619DB45180064E0E5 /* NSString+Extensions.m */; };
 		55DC7AFB19DB45370064E0E5 /* NSNumberFormatter+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC7AF919DB45370064E0E5 /* NSNumberFormatter+Extensions.m */; };
@@ -182,6 +183,7 @@
 			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
+				55AD09BB1BBC38CB00F5F436 /* DUExtendedNSLog.h in Copy Header Files */,
 				550847021AA5FAF500E33BE2 /* DUFileLogger.h in Copy Header Files */,
 				55DC7AEA19DB42AB0064E0E5 /* UIView+DUBlur.h in Copy Header Files */,
 				55DC7AE919DB428D0064E0E5 /* UIImage+Additions.h in Copy Header Files */,
@@ -374,8 +376,8 @@
 		559700E618083C3B0047DACB /* NSString+DUBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DUBase64.m"; path = "Classes/NS+Extensions/NSString+DUBase64.m"; sourceTree = "<group>"; };
 		55AD09B01BBC241D00F5F436 /* NSData+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Compression.h"; path = "Classes/NS+Extensions/NSData+Compression.h"; sourceTree = "<group>"; };
 		55AD09B11BBC241D00F5F436 /* NSData+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Compression.m"; path = "Classes/NS+Extensions/NSData+Compression.m"; sourceTree = "<group>"; };
-		55DC7AF019DB44AC0064E0E5 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logger.m; path = Classes/Logging/Logger.m; sourceTree = "<group>"; };
-		55DC7AF119DB44AC0064E0E5 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = Classes/Logging/Logger.h; sourceTree = "<group>"; };
+		55AD09B81BBC37A900F5F436 /* DUExtendedNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUExtendedNSLog.h; path = Classes/Logging/DUExtendedNSLog.h; sourceTree = "<group>"; };
+		55AD09B91BBC37A900F5F436 /* DUExtendedNSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUExtendedNSLog.m; path = Classes/Logging/DUExtendedNSLog.m; sourceTree = "<group>"; };
 		55DC7AF319DB44EC0064E0E5 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Classes/UIKit+Extensions/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		55DC7AF419DB44EC0064E0E5 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Classes/UIKit+Extensions/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		55DC7AF619DB45180064E0E5 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extensions.m"; path = "Classes/NS+Extensions/NSString+Extensions.m"; sourceTree = "<group>"; };
@@ -725,17 +727,25 @@
 			path = "Submodules/MagicalRecord-DevedUp/MagicalRecord/Core";
 			sourceTree = "<group>";
 		};
-		55DC7AB019DB3DE30064E0E5 /* Classes */ = {
+		55AD09B71BBC36BC00F5F436 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
 				550846FF1AA5FAE300E33BE2 /* DUFileLogger.h */,
 				550847001AA5FAE300E33BE2 /* DUFileLogger.m */,
+				55AD09B81BBC37A900F5F436 /* DUExtendedNSLog.h */,
+				55AD09B91BBC37A900F5F436 /* DUExtendedNSLog.m */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		55DC7AB019DB3DE30064E0E5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55AD09B71BBC36BC00F5F436 /* Logging */,
 				557BD00118081981007E3D75 /* Macros.h */,
 				559700E3180837400047DACB /* SystemVersionMacros.h */,
 				557BCFDE18081981007E3D75 /* DUConstants.h */,
 				557BCFDF18081981007E3D75 /* DUConstants.m */,
-				55DC7AF019DB44AC0064E0E5 /* Logger.m */,
-				55DC7AF119DB44AC0064E0E5 /* Logger.h */,
 				5561FF9B18AE911F0014F1A7 /* DUVersion.h */,
 				5561FF9C18AE911F0014F1A7 /* DUVersion.m */,
 				55DC7AEC19DB43620064E0E5 /* NS-Extensions */,
@@ -918,6 +928,7 @@
 				5580C39B18BF81E9001FD2A9 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				5580C38D18BF81E9001FD2A9 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				55DC7AF519DB44EC0064E0E5 /* UIImage+ImageEffects.m in Sources */,
+				55AD09BA1BBC37A900F5F436 /* DUExtendedNSLog.m in Sources */,
 				5580C38718BF81E9001FD2A9 /* NSObject+MagicalDataImport.m in Sources */,
 				5580C39918BF81E9001FD2A9 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				55DC7AFB19DB45370064E0E5 /* NSNumberFormatter+Extensions.m in Sources */,
@@ -947,7 +958,6 @@
 				550847011AA5FAE300E33BE2 /* DUFileLogger.m in Sources */,
 				557BD0E518081981007E3D75 /* DUProperties.m in Sources */,
 				557BD0BD18081981007E3D75 /* DULocalisation.m in Sources */,
-				55DC7AF219DB44AC0064E0E5 /* Logger.m in Sources */,
 				5500E91818EAC788001B8CCB /* DUGradientBackgroundView.m in Sources */,
 				5580C38318BF81E9001FD2A9 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				5580C3A918BF81E9001FD2A9 /* MagicalRecord+iCloud.m in Sources */,

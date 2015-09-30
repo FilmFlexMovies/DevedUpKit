@@ -11,7 +11,6 @@
 @protocol DUFileLogger <NSObject, MFMailComposeViewControllerDelegate>
 - (void) blankLine;
 - (void) append:(NSString *)logMessage;
-- (void) appendCrashlytics:(NSString *)logMessage;
 - (void) emailLogFileFromViewController:(UIViewController *)viewController;
 @end
 

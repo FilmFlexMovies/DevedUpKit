@@ -6,6 +6,7 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+    #import "DUExtendedNSLog.h"
     #import <UIKit/UIKit.h>
     #import "DUConstants.h"
     #import "Macros.h"

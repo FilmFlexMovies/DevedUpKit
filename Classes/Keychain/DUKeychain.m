@@ -58,7 +58,7 @@
 		error = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
 		NSAssert1((int)error == errSecSuccess, @"SecItemUpdate failed: %d", (int) error);
         if (error != errSecSuccess) {
-            DULog(@"SecItemUpdate failed: %d", (int)error);
+            NSLog(@"SecItemUpdate failed: %d", (int)error);
         }
 	} else if (error == errSecItemNotFound) {
 		// do add
@@ -67,7 +67,7 @@
 		error = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
 		NSAssert1(error == errSecSuccess, @"SecItemAdd failed: %d", (int)error);
         if (error != errSecSuccess) {
-            DULog(@"SecItemAdd failed: %d", (int)error);
+            NSLog(@"SecItemAdd failed: %d", (int)error);
         }
 	} else {
 		NSAssert1(NO, @"SecItemCopyMatching failed: %d", (int)error);
@@ -118,7 +118,7 @@
 		
 	OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);
 	if (status != errSecSuccess) {
-		DULog(@"SecItemDelete failed: %d", (int)status);
+		NSLog(@"SecItemDelete failed: %d", (int)status);
 	}
 }
 

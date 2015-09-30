@@ -75,12 +75,8 @@ static NSMutableDictionary *loggers;
 #endif
 }
 
-- (void) appendCrashlytics:(NSString *)logMessage {
-    [self append:logMessage];
-}
-
 - (void) append:(NSString *)logMessage {
-    //DULog(@"%@", logMessage);
+    //NSLog(@"%@", logMessage);
 #if defined(ENTERPRISE) || defined(DEBUG)
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         static NSDateFormatter *dateFormat = nil;
@@ -103,6 +99,10 @@ static NSMutableDictionary *loggers;
 
 - (void) emailLogFileFromViewController:(UIViewController *)viewController {
     NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:self.filename];
+    
+    
+    
+    
     NSData *allData = [file readDataToEndOfFile];
     NSData *zipped = [allData gzippedData];
     [self emailExport:zipped viewController:viewController];

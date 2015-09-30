@@ -15,7 +15,7 @@
 @implementation DUStateMachine
 
 - (void) changeToState:(id<DUState>)newState withContext:(id)context {
-    DULog(@"Changing to state %@ with context %@", newState, context);
+    NSLog(@"Changing to state %@ with context %@", newState, context);
     if ([self.currentState respondsToSelector:@selector(exitStateWithContext:)]) {
         [self.currentState exitStateWithContext:context];
     }
@@ -27,10 +27,10 @@
 
 - (void) executeCurrentStateWithContext:(id)context {
     if ([self.currentState hasBegunExecuting]) {
-        ErrorLog(@"State machine is trying to execute state %@ again with context %@ (but we have prevented it)", self.currentState, context);
+        NSLog(@"State machine is trying to execute state %@ again with context %@ (but we have prevented it)", self.currentState, context);
         return;
     } else {
-        DULog(@"Executing state %@ with context %@", self.currentState, context);
+        NSLog(@"Executing state %@ with context %@", self.currentState, context);
         [self.currentState executeStateWithContext:context];
     }
 }

@@ -7,8 +7,6 @@
 //
 
 #include <libgen.h>
-#import "Logger.h"
-#import "DUFileLogger.h"
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -22,24 +20,10 @@ typedef void (^DUBlockWithError)(NSError *error);
 #define IS_PORTRAIT UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)
 #define IS_LANDSCAPE UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
 
-    #ifdef ENTERPRISE
-        #define DULog( s, ... ) [[DUFileLoggerFactory fileLoggerForFile:@"System.log"] appendCrashlytics:[NSString stringWithFormat:@"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ]];
-	#elif defined(DEBUG)
-		#define DULog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-    #else
-        #define DULog( s, ... )
-    #endif
-
-
-
-
-//Shouldn't need to use NSLog in code anywhere
-#define ErrorLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-
-#define LogCGRect(rect) DULog(@"CGRect:%@", NSStringFromCGRect(rect));
-#define LogCGSize(size) DULog(@"CGSize:%@", NSStringFromCGSize(size));
-#define LogCGPoint(point) DULog(@"CGPoint:%@", NSStringFromCGPoint(point));
-#define LogDimensions(view) DULog(@"Frame:'%@' Bounds:'%@' Center:'%@'", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds), NSStringFromCGPoint(view.center));
+#define LogCGRect(rect) NSLog(@"CGRect:%@", NSStringFromCGRect(rect));
+#define LogCGSize(size) NSLog(@"CGSize:%@", NSStringFromCGSize(size));
+#define LogCGPoint(point) NSLog(@"CGPoint:%@", NSStringFromCGPoint(point));
+#define LogDimensions(view) NSLog(@"Frame:'%@' Bounds:'%@' Center:'%@'", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds), NSStringFromCGPoint(view.center));
 
 #define RELEASE_AND_NIL(x) [(x) release], (x) = nil;
 #define INVALIDATE_RELEASE_AND_NIL(x) [(x) invalidate], RELEASE_AND_NIL(x);

@@ -109,7 +109,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
             for (NSEntityDescription *entity in [model entities]) {
                 if ([[entity userInfo][@"TempPlaceholder"] boolValue]) {
                     // Ignore placeholder.
-                    DULog(@"Ignoring: %@", entity.name);
+                    NSLog(@"Ignoring: %@", entity.name);
                 } else {
                     [updatedEntities addObject:entity];
                 }
@@ -297,7 +297,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
             if (insertedObjects.count) {
                 BOOL success = [mainContext obtainPermanentIDsForObjects:[insertedObjects allObjects] error:&error];
                 if (!success) {
-                    ErrorLog(@"Couldn't get the permanent id's %@", error);
+                    NSLog(@"Couldn't get the permanent id's %@", error);
                 }
             }
             
@@ -319,7 +319,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
         //
         //  Don't comment this out. If it's throwing an exception here, then there is a problem. Fix it fool.
         
-        ErrorLog(@"There is an error with saving core data %@", error);
+        NSLog(@"There is an error with saving core data %@", error);
         
 #ifdef DEBUG
         
@@ -331,14 +331,14 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
         @throw [NSException exceptionWithName:@"Core Data Save Error" reason:@"Look at the logs, this only crashes in DEBUG mode, but you should figure out what is going wrong" userInfo:nil];
 #endif
         
-        ErrorLog(@"Failed to save to data store: %@", [error localizedDescription]);
+        NSLog(@"Failed to save to data store: %@", [error localizedDescription]);
         NSArray *detailedErrors = [error userInfo][NSDetailedErrorsKey];
         if (detailedErrors != nil && [detailedErrors count] > 0) {
             for (NSError *detailedError in detailedErrors) {
-                ErrorLog(@"  DetailedError: %@", [detailedError userInfo]);
+                NSLog(@"  DetailedError: %@", [detailedError userInfo]);
             }
         } else {
-            ErrorLog(@"  %@", [error userInfo]);
+            NSLog(@"  %@", [error userInfo]);
         }
 
     }    
@@ -363,7 +363,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 				if (insertedObjects.count) {
 					BOOL success = [context obtainPermanentIDsForObjects:[insertedObjects allObjects] error:&error];
 					if (!success) {
-						ErrorLog(@"Couldn't get the permanent id's %@", error);
+						NSLog(@"Couldn't get the permanent id's %@", error);
 					}
 				}				
 				
@@ -382,7 +382,7 @@ void obtainObjectPermanentID(NSManagedObject *object, NSManagedObjectContext *co
 //	NSArray *insertedObjects = [notification.userInfo objectForKey:NSInsertedObjectsKey];
 //	NSArray *updatedObjects = [notification.userInfo objectForKey:NSUpdatedObjectsKey];
 //	
-//	DLog(@"%i Updated %i Inserted %i Deleted", updatedObjects.count, insertedObjects.count, deletedObjects.count);
+//	NSLog(@"%i Updated %i Inserted %i Deleted", updatedObjects.count, insertedObjects.count, deletedObjects.count);
 #endif
 	
 }

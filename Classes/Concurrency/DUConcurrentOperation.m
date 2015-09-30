@@ -45,7 +45,7 @@
         return; 
     }
     
-    //DLog(@"opeartion started");
+    //NSLog(@"opeartion started");
     [self willChangeValueForKey:@"isExecuting"];
     self.isOperationExecuting = YES;
     [self didChangeValueForKey:@"isExecuting"];
@@ -54,7 +54,7 @@
 }
 
 - (void) finish {
-    //DLog(@"Ending operation now");    
+    //NSLog(@"Ending operation now");    
     [self willChangeValueForKey:@"isExecuting"];
     [self willChangeValueForKey:@"isFinished"];
     self.isOperationExecuting = NO;
