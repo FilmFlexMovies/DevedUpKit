@@ -16,6 +16,10 @@
 
 @implementation DUVersion
 
+- (instancetype) init {
+    @throw [NSException exceptionWithName:@"Not Supported" reason:@"init not Supported" userInfo:nil];
+}
+
 - (instancetype) initWithVersionString:(NSString *)version {
     self = [super init];
     if (self) {

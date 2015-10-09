@@ -14,7 +14,7 @@
 - (NSCalendar *) gregorianCalendar_DU {
     static NSCalendar *gregorian = nil;
     if (!gregorian) {
-        gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     }
     return gregorian;
 }
@@ -43,7 +43,7 @@
 //}
 
 - (NSDate *) yesterday {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *daysAgo = [[NSDateComponents alloc] init];
     daysAgo.day = -1;
     
@@ -54,7 +54,7 @@
 
 - (NSString *) agoFormatWithCalendar:(NSCalendar *)calendar {
     NSDate *now = [NSDate date];    
-    NSDateComponents *components = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit)
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond)
                                                fromDate:self toDate:now options:0];
     
     NSString *formattedDate = nil;

@@ -12,6 +12,14 @@
 
 @implementation DUGradientBackgroundView
 
+- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+    @throw [NSException exceptionWithName:@"Not Supported" reason:@"init not Supported" userInfo:nil];
+}
+
+- (instancetype) initWithFrame:(CGRect)frame {
+    @throw [NSException exceptionWithName:@"Not Supported" reason:@"init not Supported" userInfo:nil];
+}
+
 - (instancetype) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient {
     self = [super initWithFrame:frame];
     if (self) {

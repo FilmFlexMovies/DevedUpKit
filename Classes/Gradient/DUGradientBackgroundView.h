@@ -10,6 +10,8 @@
 
 @interface DUGradientBackgroundView : UIView
 
+- (instancetype) initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype) initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype) initWithFrame:(CGRect)frame gradient:(CAGradientLayer *)gradient NS_DESIGNATED_INITIALIZER;
 
 - (void) addDarkAlpha;
