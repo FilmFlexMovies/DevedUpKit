@@ -100,8 +100,8 @@
 		5580C3B218BF81E9001FD2A9 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580C37C18BF81E9001FD2A9 /* MagicalRecord.m */; };
 		5580C3D018BF823A001FD2A9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5580C3CF18BF823A001FD2A9 /* CoreData.framework */; };
 		559700E718083C3B0047DACB /* NSString+DUBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 559700E618083C3B0047DACB /* NSString+DUBase64.m */; };
-		55AD09B21BBC241D00F5F436 /* NSData+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B11BBC241D00F5F436 /* NSData+Compression.m */; settings = {ASSET_TAGS = (); }; };
-		55AD09BA1BBC37A900F5F436 /* DUExtendedNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B91BBC37A900F5F436 /* DUExtendedNSLog.m */; settings = {ASSET_TAGS = (); }; };
+		55AD09B21BBC241D00F5F436 /* NSData+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B11BBC241D00F5F436 /* NSData+Compression.m */; };
+		55AD09BA1BBC37A900F5F436 /* DUExtendedNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD09B91BBC37A900F5F436 /* DUExtendedNSLog.m */; };
 		55AD09BB1BBC38CB00F5F436 /* DUExtendedNSLog.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 55AD09B81BBC37A900F5F436 /* DUExtendedNSLog.h */; };
 		55DC7AB119DB3F620064E0E5 /* MagicalImportFunctions.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34618BF81E9001FD2A9 /* MagicalImportFunctions.h */; };
 		55DC7AB219DB3F620064E0E5 /* NSAttributeDescription+MagicalDataImport.h in Copy Header Files */ = {isa = PBXBuildFile; fileRef = 5580C34818BF81E9001FD2A9 /* NSAttributeDescription+MagicalDataImport.h */; };
@@ -1065,6 +1065,7 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
+				STRIP_STYLE = "non-global";
 				VALID_ARCHS = "i386 arm64 armv7s armv7";
 			};
 			name = Debug;
@@ -1113,16 +1114,18 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
-				DEPLOYMENT_POSTPROCESSING = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				DSTROOT = /tmp/DevedUpKit.dst;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevedUpKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/MagicalRecord-DevedUp/MagicalRecord\"/**";
 				VALID_ARCHS = "$(inherited)";
 			};
@@ -1139,6 +1142,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevedUpKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1235,6 +1239,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevedUpKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
