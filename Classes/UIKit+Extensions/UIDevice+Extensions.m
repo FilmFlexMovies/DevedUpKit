@@ -196,11 +196,11 @@
 
 + (BOOL) isIPad {
 	NSString *device = [self device];
-	if ([device rangeOfString:@"iPad"].location != NSNotFound) {
-		return YES;
-	} else {
-		return NO;
-	}
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        return YES;
+    } else  {
+        return NO;
+    }
 }
 
 + (BOOL) isIPadOriginal {
