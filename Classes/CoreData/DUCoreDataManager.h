@@ -5,6 +5,7 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "CoreData+MagicalRecord.h"
 #import "MagicalRecord.h" //NOTE: If you get MagicalRecord.h file not found... you haven't checked out the submodules properly, you are on a detached HEAD.
 
 extern NSString * const CoreDataUpdatedExternally;
