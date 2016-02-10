@@ -195,7 +195,6 @@
 }
 
 + (BOOL) isIPad {
-	NSString *device = [self device];
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
         return YES;
     } else  {
